@@ -13,11 +13,11 @@ app.get('/contact', function(req, res) {
 });
 
 app.get('/topcocktails', function(req, res) {
-  res.render('pages/myCocktails');
+  res.render('pages/topCocktails');
 });
 
 app.get('/mycocktails', function(req, res) {
-  res.render('pages/topCocktails');
+  res.render('pages/myCocktails');
 });
 
 app.listen(8080);
