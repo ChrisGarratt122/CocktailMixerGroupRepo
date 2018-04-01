@@ -1,8 +1,22 @@
 var express = require('express');
 var app = express();
-app.get('/', function(req, res){
- res.send("Hello world! by express");
+
+app.get('/home', function(req, res) {
+  res.render('pages/index');
 });
+
+app.get('/contact', function(req, res) {
+  res.render('pages/contact');
+});
+
+app.get('/topcocktails', function(req, res) {
+  res.render('pages/myCocktails');
+});
+
+app.get('/mycocktails', function(req, res) {
+  res.render('pages/topCocktails');
+});
+
 app.listen(8080);
 
 
