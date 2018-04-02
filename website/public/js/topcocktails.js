@@ -9,8 +9,8 @@ $(function(){
 
   getResultFromCocktailDB("Mojito", "1");
   getResultFromCocktailDB("Margarita", "2");
-  getResultFromCocktailDB("Black Russian", "3");
-  getResultFromCocktailDB("Black Forest Shake", "4");
+  getResultFromCocktailDB("Black_Russian", "3");
+  getResultFromCocktailDB("Black_Forest_Shake", "4");
 
 
   //Test alert
