@@ -60,7 +60,11 @@ function printDescription(jsondata, targetno){
 
 
   //Test alert to display descstring
-  //alert("Descstring= " + descstring);
+  alert("namecstring= " + namestring);
+  alert("imgstring= " + imgstring);
+  alert("descstring= " + descstring);
+
+  alert("Target number =" + targetno);
 
   //Append descstring to desc box
   $("cocktailName" + targetno).append(namestring);
