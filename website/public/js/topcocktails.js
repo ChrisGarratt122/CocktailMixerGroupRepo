@@ -25,7 +25,8 @@ function getResultFromCocktailDB(searchterms) {
     //Test alert to show getJSON function has been entered
     alert("getJson function has been entered");
     //handle the results
-    printJSON(jsondata);
+    var target = "cocktailDesc1";
+    printJSON(jsondata, target);
   });
 }
 
@@ -36,4 +37,7 @@ function printJSON(jsondata, target){
   //prints the JSON to the screen
   var normal = JSON.stringify(jsondata);
   $(target).append("<p>" + normal + "</p>");
+
+  //Test alert telling that stringify has happened
+  alert("Stringify has happened.");
 }
