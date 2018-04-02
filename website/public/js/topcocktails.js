@@ -31,8 +31,7 @@ function getResultFromCocktailDB(searchterms, targetno) {
     //Test alert to show getJSON function has been entered
     //alert("getJson function has been entered");
 
-    //Creating target variable to hold what element end result will be printed in.
-    //Send jsondata and target to printing function
+    //Send jsondata and target number to printing function
     printDescription(jsondata, targetno);
   });
 }
@@ -49,11 +48,12 @@ function printDescription(jsondata, targetno){
   //Test alert to show for has been entered
   //alert("desc about to be created");
 
-  //Searching jsondata for instructions and creating desc variable to hold it
+  //Searching jsondata for relevant data and creating corresponding variables to hold it
   var name = jsondata.drinks[0].strDrink;
   var image = jsondata.drinks[0].strDrinkThumb;
   var desc = jsondata.drinks[0].strInstructions;
 
+  //Creating string from returned data
   namestring += name;
   imgstring += image;
   descstring += desc;
@@ -64,8 +64,10 @@ function printDescription(jsondata, targetno){
   //alert("imgstring= " + imgstring);
   //alert("descstring= " + descstring);
 
+  //Test alert to display target number
   //alert("Target number =" + targetno);
 
+  //Constructing targets to hold ID's of the elements to be altered in the HTML
   var nametarget = "#cocktailName" + targetno;
   var imgtarget = "#cocktailImg" + targetno;
   var desctarget = "#cocktailDesc" + targetno;
