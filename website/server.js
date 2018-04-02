@@ -4,20 +4,20 @@ var app = express();
 
 app.set('view engine', 'ejs');
 
-app.get('/home', function(req, res) {
-  res.render('pages/index');
+app.get('/', function(req, res) {
+  res.render('views/pages/index');
 });
 
 app.get('/contact', function(req, res) {
-  res.render('pages/contact');
+  res.render('views/pages/contact');
 });
 
 app.get('/topcocktails', function(req, res) {
-  res.render('pages/topCocktails');
+  res.render('views/pages/topCocktails');
 });
 
 app.get('/mycocktails', function(req, res) {
-  res.render('pages/myCocktails');
+  res.render('views/pages/myCocktails');
 });
 
 app.listen(8080);
