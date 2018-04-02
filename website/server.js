@@ -8,6 +8,9 @@ const app = express();
 // var session = require('express-session');
 // var app = express();
 
+//Telling express to use the public folder.
+app.use(express.static('public'))
+
 //Setting View Engine to ejs
 app.set('view engine', 'ejs');
 
