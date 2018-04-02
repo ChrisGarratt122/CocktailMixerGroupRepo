@@ -1,17 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Mixer</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="stylesheets/style.css" rel="stylesheet">
+    <% include ../partials/head %>
   </head>
 
   <!-- Website
@@ -25,24 +15,7 @@
 
 
 <div class="nav-container">
-  <div class="button_container" id="toggle">
-      <span class="top"></span>
-      <span class="middle"></span>
-      <span class="bottom"></span>
-    </div>
-
-    <div class="overlay" id="overlay">
-      <nav class="overlay-menu">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/myCocktails">My Cocktails</a></li>
-          <li><a href="/topCocktails">Top Cocktails</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-        <span class="login"><a href="#">Login</a></span>
-        <span class="signup"><a href="#">Signup</a></span>
-      </nav>
-    </div>
+  <% include ../partials/header %>
 </div>
 
 
