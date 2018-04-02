@@ -50,7 +50,7 @@ function printDescription(jsondata, target){
   alert("Descstring= " + descstring);
 
   //Append descstring to desc box
-  $(target).append("<p>" + descstring + "</p>");
+  $(target).append(descstring);
 }
 
 // function printJSON(jsondata, target){
