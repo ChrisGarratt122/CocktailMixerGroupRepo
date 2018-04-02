@@ -26,20 +26,38 @@ function getResultFromCocktailDB(searchterms) {
     alert("getJson function has been entered");
     //handle the results
     var target = "#cocktailDesc1";
-    printJSON(jsondata, target);
+    //printJSON(jsondata, target);
+    printDescription(jsondata, target);
   });
 }
 
-function printJSON(jsondata, target){
+function printDescription(jsondata, target){
   //Test alert telling that function has been entered
-  alert("printJSON entered");
+  alert("PrintDescription has been entered.");
 
-  //prints the JSON to the screen
-  //var normal = JSON.stringify(jsondata);
-  var pretty = JSON.stringify(jsondata, null, 4);
-  //$(target).append("<p>" + normal + "</p>");
-  $(target).append("<pre>" + pretty + "</pre>");
+  //Creating string to hold HTML code (Desc from API) that will be injected.
+  var descstring = "";
 
-  //Test alert telling that stringify has happened
-  alert("Stringify has happened.");
+  //Locate description in result
+  for (var i=0; i<10; i++){
+    var desc = jsondata.Search[i].strInstructions;
+    descstring += "<p>" + desc + "</p>";
+  }
+
+  //Inject html into description box
+  $(target).html(descstring);
+}
+
+// function printJSON(jsondata, target){
+//   //Test alert telling that function has been entered
+//   alert("printJSON entered");
+//
+//   //prints the JSON to the screen
+//   //var normal = JSON.stringify(jsondata);
+//   var pretty = JSON.stringify(jsondata, null, 4);
+//   //$(target).append("<p>" + normal + "</p>");
+//   $(target).append("<pre>" + pretty + "</pre>");
+//
+//   //Test alert telling that stringify has happened
+//   alert("Stringify has happened.");
 }
