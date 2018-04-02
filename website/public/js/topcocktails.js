@@ -7,16 +7,20 @@ $(function(){
   //Test alert
   //alert("Getting 'Mojito' from API")
 
-  getResultFromCocktailDB("Mojito");
+  getResultFromCocktailDB("Mojito", "1");
+  getResultFromCocktailDB("Margarita", "2");
+  getResultFromCocktailDB("Black Russian", "3");
+  getResultFromCocktailDB("Black Forest Shake", "4");
+
 
   //Test alert
   //alert("Sending data to print function");
-  
+
   printJSON(data1, "#cocktailDesc1");
 });
 
 //Function gets data from theCocktailDB API
-function getResultFromCocktailDB(searchterms) {
+function getResultFromCocktailDB(searchterms, targetno) {
   //Test alert telling that function has been entered
   //alert("getResultFromCocktailDB entered");
 
@@ -33,7 +37,7 @@ function getResultFromCocktailDB(searchterms) {
     //alert("getJson function has been entered");
 
     //Creating target variable to hold what element end result will be printed in.
-    var target = "#cocktailDesc1";
+    var target = "#cocktailDesc" + targetno;
     //Send jsondata and target to printing function
     printDescription(jsondata, target);
   });
