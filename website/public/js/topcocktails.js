@@ -42,7 +42,7 @@ function printDescription(jsondata, target){
   //for (var i=0; i<10; i++){
     //Test alert to show for has been entered
     alert("desc about to be created");
-    var desc = jsondata.strInstructions;
+    var desc = jsondata.drinks[0].strInstructions;
     descstring += "<p>" + desc + "</p>";
   //}
 
