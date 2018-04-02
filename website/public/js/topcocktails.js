@@ -47,7 +47,7 @@ function printDescription(jsondata, target){
   //}
 
   //Test alert to display descstring
-  //alert("Descstring= " + descstring);
+  alert("Descstring= " + descstring);
 
   //Append descstring to desc box
   $(target).append("<p>" + descstring + "</p>");
