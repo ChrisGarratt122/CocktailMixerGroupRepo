@@ -4,7 +4,7 @@ $(function(){
   //Get Info for first top pick from API
   //Test alert
   alert("Getting 'Mojito from API'")
-  var data1 = getResultFromCoctailDB("Mojito");
+  var data1 = getResultFromCocktailDB("Mojito");
   //Test alert
   alert("Sending data to print function");
   printJSON(data1, "#cocktailDesc1");
