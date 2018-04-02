@@ -4,7 +4,8 @@ $(function(){
   //Get Info for first top pick from API
   //Test alert
   alert("Getting 'Mojito' from API")
-  var data1 = getResultFromCocktailDB("Mojito");
+  //var data1 = getResultFromCocktailDB("Mojito");
+  getResultFromCocktailDB("Mojito");
   //Test alert
   alert("Sending data to print function");
   printJSON(data1, "#cocktailDesc1");
@@ -18,13 +19,13 @@ function getResultFromCocktailDB(searchterms) {
   //build url for the request
   var url = ("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchterms);
   //Test alert to display url variable
-  alert("Url built:" + url);
+  alert("Url built: " + url);
   //use jquery json shortcut
   $.getJSON(url, function(jsondata) {
     //Test alert to show getJSON function has been entered
     alert("getJson function has been entered");
     //handle the results
-    return jsondata;
+    printJSON(jsondata);
   });
 }
 
