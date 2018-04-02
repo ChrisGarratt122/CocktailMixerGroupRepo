@@ -25,7 +25,7 @@ function getResultFromCocktailDB(searchterms) {
     //Test alert to show getJSON function has been entered
     alert("getJson function has been entered");
     //handle the results
-    var target = "cocktailDesc1";
+    var target = "#cocktailDesc1";
     printJSON(jsondata, target);
   });
 }
