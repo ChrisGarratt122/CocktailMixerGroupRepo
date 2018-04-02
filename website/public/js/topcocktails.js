@@ -16,11 +16,13 @@ function getResultFromCocktailDB(searchterms) {
   alert("getResultFromCocktailDB entered");
   //call cocktail API using Ajax
   //build url for the request
-  var url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchterms;
+  var url = ("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchterms;)
   //Test alert to display url variable
+  alert("Url built:" + url);
   //use jquery json shortcut
   $.getJSON(url, function(jsondata) {
     //Test alert to show getJSON function has been entered
+    alert("getJson function has been entered");
     //handle the results
     return jsondata;
   });
