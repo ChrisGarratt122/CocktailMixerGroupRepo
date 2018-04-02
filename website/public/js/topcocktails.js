@@ -43,7 +43,7 @@ function printDescription(jsondata, target){
     //Test alert to show for has been entered
     //alert("desc about to be created");
     var desc = jsondata.drinks[0].strInstructions;
-    descstring += "<p>" + desc + "</p>";
+    descstring += "desc";
   //}
 
   //Test alert to display descstring
