@@ -40,12 +40,17 @@ function printDescription(jsondata, target){
 
   //Locate description in result
   for (var i=0; i<10; i++){
+    //Test alert to show for has been entered
+    alert("For loop entered");
     var desc = jsondata.Search[i].strInstructions;
     descstring += "<p>" + desc + "</p>";
   }
 
-  //Inject html into description box
-  $(target).html(descstring);
+  //Test alert to display descstring
+  alert("Descstring= " + descstring);
+
+  //Append descstring to desc box
+  $(target).append("<p>" + descstring + "</p>");
 }
 
 // function printJSON(jsondata, target){
