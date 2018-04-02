@@ -35,8 +35,10 @@ function printJSON(jsondata, target){
   alert("printJSON entered");
 
   //prints the JSON to the screen
-  var normal = JSON.stringify(jsondata);
-  $(target).append("<p>" + normal + "</p>");
+  //var normal = JSON.stringify(jsondata);
+  var pretty = JSON.stringify(jsondata, null, 4);
+  //$(target).append("<p>" + normal + "</p>");
+  $(target).append("<pre>" + pretty + "</pre>");
 
   //Test alert telling that stringify has happened
   alert("Stringify has happened.");
