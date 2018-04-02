@@ -5,19 +5,19 @@ var app = express();
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
-  res.render('views/pages/index');
+  res.render('pages/index');
 });
 
 app.get('/contact', function(req, res) {
-  res.render('views/pages/contact');
+  res.render('pages/contact');
 });
 
 app.get('/topcocktails', function(req, res) {
-  res.render('views/pages/topCocktails');
+  res.render('pages/topCocktails');
 });
 
 app.get('/mycocktails', function(req, res) {
-  res.render('views/pages/myCocktails');
+  res.render('pages/myCocktails');
 });
 
 app.listen(8080);
