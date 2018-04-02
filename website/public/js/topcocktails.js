@@ -39,7 +39,7 @@ function getResultFromCocktailDB(searchterms, targetno) {
 
 function printDescription(jsondata, targetno){
   //Test alert telling that function has been entered
-  //alert("PrintDescription has been entered.");
+  alert("PrintDescription has been entered.");
 
   //Creating strings to hold HTML code (from API) that will be injected.
   var namestring = "";
