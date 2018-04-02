@@ -11,6 +11,9 @@ const app = express();
 //Setting View Engine to ejs
 app.set('view engine', 'ejs');
 
+//Telling express we are using sessions.
+app.use(session({ secret: 'example' }));
+
 //******GET ROUTES (Displaying Pages)*******
 app.get('/', function(req, res) {
   res.render('pages/index');
