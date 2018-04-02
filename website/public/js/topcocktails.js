@@ -39,7 +39,7 @@ function getResultFromCocktailDB(searchterms, targetno) {
 
 function printDescription(jsondata, targetno){
   //Test alert telling that function has been entered
-  alert("PrintDescription has been entered.");
+  //alert("PrintDescription has been entered.");
 
   //Creating strings to hold HTML code (from API) that will be injected.
   var namestring = "";
@@ -60,15 +60,15 @@ function printDescription(jsondata, targetno){
 
 
   //Test alert to display descstring
-  alert("namecstring= " + namestring);
-  alert("imgstring= " + imgstring);
-  alert("descstring= " + descstring);
+  //alert("namecstring= " + namestring);
+  //alert("imgstring= " + imgstring);
+  //alert("descstring= " + descstring);
 
-  alert("Target number =" + targetno);
+  //alert("Target number =" + targetno);
 
-  var nametarget = "cocktailName" + targetno;
-  var imgtarget = "cocktailImg" + targetno;
-  var desctarget = "cocktailDesc" + targetno;
+  var nametarget = "#cocktailName" + targetno;
+  var imgtarget = "#cocktailImg" + targetno;
+  var desctarget = "#cocktailDesc" + targetno;
 
   //Append descstring to desc box
   $(nametarget).append(namestring);
