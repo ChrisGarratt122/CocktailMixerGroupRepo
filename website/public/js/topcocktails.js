@@ -12,6 +12,8 @@ $(function(){
 
 //Function gets data from theCocktailDB API
 function getResultFromCocktailDB(searchterms) {
+  //Test alert telling that function has been entered
+  alert("getResultFromCocktailDB entered");
   //call cocktail API using Ajax
   //build url for the request
   var url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchterms;
@@ -23,6 +25,9 @@ function getResultFromCocktailDB(searchterms) {
 }
 
 function printJSON(jsondata, target){
+  //Test alert telling that function has been entered
+  alert("printJSON entered");
+
   //prints the JSON to the screen
   var normal = JSON.stringify(jsondata);
   $(target).append("<p>" + normal + "</p>");
