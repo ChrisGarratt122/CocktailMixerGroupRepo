@@ -39,12 +39,12 @@ function printDescription(jsondata, target){
   var descstring = "";
 
   //Locate description in result
-  for (var i=0; i<10; i++){
+  //for (var i=0; i<10; i++){
     //Test alert to show for has been entered
-    alert("For loop entered");
-    var desc = jsondata.Search[i].strInstructions;
+    alert("desc about to be created");
+    var desc = jsondata.strInstructions;
     descstring += "<p>" + desc + "</p>";
-  }
+  //}
 
   //Test alert to display descstring
   alert("Descstring= " + descstring);
