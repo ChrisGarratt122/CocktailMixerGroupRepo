@@ -66,10 +66,14 @@ function printDescription(jsondata, targetno){
 
   alert("Target number =" + targetno);
 
+  var nametarget = "cocktailName" + targetno;
+  var imgtarget = "cocktailImg" + targetno;
+  var desctarget = "cocktailDesc" + targetno;
+
   //Append descstring to desc box
-  $("cocktailName" + targetno).append(namestring);
-  $("cocktailImg" + targetno).attr("src", imgstring);
-  $("cocktailDesc" + targetno).append(descstring);
+  $(nametarget).append(namestring);
+  $(imgtarget).attr("src", imgstring);
+  $(desctarget).append(descstring);
   //Add drink image
 
 }
