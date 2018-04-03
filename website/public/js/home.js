@@ -21,9 +21,9 @@ $(function(){
   appendCocktailBox('Margarita');
   appendCocktailBox('Black Russian');
 
-  alert("About to attempt end of row append.")
-
-  appendCocktailRowEnd();
+  // alert("About to attempt end of row append.")
+  //
+  // appendCocktailRowEnd();
 
   alert("Returned after appends;")
 
