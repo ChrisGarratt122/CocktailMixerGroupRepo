@@ -21,11 +21,11 @@ $(function(){
   appendCocktailBox('Margarita');
   appendCocktailBox('Black Russian');
 
-  // alert("About to attempt end of row append.")
+  // alert("About to attempt end of row append.");
   //
   // appendCocktailRowEnd();
 
-  alert("Returned after appends;")
+  alert("Returned after appends;");
 
   //document.getElementById("bordercontainer").appendChild=
   // <%- include("../partials/cocktailbox",{name1:"MojitoTest1",name2:"MargaritaTest1",name3:"Black RussianTest1"}) %>
@@ -37,8 +37,9 @@ $(function(){
 
 function appendCocktailRowStart() {
 
-  alert("appendCocktailRowStart entered.")
-  var htmlstring = "<div class=\"row text-center\">"
+  alert("appendCocktailRowStart entered.");
+  var htmlstring = "";
+  htmlstring += "<div class=\"row text-center\">";
 
   $("#bordercontainer").append(htmlstring);
 
@@ -46,7 +47,7 @@ function appendCocktailRowStart() {
 
 function appendCocktailBox(name) {
 
-  alert("appendCocktailBox entered.")
+  alert("appendCocktailBox entered.");
   var htmlstring = "";
   htmlstring += "<div class=\"col-sm\">";
   htmlstring += "<img src=\"img/Mojito.jpg\" alt=\"...\" class=\"img-thumbnail\">";
@@ -61,8 +62,8 @@ function appendCocktailBox(name) {
 
 function appendCocktailRowEnd() {
 
-  alert("appendCocktailRowEnd entered.")
-  var htmlstring = "</div>"
+  alert("appendCocktailRowEnd entered.");
+  var htmlstring = "</div>";
 
   $("#bordercontainer").append(htmlstring);
 
