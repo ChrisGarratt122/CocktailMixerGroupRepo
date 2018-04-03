@@ -282,8 +282,8 @@ h2,p {
   background-color: white;
   padding: 20px;
 
-  height: 75%;
-  overflow: scroll;
+  height: 50%;
+  overflow: auto;
 
 }
 
