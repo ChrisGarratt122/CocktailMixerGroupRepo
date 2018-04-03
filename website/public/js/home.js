@@ -48,7 +48,7 @@ function appendCocktailBox(name) {
 
   alert("appendCocktailBox entered.")
   var htmlstring = "";
-  htmlstring += "<div class=\"col-sm\">";
+  htmlstring += "<div class=\"col-sm myCocktailBackground\">";
   htmlstring += "<img src=\"img/Mojito.jpg\" alt=\"...\" class=\"img-thumbnail\">";
   htmlstring += "<h3>" + name + "</h3>";
   htmlstring += "<p>Test text</p>";
