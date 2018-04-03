@@ -21,9 +21,9 @@ $(function(){
   appendCocktailBox('Margarita');
   appendCocktailBox('Black Russian');
 
-  // alert("About to attempt end of row append.");
-  //
-  // appendCocktailRowEnd();
+  alert("About to attempt end of row append.");
+
+  appendCocktailRowEnd();
 
   alert("Returned after appends;");
 
@@ -39,7 +39,7 @@ function appendCocktailRowStart() {
 
   alert("appendCocktailRowStart entered.");
   var htmlstring = "";
-  htmlstring += "<div class=\"row text-center\">";
+  htmlstring += '<div class=\"row text-center\">';
 
   $("#bordercontainer").append(htmlstring);
 
