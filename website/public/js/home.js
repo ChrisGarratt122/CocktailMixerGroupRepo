@@ -36,7 +36,7 @@ $(function(){
 function appendCocktailRowStart() {
 
   alert("appendCocktailRowStart entered.")
-  var htmlstring = "<div class='row text-center'>"
+  var htmlstring = "<div class=\"row text-center\">"
 
   $("#bordercontainer").append(htmlstring);
 
@@ -46,8 +46,8 @@ function appendCocktailBox(name) {
 
   alert("appendCocktailBox entered.")
   var htmlstring = "";
-  htmlstring += "<div class='col-sm'";
-  htmlstring += "<img src='img/Mojito.jpg' alt='...' class='img-thumbnail'>";
+  htmlstring += "<div class=\"col-sm\"";
+  htmlstring += "<img src=\"img/Mojito.jpg\" alt=\"...\" class=\"img-thumbnail\">";
   htmlstring += "<h3>" + name + "</h3>";
   htmlstring += "<p>Test text</p>";
   htmlstring += "</div>";
