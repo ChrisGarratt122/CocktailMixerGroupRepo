@@ -18,6 +18,8 @@ $(function(){
   alert("About to attempt box append");
 
   appendCocktailBox('Mojito');
+  appendCocktailBox('Margarita');
+  appendCocktailBox('Black Russian');
 
   alert("About to attempt end of row append.")
 
