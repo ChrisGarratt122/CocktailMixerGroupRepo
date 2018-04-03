@@ -11,6 +11,8 @@ $(function(){
   // getResultFromCocktailDB("Black_Russian", "3");
   // getResultFromCocktailDB("Black_Forest_Shake", "4");
 
+  alert("Function entered, about to attempt html insert");
+
   document.getElementById("bordercontainer").innerHTML=
   <%- include("../partials/cocktailbox",{name1:"MojitoTest1",name2:"MargaritaTest1",name3:"Black RussianTest1"}) %>
   <%- include("../partials/cocktailbox",{name1:"MojitoTest2",name2:"MargaritaTest2",name3:"Black RussianTest2"}) %>
