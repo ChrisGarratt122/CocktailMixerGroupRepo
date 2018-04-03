@@ -11,13 +11,19 @@ $(function(){
   // getResultFromCocktailDB("Black_Russian", "3");
   // getResultFromCocktailDB("Black_Forest_Shake", "4");
 
-  alert("Function entered, about to attempt row append");
+  alert("Function entered, about to attempt start of row append");
 
-  appendCocktailRow();
+  appendCocktailRowStart();
 
   alert("About to attempt box append");
 
-  appendCocktailBox();
+  appendCocktailBox('Mojito');
+
+  alert("About to attempt end of row append.")
+
+  appendCocktailRowEnd();
+
+  alert("Returned after appends;")
 
   //document.getElementById("bordercontainer").appendChild=
   // <%- include("../partials/cocktailbox",{name1:"MojitoTest1",name2:"MargaritaTest1",name3:"Black RussianTest1"}) %>
@@ -27,18 +33,35 @@ $(function(){
 
 });
 
-function appendCocktailRow() {
+function appendCocktailRowStart() {
 
-  alert("appendCocktailRow entered.")
-  var htmlstring = "<div class='row text-center'></div;"
+  alert("appendCocktailRowStart entered.")
+  var htmlstring = "<div class='row text-center'>;"
 
   $("#bordercontainer").append(htmlstring);
 
 }
 
-function appendCocktailBox() {
+function appendCocktailBox(name) {
 
   alert("appendCocktailBox entered.")
   var htmlstring = "";
+  htmlstring += "<div class='col-sm'";
+  htmlstring += "<img src='img/Mojito.jpg' alt='...' class='img-thumbnail'>";
+  htmlstring += "<h3>" + name + "</h3>";
+  htmlstring += "<p>Test text</p>";
+  htmlstring += "";
+
+  $("#bordercontainer").append(htmlstring);
+
+
+}
+
+function appendCocktailRowEnd() {
+
+  alert("appendCocktailRowEnd entered.")
+  var htmlstring = "</div>;"
+
+  $("#bordercontainer").append(htmlstring);
 
 }
