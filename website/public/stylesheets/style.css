@@ -281,6 +281,10 @@ h2,p {
 .homepage-cocktails {
   background-color: white;
   padding: 20px;
+
+  height: 75%;
+  overflow: scroll;
+
 }
 
 .homepage-cocktails img {
