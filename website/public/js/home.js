@@ -130,12 +130,13 @@ function removeFromArray(array, ingredient) {
        array.splice(i, 1);
        console.log("Spliced " + ingredient + " out of array.");
     }
+    }
     //return updated array
     return array;
 
-  }
 
-}
+
+  }
 
 }
 
