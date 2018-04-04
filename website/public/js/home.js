@@ -30,6 +30,55 @@ $(function(){
 
 });
 
+//Function gets data from theCocktailDB API
+function getIngredientsFromCocktailDB() {
+  //Test alert telling that function has been entered
+  //alert("getResultFromCocktailDB entered");
+
+  //call cocktail API using Ajax
+  //build url for the request
+  var url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
+
+  //Test alert to display url variable
+  //alert("Url built: " + url);
+  console.log("Url: " + url);
+
+  //use jquery json shortcut
+  $.getJSON(url, function(jsondata) {
+    //Test alert to show getJSON function has been entered
+    //alert("getJson function has been entered");
+
+    //Send jsondata to array building function
+    buildArray(jsondata);
+  });
+}
+
+function buildArray(jsondata) {
+
+  var array = [];
+
+  jsondata.drinks[0].strInstructions;
+
+  $.each(jsondata.drinks, function (index, strInstructions) {
+        array.push(drinks.strInstructions); //push values here
+  });
+
+  console.log(array); // see the output here
+
+  displayArray(array);
+
+}
+
+function displayArray(array) {
+  aLength = array.length;
+	text = "";
+	for (i = 0; i < aLength; i++) {
+  text += "<a href=" +  + ">" + Contact + "</a>"
+  }
+
+  $(#myDropdown).append(text);
+}
+
 // /* When the user clicks on the button,
 // toggle between hiding and showing the dropdown content */
 $('#search-bar').click(function() {
@@ -56,9 +105,6 @@ $('#search-bar').keyup(function() {
       }
   }
   });
-
-
-
 
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
@@ -104,9 +150,6 @@ function addToArray(array, ingredient) {
   return array;
 }
 
-
-
-//******BUGGED V ********
 function removeFromArray(array, ingredient) {
 
   if (array === undefined) {
@@ -140,7 +183,7 @@ function removeFromArray(array, ingredient) {
 
 }
 
-//**** BUGGED ^ *****
+
 
 function appendCocktailRowStart() {
 
