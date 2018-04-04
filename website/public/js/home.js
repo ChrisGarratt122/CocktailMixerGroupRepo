@@ -63,11 +63,13 @@ function buildArray(jsondata) {
 
   console.log("Entered buildArray() function.");
 
-  var array = [];
-
-  $.each(jsondata.drinks, function (index, strInstructions) {
-        array.push(drinks.strInstructions); //push values here
+  var array = $.map(jsondata.drinks, function (el) {
+  return el.strIngredient1;
   });
+
+  // $.each(jsondata.drinks, function (index, drink) {
+  //       array.push(drinks.strInstructions); //push values here
+  // });
 
   console.log(array); // see the output here
 
