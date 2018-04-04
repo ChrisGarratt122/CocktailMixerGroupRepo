@@ -23,7 +23,7 @@
         <form>
           <div class="dropdown">
             <!-- <button onclick="myFunction()" class="dropbtn">Dropdown</button> -->
-            <input type="text"  class="form-control" placeholder="Add Ingredient..." id="email" onclick="myfunction" onkeyup="filterFunction()">
+            <input type="text"  class="form-control" placeholder="Add Ingredient..." id="email" onclick="myfunction()" onkeyup="filterFunction()">
             <div id="myDropdown" class="dropdown-content">
               <a href="#test example1">About</a>
               <a href="#test example2">Base</a>
@@ -63,7 +63,7 @@ function myFunction() {
 
 function filterFunction() {
     var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
+    input = document.getElementById("email");
     filter = input.value.toUpperCase();
     div = document.getElementById("myDropdown");
     a = div.getElementsByTagName("a");
