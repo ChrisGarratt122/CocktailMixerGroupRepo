@@ -1,6 +1,8 @@
 $(function(){
   alert("document ready");
 
+  console.log("About to enter getIngredientsFromCocktailDB()");
+  getIngredientsFromCocktailDB();
 
   //Test alert
   //alert("Getting 'Mojito' from API")
@@ -37,6 +39,8 @@ function getIngredientsFromCocktailDB() {
 
   //call cocktail API using Ajax
   //build url for the request
+  console.log("Entered getIngredientsFromCocktailDB()");
+
   var url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 
   //Test alert to display url variable
@@ -49,11 +53,15 @@ function getIngredientsFromCocktailDB() {
     //alert("getJson function has been entered");
 
     //Send jsondata to array building function
+
+    console.log("About to enter buildArray() function.");
     buildArray(jsondata);
   });
 }
 
 function buildArray(jsondata) {
+
+  console.log("Entered buildArray() function.");
 
   var array = [];
 
@@ -65,17 +73,22 @@ function buildArray(jsondata) {
 
   console.log(array); // see the output here
 
+  console.log("About to enter displayArray() function.");
   displayArray(array);
 
 }
 
 function displayArray(array) {
+
+  console.log("Entered displayArray() function.");
+
   aLength = array.length;
 	text = "";
 	for (i = 0; i < aLength; i++) {
   text += "<a href=" +  + ">" + Contact + "</a>";
   }
 
+  console.log("Appending to myDropdown");
   $('#myDropdown').append(text);
 }
 
