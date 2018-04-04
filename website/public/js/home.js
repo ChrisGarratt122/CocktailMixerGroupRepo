@@ -76,7 +76,7 @@ function displayArray(array) {
   text += "<a href=" +  + ">" + Contact + "</a>";
   }
 
-  $(#myDropdown).append(text);
+  $('#myDropdown').append(text);
 }
 
 // /* When the user clicks on the button,
