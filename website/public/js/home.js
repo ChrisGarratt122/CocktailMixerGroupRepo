@@ -131,7 +131,7 @@ function removeFromArray(array, ingredient) {
     return array;
 }
 
-  }
+  
 
 function appendCocktailRowStart() {
 
