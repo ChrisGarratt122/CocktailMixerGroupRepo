@@ -352,9 +352,9 @@ h2,p {
     width: 100%;
     border:none;
     text-align: left;
-} 
+}
 
-.btnLink button:hover {background-color: #ddd}
+.dropdown-content button:hover {background-color: #ddd}
 
 .show {display:block;}
 
