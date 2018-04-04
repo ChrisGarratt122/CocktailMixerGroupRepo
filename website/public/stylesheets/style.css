@@ -327,7 +327,6 @@ h2,p {
 }
 
 .dropdown-content {
-    display: none;
     position: absolute;
     background-color: #f6f6f6;
     min-width: 230px;
