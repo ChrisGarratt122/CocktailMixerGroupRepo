@@ -56,113 +56,113 @@ $('#search-bar').keyup(function() {
       }
   }
   });
-//
-//
-//
-//
-// // function myFunction() {
-// //     document.getElementById("myDropdown").classList.toggle("show");
-// // }
-// //
-// // function filterFunction() {
-// //     var input, filter, ul, li, a, i;
-// //     input = document.getElementById("search-bar");
-// //     filter = input.value.toUpperCase();
-// //     div = document.getElementById("myDropdown");
-// //     a = div.getElementsByTagName("a");
-// //     for (i = 0; i < a.length; i++) {
-// //         if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-// //             a[i].style.display = "";
-// //         } else {
-// //             a[i].style.display = "none";
-// //         }
-// //     }
-// // }
-//
-// function getArray(name) {
-//
-//     //If array doesn't exist, create it
-//     var arr = name || [];
-//
-//     //Return array
-//     return arr;
+
+
+
+
+// function myFunction() {
+//     document.getElementById("myDropdown").classList.toggle("show");
 // }
 //
-// function addToArray(array, ingredient) {
-//
-//   if (array === undefined) {
-//   //If array does not exist.
-//   console.log("Array is does not exist, breaking from function.");
-//   break;
-//   }
-//   else {
-//   //Else array does exist.
-//   array.push(ingredient);
-//   console.log("Pushed " + ingredient + " into array.");
-//   }
-//   //return updated array
-//   return array;
-// }
-//
-// function removeFromArray(array, ingredient) {
-//
-//   if (array === undefined) {
-//     //If array does not exist
-//     console.log("Array does not exist. Breaking from function.");
-//     break;
-//   }
-//
-//   else if (array.length == 0) {
-//     //If array is empty
-//     console.log("Array is empty. Breaking from function.");
-//     break;
-//   }
-//   else {
-//     //Else array exists and is not empty
-//     //For each element in array (Beginning from last element)
-//     for(var i = array.length - 1; i >= 0; i--) {
-//     //If current array item matches ingredient
-//     if(array[i] === ingredient) {
-//       //Splice item out of array
-//        array.splice(i, 1);
-//        console.log("Spliced " + ingredient + " out of array.");
+// function filterFunction() {
+//     var input, filter, ul, li, a, i;
+//     input = document.getElementById("search-bar");
+//     filter = input.value.toUpperCase();
+//     div = document.getElementById("myDropdown");
+//     a = div.getElementsByTagName("a");
+//     for (i = 0; i < a.length; i++) {
+//         if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+//             a[i].style.display = "";
+//         } else {
+//             a[i].style.display = "none";
+//         }
 //     }
-//     //return updated array
-//     return array;
 // }
-//
-//   }
-//
-// function appendCocktailRowStart() {
-//
-//   alert("appendCocktailRowStart entered.");
-//   var htmlstring = "";
-//   htmlstring += '<div class=\"row text-center\">';
-//
-//   $("#bordercontainer").append(htmlstring);
-//
-// }
-//
-// function appendCocktailBox(name) {
-//
-//   alert("appendCocktailBox entered.");
-//   var htmlstring = "";
-//   htmlstring += "<div class=\"col-sm\">";
-//   htmlstring += "<img src=\"img/Mojito.jpg\" alt=\"...\" class=\"img-thumbnail\">";
-//   htmlstring += "<h3>" + name + "</h3>";
-//   htmlstring += "<p>Test text</p>";
-//   htmlstring += "</div>";
-//
-//   $("#bordercontainer").append(htmlstring);
-//
-//
-// }
-//
-// function appendCocktailRowEnd() {
-//
-//   alert("appendCocktailRowEnd entered.");
-//   var htmlstring = "</div>";
-//
-//   $("#bordercontainer").append(htmlstring);
-//
-// }
+
+function getArray(name) {
+
+    //If array doesn't exist, create it
+    var arr = name || [];
+
+    //Return array
+    return arr;
+}
+
+function addToArray(array, ingredient) {
+
+  if (array === undefined) {
+  //If array does not exist.
+  console.log("Array is does not exist, breaking from function.");
+  break;
+  }
+  else {
+  //Else array does exist.
+  array.push(ingredient);
+  console.log("Pushed " + ingredient + " into array.");
+  }
+  //return updated array
+  return array;
+}
+
+function removeFromArray(array, ingredient) {
+
+  if (array === undefined) {
+    //If array does not exist
+    console.log("Array does not exist. Breaking from function.");
+    break;
+  }
+
+  else if (array.length == 0) {
+    //If array is empty
+    console.log("Array is empty. Breaking from function.");
+    break;
+  }
+  else {
+    //Else array exists and is not empty
+    //For each element in array (Beginning from last element)
+    for(var i = array.length - 1; i >= 0; i--) {
+    //If current array item matches ingredient
+    if(array[i] === ingredient) {
+      //Splice item out of array
+       array.splice(i, 1);
+       console.log("Spliced " + ingredient + " out of array.");
+    }
+    //return updated array
+    return array;
+}
+
+  }
+
+function appendCocktailRowStart() {
+
+  alert("appendCocktailRowStart entered.");
+  var htmlstring = "";
+  htmlstring += '<div class=\"row text-center\">';
+
+  $("#bordercontainer").append(htmlstring);
+
+}
+
+function appendCocktailBox(name) {
+
+  alert("appendCocktailBox entered.");
+  var htmlstring = "";
+  htmlstring += "<div class=\"col-sm\">";
+  htmlstring += "<img src=\"img/Mojito.jpg\" alt=\"...\" class=\"img-thumbnail\">";
+  htmlstring += "<h3>" + name + "</h3>";
+  htmlstring += "<p>Test text</p>";
+  htmlstring += "</div>";
+
+  $("#bordercontainer").append(htmlstring);
+
+
+}
+
+function appendCocktailRowEnd() {
+
+  alert("appendCocktailRowEnd entered.");
+  var htmlstring = "</div>";
+
+  $("#bordercontainer").append(htmlstring);
+
+}
