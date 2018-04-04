@@ -37,7 +37,7 @@ $('#search-bar').click(function() {
   document.getElementById("myDropdown").classList.toggle("show");
   });
 
-$('#search-bar').onkeyup(function() {
+$('#search-bar').keyup(function() {
   alert("Keyup tried to do something");
 
   var input, filter, ul, li, a, i;
