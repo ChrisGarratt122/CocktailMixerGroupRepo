@@ -341,14 +341,20 @@ h2,p {
     font-family: 'Raleway', sans-serif;
 }
 
-.dropdown-content a {
+.dropdown-content button {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-}
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #f6f6f6;
+    width: 100%;
+    border:none;
+    text-align: left;
+} 
 
-.dropdown a:hover {background-color: #ddd}
+.btnLink button:hover {background-color: #ddd}
 
 .show {display:block;}
 
