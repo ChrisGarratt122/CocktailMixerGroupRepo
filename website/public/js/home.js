@@ -87,7 +87,7 @@ function displayArray(array) {
 
 	for (i = 0; i < aLength; i++) {
   ingName = array[i].replace(/\s+/g, '');
-  text += "<a href="" id= link" + array[i]  + ">" + array[i]  + "</a>";
+  text += "<a href="" id= link" + ingName  + ">" + array[i]  + "</a>";
   }
 
   console.log("Appending to myDropdown");
