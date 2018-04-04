@@ -33,10 +33,13 @@ $(function(){
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 $('#search-bar').click(function() {
+  alert("Click tried to do something");
   document.getElementById("myDropdown").classList.toggle("show");
   });
 
 $('#search-bar').onkeyup(function() {
+  alert("Keyup tried to do something");
+
   var input, filter, ul, li, a, i;
   input = document.getElementById("search-bar");
   filter = input.value.toUpperCase();
