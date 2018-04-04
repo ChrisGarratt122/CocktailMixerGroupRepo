@@ -322,8 +322,7 @@ h2,p {
 #myInput:focus {outline: 3px solid #ddd;}
 
 .dropdown {
-    position: relative;
-    display: inline-block;
+
 }
 
 .dropdown-content {
