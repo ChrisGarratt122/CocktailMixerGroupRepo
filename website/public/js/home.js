@@ -73,7 +73,7 @@ function displayArray(array) {
   aLength = array.length;
 	text = "";
 	for (i = 0; i < aLength; i++) {
-  text += "<a href=" +  + ">" + Contact + "</a>"
+  text += "<a href=" +  + ">" + Contact + "</a>";
   }
 
   $(#myDropdown).append(text);
