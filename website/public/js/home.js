@@ -65,8 +65,6 @@ function buildArray(jsondata) {
 
   var array = [];
 
-  jsondata.drinks[0].strInstructions;
-
   $.each(jsondata.drinks, function (index, strInstructions) {
         array.push(drinks.strInstructions); //push values here
   });
