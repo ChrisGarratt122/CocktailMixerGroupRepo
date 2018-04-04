@@ -4,7 +4,7 @@
     <% include ../partials/head %>
 
     <!--index.js only relevant to this page-->
-    <script src="js/home.js"></script>
+    <script type="text/javascript" src="js/home.js"></script>
 
   </head>
 
@@ -27,7 +27,7 @@
         <form>
           <div class="dropdown">
             <!-- <button onclick="myFunction()" class="dropbtn">Dropdown</button> -->
-            <input type="text"  class="form-control" placeholder="Add Ingredient..." id="search-bar" onclick="myFunction()" onkeyup="filterFunction()">
+            <input type="text"  class="form-control" placeholder="Add Ingredient..." id="search-bar" onclick="myFunction();" onkeyup="filterFunction();">
             <div id="myDropdown" class="dropdown-content">
               <a href="#test example1">About</a>
               <a href="#test example2">Base</a>
