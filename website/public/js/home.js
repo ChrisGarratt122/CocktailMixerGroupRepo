@@ -79,59 +79,58 @@ $('#search-bar').keyup(function() {
 //     }
 // }
 
-function getArray(name) {
-
-    //If array doesn't exist, create it
-    var arr = name || [];
-
-    //Return array
-    return arr;
-}
-
-function addToArray(array, ingredient) {
-
-  if (array === undefined) {
-  //If array does not exist.
-  console.log("Array is does not exist, breaking from function.");
-  break;
-  }
-  else {
-  //Else array does exist.
-  array.push(ingredient);
-  console.log("Pushed " + ingredient + " into array.");
-  }
-  //return updated array
-  return array;
-}
-
-function removeFromArray(array, ingredient) {
-
-  if (array === undefined) {
-    //If array does not exist
-    console.log("Array does not exist. Breaking from function.");
-    break;
-  }
-
-  else if (array.length == 0) {
-    //If array is empty
-    console.log("Array is empty. Breaking from function.");
-    break;
-  }
-  else {
-    //Else array exists and is not empty
-    //For each element in array (Beginning from last element)
-    for(var i = array.length - 1; i >= 0; i--) {
-    //If current array item matches ingredient
-    if(array[i] === ingredient) {
-      //Splice item out of array
-       array.splice(i, 1);
-       console.log("Spliced " + ingredient + " out of array.");
-    }
-    //return updated array
-    return array;
-}
-
-  
+// function getArray(name) {
+//
+//     //If array doesn't exist, create it
+//     var arr = name || [];
+//
+//     //Return array
+//     return arr;
+// }
+//
+// function addToArray(array, ingredient) {
+//
+//   if (array === undefined) {
+//   //If array does not exist.
+//   console.log("Array is does not exist, breaking from function.");
+//   break;
+//   }
+//   else {
+//   //Else array does exist.
+//   array.push(ingredient);
+//   console.log("Pushed " + ingredient + " into array.");
+//   }
+//   //return updated array
+//   return array;
+// }
+//
+// function removeFromArray(array, ingredient) {
+//
+//   if (array === undefined) {
+//     //If array does not exist
+//     console.log("Array does not exist. Breaking from function.");
+//     break;
+//   }
+//
+//   else if (array.length == 0) {
+//     //If array is empty
+//     console.log("Array is empty. Breaking from function.");
+//     break;
+//   }
+//   else {
+//     //Else array exists and is not empty
+//     //For each element in array (Beginning from last element)
+//     for(var i = array.length - 1; i >= 0; i--) {
+//     //If current array item matches ingredient
+//     if(array[i] === ingredient) {
+//       //Splice item out of array
+//        array.splice(i, 1);
+//        console.log("Spliced " + ingredient + " out of array.");
+//     }
+//     //return updated array
+//     return array;
+//
+//   }
 
 function appendCocktailRowStart() {
 
