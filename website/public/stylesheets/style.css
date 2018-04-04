@@ -322,10 +322,12 @@ h2,p {
 #myInput:focus {outline: 3px solid #ddd;}
 
 .dropdown {
-
+    position: relative;
+    display: inline-block;
 }
 
 .dropdown-content {
+    display: none;
     position: absolute;
     background-color: #f6f6f6;
     min-width: 230px;
