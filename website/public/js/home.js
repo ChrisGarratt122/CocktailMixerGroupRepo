@@ -119,6 +119,22 @@ $('#search-bar').keyup(function() {
   }
   });
 
+$('a').click(function() {
+    var ingredient = $(this).text();
+    console.log("Ingredient Selected: " + ingredient + ".");
+
+    var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
+    $('#button-container').append(text);
+});
+
+$(":button").click(function() {
+    console.log("A button has been clicked.");
+});
+
+
+
+//*******Functions for dropdown box******//
+
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -137,6 +153,8 @@ function filterFunction() {
         }
     }
 }
+
+//*******Functions for altering local ingredient array********//
 
 function getArray(name) {
 
