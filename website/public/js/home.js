@@ -137,6 +137,8 @@ function removeFromArray(array, ingredient) {
 
 }
 
+}
+
 //**** BUGGED ^ *****
 
 function appendCocktailRowStart() {
