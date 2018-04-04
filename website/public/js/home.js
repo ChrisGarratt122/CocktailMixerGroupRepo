@@ -85,7 +85,7 @@ function displayArray(array) {
   aLength = array.length;
 	text = "";
 	for (i = 0; i < aLength; i++) {
-  text += "<a href=" +  + ">" + Contact + "</a>";
+  text += "<a href=" + array[i]  + ">" + array[i]  + "</a>";
   }
 
   console.log("Appending to myDropdown");
