@@ -32,27 +32,27 @@ $(function(){
 
 // /* When the user clicks on the button,
 // toggle between hiding and showing the dropdown content */
-// $('#search-bar').click(function() {
-//   alert("Click tried to do something");
-//   document.getElementById("myDropdown").classList.toggle("show");
-//   });
-//
-// $('#search-bar').onkeyup(function() {
-//   alert("Keyup tried to do something");
-//
-//   var input, filter, ul, li, a, i;
-//   input = document.getElementById("search-bar");
-//   filter = input.value.toUpperCase();
-//   div = document.getElementById("myDropdown");
-//   a = div.getElementsByTagName("a");
-//   for (i = 0; i < a.length; i++) {
-//       if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-//           a[i].style.display = "";
-//       } else {
-//           a[i].style.display = "none";
-//       }
-//   }
-//   });
+$('#search-bar').click(function() {
+  alert("Click tried to do something");
+  document.getElementById("myDropdown").classList.toggle("show");
+  });
+
+$('#search-bar').onkeyup(function() {
+  alert("Keyup tried to do something");
+
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("search-bar");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+      if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+          a[i].style.display = "";
+      } else {
+          a[i].style.display = "none";
+      }
+  }
+  });
 //
 //
 //
