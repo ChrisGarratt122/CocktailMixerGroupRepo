@@ -333,7 +333,7 @@ h2,p {
     background-color: #f6f6f6;
     min-width: 230px;
     width: 472px;
-    min-height: 50px
+    min-height: 50px;
     max-height: 338px;
     overflow: auto;
     border: 1px solid #ddd;
