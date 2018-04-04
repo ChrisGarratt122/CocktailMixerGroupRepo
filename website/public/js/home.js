@@ -1,26 +1,26 @@
 $(function(){
-  //alert("document ready");
+  alert("document ready");
 
 
   //Test alert
   //alert("Getting 'Mojito' from API")
-  alert("About to create array.");
-
-  alert("Function entered, about to attempt start of row append");
-
-  //appendCocktailRowStart();
-
-  alert("About to attempt box append");
-
-  // appendCocktailBox('Mojito');
-  // appendCocktailBox('Margarita');
-  // appendCocktailBox('Black Russian');
-
-  alert("About to attempt end of row append.");
-
-  // appendCocktailRowEnd();
-
-  alert("Returned after appends;");
+  // alert("About to create array.");
+  //
+  // alert("Function entered, about to attempt start of row append");
+  //
+  // //appendCocktailRowStart();
+  //
+  // alert("About to attempt box append");
+  //
+  // // appendCocktailBox('Mojito');
+  // // appendCocktailBox('Margarita');
+  // // appendCocktailBox('Black Russian');
+  //
+  // alert("About to attempt end of row append.");
+  //
+  // // appendCocktailRowEnd();
+  //
+  // alert("Returned after appends;");
 
   //document.getElementById("bordercontainer").appendChild=
   // <%- include("../partials/cocktailbox",{name1:"MojitoTest1",name2:"MargaritaTest1",name3:"Black RussianTest1"}) %>
@@ -33,12 +33,15 @@ $(function(){
 // /* When the user clicks on the button,
 // toggle between hiding and showing the dropdown content */
 $('#search-bar').click(function() {
-  alert("Click tried to do something");
+  //alert("Click tried to do something");
+  console.log("jquery click() entered.");
+
   document.getElementById("myDropdown").classList.toggle("show");
   });
 
 $('#search-bar').keyup(function() {
-  alert("Keyup tried to do something");
+  //alert("Keyup tried to do something");
+  console.log("jquery keyup() entered.");
 
   var input, filter, ul, li, a, i;
   input = document.getElementById("search-bar");
