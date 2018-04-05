@@ -239,6 +239,7 @@ function getArray() {
 
     var clientArray = [];
     $( "#button-container" ).each(function() {
+      console.log($(this).text);
       clientArray.push($(this).text);
       console.log("Added " + $(this).text() + " to array.");
     });
