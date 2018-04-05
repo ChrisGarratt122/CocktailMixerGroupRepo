@@ -143,16 +143,16 @@ function myFunction() {
 }
 
 function filterFunction() {
-    var input, filter, ul, li, a, i;
+    var input, filter, ul, li, button, i;
     input = document.getElementById("search-bar");
     filter = input.value.toUpperCase();
     div = document.getElementById("myDropdown");
-    a = div.getElementsByTagName("a");
-    for (i = 0; i < a.length; i++) {
-        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-            a[i].style.display = "";
+    button = div.getElementsByTagName("button");
+    for (i = 0; i < button.length; i++) {
+        if (button[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            button[i].style.display = "";
         } else {
-            a[i].style.display = "none";
+            button[i].style.display = "none";
         }
     }
 }
