@@ -1,6 +1,6 @@
 $(function(){
 
-  $(".dropButton").click(function(){
+  $(":button").click(function(){
       console.log("A button has been clicked.");
       alert("Button has been clicked.");
 
