@@ -1,6 +1,6 @@
 $(function(){
 
-  $(":button").click(function(){
+  $(".dropButton").click(function(){
       console.log("A button has been clicked.");
       alert("Button has been clicked.");
 
@@ -102,7 +102,7 @@ function displayArray(array) {
 
 	for (i = 0; i < aLength; i++) {
   ingName = array[i].replace(/\s+/g, '');
-  text  += "<button class='dropButton' name='btn" + ingName +"'>" + array[i] + "</button>";
+  text  += "<button type='button' class='dropButton' name='btn" + ingName +"'>" + array[i] + "</button>";
   //text += "<a href='' id='link" + ingName  + "'>" + array[i]  + "</a>";
   }
 
