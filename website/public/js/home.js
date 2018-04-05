@@ -17,7 +17,7 @@ $(function(){
   // alert("document ready");
   //
   // console.log("About to enter getIngredientsFromCocktailDB()");
-  // getIngredientsFromCocktailDB();
+  getIngredientsFromCocktailDB();
 
   //Test alert
   //alert("Getting 'Mojito' from API")
