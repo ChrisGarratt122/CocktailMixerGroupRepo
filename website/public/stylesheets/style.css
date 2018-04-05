@@ -285,6 +285,8 @@ h2,p {
   height: 850px;
   overflow: auto;
 
+  margin-top:5%;
+
 }
 
 .homepage-cocktails img {
@@ -304,8 +306,8 @@ h2,p {
   color: #fff;
   border: 1px solid #fff;
   margin: 0;
-  margin-left: 10px;
-  margin-bottom: 80px;
+  margin-top:1%;
+  margin-left: 2%;
 }
 
 .search {
