@@ -1,23 +1,23 @@
 $(function(){
 
-  $(".dropButton").click(function(){
-      console.log("A button has been clicked.");
-      alert("Button has been clicked.");
-
-      //Make dropdown invisible again.
-      // document.getElementById("myDropdown").classList.toggle("show");
-      // console.log("Dropdown hidden.");
-      //
-      // var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
-      // $('#button-container').append(text);
-      console.log("Ingredient button added.");
-  });
-
-
-  alert("document ready");
-
-  console.log("About to enter getIngredientsFromCocktailDB()");
-  getIngredientsFromCocktailDB();
+  // $(".dropButton").click(function(){
+  //     console.log("A button has been clicked.");
+  //     alert("Button has been clicked.");
+  //
+  //     //Make dropdown invisible again.
+  //     // document.getElementById("myDropdown").classList.toggle("show");
+  //     // console.log("Dropdown hidden.");
+  //     //
+  //     // var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
+  //     // $('#button-container').append(text);
+  //     console.log("Ingredient button added.");
+  // });
+  //
+  //
+  // alert("document ready");
+  //
+  // console.log("About to enter getIngredientsFromCocktailDB()");
+  // getIngredientsFromCocktailDB();
 
   //Test alert
   //alert("Getting 'Mojito' from API")
@@ -47,18 +47,18 @@ $(function(){
 
 });
 
-$(".dropButton").click(function(){
-    console.log("A button has been clicked.");
-    alert("Button has been clicked.");
-
-    //Make dropdown invisible again.
-    // document.getElementById("myDropdown").classList.toggle("show");
-    // console.log("Dropdown hidden.");
-    //
-    // var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
-    // $('#button-container').append(text);
-    console.log("Ingredient button added.");
-});
+// $(".dropButton").click(function(){
+//     console.log("A button has been clicked.");
+//     alert("Button has been clicked.");
+//
+//     //Make dropdown invisible again.
+//     // document.getElementById("myDropdown").classList.toggle("show");
+//     // console.log("Dropdown hidden.");
+//     //
+//     // var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
+//     // $('#button-container').append(text);
+//     console.log("Ingredient button added.");
+// });
 
 //Function gets data from theCocktailDB API
 function getIngredientsFromCocktailDB() {
@@ -134,7 +134,7 @@ function displayArray(array) {
       // $('#button-container').append(text);
       console.log("Ingredient button added.");
   });
-  
+
 }
 
 // /* When the user clicks on the button,
