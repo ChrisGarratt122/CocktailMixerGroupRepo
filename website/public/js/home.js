@@ -125,9 +125,10 @@ function displayArray(array) {
       document.getElementById("myDropdown").classList.toggle("show");
       console.log("Dropdown hidden.");
       var ingredient = $(this).text();
+      var ingId = ingredient.replace(/\s+/g, '');
       console.log(ingredient);
 
-      var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
+      var text = "<button class='recipe-ingredient' type='button' name='button' id='btn" + ingId + "'>" + ingredient + "</button>";
       $('#button-container').append(text);
       console.log("Ingredient button added.");
 
@@ -140,6 +141,9 @@ function displayArray(array) {
           console.log("Dropdown hidden.");
           var ingredient = $(this).text();
           console.log(ingredient);
+          var ingId = "#btn" + ingredient.replace(/\s+/g, '');
+          console.log(ingId);
+          $(ingId).remove();
 
           console.log("About to try splicing element from array.");
           var clientArray = getArray();
@@ -179,73 +183,11 @@ $('#search-bar').keyup(function() {
   }
   });
 
-// $('a').click(function() {
-//     var ingredient = $(this).text();
-//     console.log("Ingredient Selected: " + ingredient + ".");
-//
-//     var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
-//     $('#button-container').append(text);
-// });
-
-// $(":button").click(function(){
-//     console.log("A button has been clicked.");
-//     //Make dropdown invisible again.
-//     document.getElementById("myDropdown").classList.toggle("show");
-//     console.log("Dropdown hidden.");
-//
-//     var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
-//     $('#button-container').append(text);
-//     console.log("Ingredient button added.");
-// });
-
-
-
-//*******Functions for dropdown box******//
-
-// function myFunction() {
-//     document.getElementById("myDropdown").classList.toggle("show");
-// }
-//
-// function filterFunction() {
-//     var input, filter, ul, li, button, i;
-//     input = document.getElementById("search-bar");
-//     filter = input.value.toUpperCase();
-//     div = document.getElementById("myDropdown");
-//     button = div.getElementsByTagName(":button");
-//     for (i = 0; i < button.length; i++) {
-//         if (button[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-//             button[i].style.display = "";
-//         } else {
-//             button[i].style.display = "none";
-//         }
-//     }
-// }
-
-//*******Functions for altering local ingredient array********//
-
 function getArray() {
-
-    // //If array doesn't exist, create it
-    // if (name === undefined) {
-    //   console.log("Client array does not exist yet.");
-    //   console.log("Creating client array.");
-    //   var clientArray = [];
-    //   return clientArray;
-    // }
-    // else {
-    //   console.log("Array does exist, passing back.");
-    //   //return Array;
-    //   return name;
 
     var clientArray = [];
 
-  $("#button-container").find(":button").each(function(){ clientArray.push($(this).text()); });
-
-    // $( "#button-container" ).each(function() {
-    //   console.log($(this).text);
-    //   clientArray.push($(this).text);
-    //   console.log("Added " + $(this).text() + " to array.");
-    // });
+    $("#button-container").find(":button").each(function(){ clientArray.push($(this).text()); });
     console.log(clientArray);
     console.log("getArray() returning clientArray");
     return clientArray;
