@@ -1,7 +1,13 @@
 $(function(){
 
-  $(":button").click(function(){
+  $("#myDropdown").click(function(){
       console.log("A button has been clicked.");
+      if ($(this).is(":visible");) {
+        console.log("dropdown is visible.");
+      }
+      else {
+        console.log("Dropdown is not visible.");
+      }
       //Make dropdown invisible again.
       // document.getElementById("myDropdown").classList.toggle("show");
       // console.log("Dropdown hidden.");
