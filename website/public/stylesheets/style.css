@@ -312,6 +312,12 @@ h2,p {
   height: 90px;
 }
 
+#button-container {
+
+  width:75%;
+
+}
+
 /*****************
   Search Function
 *****************/
