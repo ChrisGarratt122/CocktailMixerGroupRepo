@@ -2,7 +2,7 @@ $(function(){
 
   $("#myDropdown").click(function(){
       console.log("A button has been clicked.");
-      if ($(this).is(":visible");) {
+      if ($(this).is(":visible")) {
         console.log("dropdown is visible.");
       }
       else {
