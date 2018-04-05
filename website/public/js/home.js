@@ -145,6 +145,7 @@ function displayArray(array) {
           console.log(ingredient);
 
           console.log("About to try splicing element from array.");
+          var clientArray = getArray("clientArray");
           clientArray = removeFromArray(clientArray, ingredient);
           console.log("ClientArray passed back.");
           console.log("clientArray");
