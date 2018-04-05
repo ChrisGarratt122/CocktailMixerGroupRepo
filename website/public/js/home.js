@@ -238,11 +238,14 @@ function getArray() {
     //   return name;
 
     var clientArray = [];
-    $( "#button-container" ).each(function() {
-      console.log($(this).text);
-      clientArray.push($(this).text);
-      console.log("Added " + $(this).text() + " to array.");
-    });
+
+    clientArray = $("#button-container").children().toArray();
+
+    // $( "#button-container" ).each(function() {
+    //   console.log($(this).text);
+    //   clientArray.push($(this).text);
+    //   console.log("Added " + $(this).text() + " to array.");
+    // });
     console.log(clientArray);
     console.log("getArray() returning clientArray");
     return clientArray;
