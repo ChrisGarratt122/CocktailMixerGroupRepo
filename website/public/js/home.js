@@ -142,7 +142,7 @@ function displayArray(array) {
           console.log(ingredient);
 
           console.log("About to try splicing element from array.");
-          // var clientArray = getArray("clientArray");
+          var clientArray = getArray();
           clientArray = removeFromArray(clientArray, ingredient);
           console.log("ClientArray passed back.");
           console.log(clientArray);
@@ -236,6 +236,11 @@ function getArray() {
     //   console.log("Array does exist, passing back.");
     //   //return Array;
     //   return name;
+
+    var clientArray = [];
+    $( "#button-container" ).each(function( index ) {
+  console.log( index + ": " + $( this ).text() );
+    });
 
     console.log("getArray() returning clientArray");
     return clientArray;
