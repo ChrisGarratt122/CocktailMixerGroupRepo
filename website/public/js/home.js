@@ -133,6 +133,23 @@ function displayArray(array) {
       var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
       $('#button-container').append(text);
       console.log("Ingredient button added.");
+
+      $(".recipe-ingredient").click(function(){
+          console.log("Recipe Ingredient Clicked.");
+          console.log(this);
+
+          //******Remove button from page?
+
+          console.log("Dropdown hidden.");
+          var ingredient = $(this).text();
+          console.log(ingredient);
+
+          console.log("About to try splicing element from array.");
+          clientArray = removeFromArray(clientArray, ingredient);
+          console.log("ClientArray passed back.");
+          console.log("clientArray");
+
+      });
   });
 
 }
