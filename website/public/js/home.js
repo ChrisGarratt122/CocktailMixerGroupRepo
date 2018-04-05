@@ -2,6 +2,7 @@ $(function(){
 
   $(".dropButton").click(function(){
       console.log("A button has been clicked.");
+      alert("Button has been clicked.");
 
       //Make dropdown invisible again.
       // document.getElementById("myDropdown").classList.toggle("show");
