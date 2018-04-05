@@ -242,7 +242,7 @@ function getArray() {
 
 }
 
-}
+//}
 
 function addToArray(array, ingredient) {
 
