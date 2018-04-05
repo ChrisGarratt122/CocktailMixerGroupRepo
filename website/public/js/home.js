@@ -104,7 +104,9 @@ function displayArray(array) {
       //Make dropdown invisible again.
       document.getElementById("myDropdown").classList.toggle("show");
       console.log("Dropdown hidden.");
-      //
+      var ingredient = this.innerHtml;
+      console.log(ingredient);
+
       var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
       $('#button-container').append(text);
       console.log("Ingredient button added.");
