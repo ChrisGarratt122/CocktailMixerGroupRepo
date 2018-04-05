@@ -264,13 +264,11 @@ function removeFromArray(array, ingredient) {
   if (array === undefined) {
     //If array does not exist
     console.log("Array does not exist. Breaking from function.");
-    break;
   }
 
   else if (array.length == 0) {
     //If array is empty
     console.log("Array is empty. Breaking from function.");
-    break;
   }
   else {
     //Else array exists and is not empty
