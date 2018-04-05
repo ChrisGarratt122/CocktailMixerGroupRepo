@@ -8,11 +8,8 @@ $(function(){
 
   console.log("About to get client array");
   var clientArray = [];
+  console.log("Client array created: " + clientArray);
 
-
-  clientArray = getArray(clientArray);
-
-  console.log("Local array: " + clientArray);
 
   // $(".recipe-ingredient").click(function(){
   //     console.log("Recipe Ingredient Clicked.");
@@ -145,7 +142,7 @@ function displayArray(array) {
           console.log(ingredient);
 
           console.log("About to try splicing element from array.");
-          var clientArray = getArray("clientArray");
+          // var clientArray = getArray("clientArray");
           clientArray = removeFromArray(clientArray, ingredient);
           console.log("ClientArray passed back.");
           console.log(clientArray);
@@ -226,18 +223,22 @@ $('#search-bar').keyup(function() {
 
 //*******Functions for altering local ingredient array********//
 
-function getArray(name) {
+function getArray() {
 
-    //If array doesn't exist, create it
-    if (name === undefined) {
-      console.log("Client array does not exist yet.");
-      console.log("Creating client array.");
-      var clientArray = [];
-      return clientArray;
-    }
-    else {
-      //return Array;
-      return name;
+    // //If array doesn't exist, create it
+    // if (name === undefined) {
+    //   console.log("Client array does not exist yet.");
+    //   console.log("Creating client array.");
+    //   var clientArray = [];
+    //   return clientArray;
+    // }
+    // else {
+    //   console.log("Array does exist, passing back.");
+    //   //return Array;
+    //   return name;
+
+    console.log("getArray() returning clientArray");
+    return clientArray;
 
 }
 
