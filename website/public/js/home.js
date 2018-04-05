@@ -9,7 +9,8 @@ $(function(){
   console.log("About to get client array");
   var clientArray = [];
 
-  clientArray = getArray(client);
+
+  clientArray = getArray("client");
 
   console.log("Local array: " + clientArray);
 
