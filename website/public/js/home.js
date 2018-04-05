@@ -4,6 +4,7 @@ $(function(){
       console.log("A button has been clicked.");
       if ($(this).is(":visible")) {
         console.log("dropdown is visible.");
+        console.log(this);
       }
       else {
         console.log("Dropdown is not visible.");
