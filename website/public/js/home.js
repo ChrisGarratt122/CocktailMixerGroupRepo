@@ -1,22 +1,8 @@
 $(function(){
 
-  // $(".dropButton").click(function(){
-  //     console.log("A button has been clicked.");
-  //     alert("Button has been clicked.");
-  //
-  //     //Make dropdown invisible again.
-  //     // document.getElementById("myDropdown").classList.toggle("show");
-  //     // console.log("Dropdown hidden.");
-  //     //
-  //     // var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
-  //     // $('#button-container').append(text);
-  //     console.log("Ingredient button added.");
-  // });
-  //
-  //
   // alert("document ready");
-  //
-  // console.log("About to enter getIngredientsFromCocktailDB()");
+
+  console.log("About to enter getIngredientsFromCocktailDB()");
   getIngredientsFromCocktailDB();
 
   //Test alert
@@ -47,18 +33,6 @@ $(function(){
 
 });
 
-// $(".dropButton").click(function(){
-//     console.log("A button has been clicked.");
-//     alert("Button has been clicked.");
-//
-//     //Make dropdown invisible again.
-//     // document.getElementById("myDropdown").classList.toggle("show");
-//     // console.log("Dropdown hidden.");
-//     //
-//     // var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
-//     // $('#button-container').append(text);
-//     console.log("Ingredient button added.");
-// });
 
 //Function gets data from theCocktailDB API
 function getIngredientsFromCocktailDB() {
@@ -128,11 +102,11 @@ function displayArray(array) {
       console.log(this);
 
       //Make dropdown invisible again.
-      // document.getElementById("myDropdown").classList.toggle("show");
-      // console.log("Dropdown hidden.");
+      document.getElementById("myDropdown").classList.toggle("show");
+      console.log("Dropdown hidden.");
       //
-      // var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
-      // $('#button-container').append(text);
+      var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
+      $('#button-container').append(text);
       console.log("Ingredient button added.");
   });
 
