@@ -125,6 +125,7 @@ function displayArray(array) {
   $(".dropButton").click(function(){
       console.log("A button has been clicked.");
       alert("Button has been clicked.");
+      console.log(this);
 
       //Make dropdown invisible again.
       // document.getElementById("myDropdown").classList.toggle("show");
