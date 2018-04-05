@@ -1,4 +1,16 @@
 $(function(){
+
+  $(":button").click(function(){
+      console.log("A button has been clicked.");
+      //Make dropdown invisible again.
+      document.getElementById("myDropdown").classList.toggle("show");
+      console.log("Dropdown hidden.");
+
+      var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
+      $('#button-container').append(text);
+      console.log("Ingredient button added.");
+  });
+  
   alert("document ready");
 
   console.log("About to enter getIngredientsFromCocktailDB()");
@@ -122,13 +134,13 @@ $('#search-bar').keyup(function() {
   }
   });
 
-$('a').click(function() {
-    var ingredient = $(this).text();
-    console.log("Ingredient Selected: " + ingredient + ".");
-
-    var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
-    $('#button-container').append(text);
-});
+// $('a').click(function() {
+//     var ingredient = $(this).text();
+//     console.log("Ingredient Selected: " + ingredient + ".");
+//
+//     var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
+//     $('#button-container').append(text);
+// });
 
 $(":button").click(function(){
     console.log("A button has been clicked.");
