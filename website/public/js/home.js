@@ -108,16 +108,16 @@ $('#search-bar').keyup(function() {
   //alert("Keyup tried to do something");
   console.log("jquery keyup() entered.");
 
-  var input, filter, ul, li, a, i;
+  var input, filter, ul, li, button, i;
   input = document.getElementById("search-bar");
   filter = input.value.toUpperCase();
   div = document.getElementById("myDropdown");
-  a = div.getElementsByTagName("a");
+  button = div.getElementsByTagName(":button");
   for (i = 0; i < a.length; i++) {
-      if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-          a[i].style.display = "";
+      if (button[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+          button[i].style.display = "";
       } else {
-          a[i].style.display = "none";
+          button[i].style.display = "none";
       }
   }
   });
@@ -138,24 +138,24 @@ $(":button").click(function() {
 
 //*******Functions for dropdown box******//
 
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-function filterFunction() {
-    var input, filter, ul, li, button, i;
-    input = document.getElementById("search-bar");
-    filter = input.value.toUpperCase();
-    div = document.getElementById("myDropdown");
-    button = div.getElementsByTagName(":button");
-    for (i = 0; i < button.length; i++) {
-        if (button[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-            button[i].style.display = "";
-        } else {
-            button[i].style.display = "none";
-        }
-    }
-}
+// function myFunction() {
+//     document.getElementById("myDropdown").classList.toggle("show");
+// }
+//
+// function filterFunction() {
+//     var input, filter, ul, li, button, i;
+//     input = document.getElementById("search-bar");
+//     filter = input.value.toUpperCase();
+//     div = document.getElementById("myDropdown");
+//     button = div.getElementsByTagName(":button");
+//     for (i = 0; i < button.length; i++) {
+//         if (button[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+//             button[i].style.display = "";
+//         } else {
+//             button[i].style.display = "none";
+//         }
+//     }
+// }
 
 //*******Functions for altering local ingredient array********//
 
