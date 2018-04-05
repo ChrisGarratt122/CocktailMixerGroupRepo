@@ -47,6 +47,19 @@ $(function(){
 
 });
 
+$(".dropButton").click(function(){
+    console.log("A button has been clicked.");
+    alert("Button has been clicked.");
+
+    //Make dropdown invisible again.
+    // document.getElementById("myDropdown").classList.toggle("show");
+    // console.log("Dropdown hidden.");
+    //
+    // var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
+    // $('#button-container').append(text);
+    console.log("Ingredient button added.");
+});
+
 //Function gets data from theCocktailDB API
 function getIngredientsFromCocktailDB() {
   //Test alert telling that function has been entered
@@ -108,6 +121,20 @@ function displayArray(array) {
 
   console.log("Appending to myDropdown");
   $('#myDropdown').append(text);
+
+  $(".dropButton").click(function(){
+      console.log("A button has been clicked.");
+      alert("Button has been clicked.");
+
+      //Make dropdown invisible again.
+      // document.getElementById("myDropdown").classList.toggle("show");
+      // console.log("Dropdown hidden.");
+      //
+      // var text = "<button class=\"recipe-ingredient\" type=\"button\" name=\"button\">" + ingredient + "</button>";
+      // $('#button-container').append(text);
+      console.log("Ingredient button added.");
+  });
+  
 }
 
 // /* When the user clicks on the button,
