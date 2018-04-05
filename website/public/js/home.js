@@ -1,13 +1,35 @@
 $(function(){
 
   // alert("document ready");
+  console.log("Document Ready");
 
   console.log("About to enter getIngredientsFromCocktailDB()");
   getIngredientsFromCocktailDB();
 
-  //Test alert
-  //alert("Getting 'Mojito' from API")
-  // alert("About to create array.");
+  console.log("About to get client array");
+  var clientArray = [];
+
+  clientArray = getArray(client);
+
+  console.log("Local array: " + clientArray);
+
+  $(".recipe-ingredient").click(function(){
+      console.log("Recipe Ingredient Clicked.");
+      console.log(this);
+
+      //******Remove button from page?
+
+      console.log("Dropdown hidden.");
+      var ingredient = $(this).text();
+      console.log(ingredient);
+
+      console.log("About to try splicing element from array.");
+      clientArray = removeFromArray(clientArray, ingredient);
+      console.log("ClientArray passed back.");
+      console.log("clientArray");
+
+  });
+
   //
   // alert("Function entered, about to attempt start of row append");
   //
