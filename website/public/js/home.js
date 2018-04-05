@@ -113,6 +113,7 @@ $('#search-bar').keyup(function() {
   filter = input.value.toUpperCase();
   div = document.getElementById("myDropdown");
   button = div.getElementsByTagName(":button");
+  console.log(button)
   for (i = 0; i < button.length; i++) {
       if (button[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
           button[i].style.display = "";
