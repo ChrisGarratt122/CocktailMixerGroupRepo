@@ -1,14 +1,8 @@
 $(function(){
 
-  $("#myDropdown").click(function(){
+  $(".dropButton").click(function(){
       console.log("A button has been clicked.");
-      if ($(this).is(":visible")) {
-        console.log("dropdown is visible.");
-        console.log(this);
-      }
-      else {
-        console.log("Dropdown is not visible.");
-      }
+
       //Make dropdown invisible again.
       // document.getElementById("myDropdown").classList.toggle("show");
       // console.log("Dropdown hidden.");
@@ -17,6 +11,7 @@ $(function(){
       // $('#button-container').append(text);
       console.log("Ingredient button added.");
   });
+
 
   alert("document ready");
 
@@ -106,7 +101,7 @@ function displayArray(array) {
 
 	for (i = 0; i < aLength; i++) {
   ingName = array[i].replace(/\s+/g, '');
-  text  += "<button type='button' name='btn" + ingName +"'>" + array[i] + "</button>";
+  text  += "<button class='dropButton' name='btn" + ingName +"'>" + array[i] + "</button>";
   //text += "<a href='' id='link" + ingName  + "'>" + array[i]  + "</a>";
   }
 
