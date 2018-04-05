@@ -126,6 +126,7 @@ function displayArray(array) {
       console.log("Dropdown hidden.");
       var ingredient = $(this).text();
       var ingId = ingredient.replace(/\s+/g, '');
+      ingId = ingId.replace(/'/g, '');
       console.log(ingredient);
 
       var text = "<button class='recipe-ingredient' type='button' name='button' id='btn" + ingId + "'>" + ingredient + "</button>";
