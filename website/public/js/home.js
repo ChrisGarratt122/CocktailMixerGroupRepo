@@ -130,7 +130,7 @@ $('a').click(function() {
     $('#button-container').append(text);
 });
 
-$(':button').click(function() {
+$(":button").click(function(){
     console.log("A button has been clicked.");
     //Make dropdown invisible again.
     document.getElementById("myDropdown").classList.toggle("show");
