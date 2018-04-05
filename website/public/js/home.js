@@ -240,6 +240,8 @@ function getArray(name) {
 
 }
 
+}
+
 function addToArray(array, ingredient) {
 
   if (array === undefined) {
@@ -282,11 +284,7 @@ function removeFromArray(array, ingredient) {
     }
     //return updated array
     return array;
-
-
-
   }
-
 }
 
 
