@@ -238,10 +238,11 @@ function getArray() {
     //   return name;
 
     var clientArray = [];
-    $( "#button-container" ).each(function( index ) {
-  console.log( index + ": " + $( this ).text() );
+    $( "#button-container" ).each(function() {
+      clientArray.push($(this).text);
+      console.log("Added " + $(this).text() + " to array.");
     });
-
+    console.log(clientArray);
     console.log("getArray() returning clientArray");
     return clientArray;
 
