@@ -239,7 +239,7 @@ function getArray() {
 
     var clientArray = [];
 
-    clientArray = $("#button-container").children().toArray();
+  $("#button-container").find(":button").each(function(){ clientArray.push(this.text()); });
 
     // $( "#button-container" ).each(function() {
     //   console.log($(this).text);
