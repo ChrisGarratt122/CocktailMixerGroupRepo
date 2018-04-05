@@ -10,26 +10,26 @@ $(function(){
   var clientArray = [];
 
 
-  clientArray = getArray("client");
+  clientArray = getArray("clientArray");
 
   console.log("Local array: " + clientArray);
 
-  $(".recipe-ingredient").click(function(){
-      console.log("Recipe Ingredient Clicked.");
-      console.log(this);
-
-      //******Remove button from page?
-
-      console.log("Dropdown hidden.");
-      var ingredient = $(this).text();
-      console.log(ingredient);
-
-      console.log("About to try splicing element from array.");
-      clientArray = removeFromArray(clientArray, ingredient);
-      console.log("ClientArray passed back.");
-      console.log("clientArray");
-
-  });
+  // $(".recipe-ingredient").click(function(){
+  //     console.log("Recipe Ingredient Clicked.");
+  //     console.log(this);
+  //
+  //     //******Remove button from page?
+  //
+  //     console.log("Dropdown hidden.");
+  //     var ingredient = $(this).text();
+  //     console.log(ingredient);
+  //
+  //     console.log("About to try splicing element from array.");
+  //     clientArray = removeFromArray(clientArray, ingredient);
+  //     console.log("ClientArray passed back.");
+  //     console.log("clientArray");
+  //
+  // });
 
   //
   // alert("Function entered, about to attempt start of row append");
@@ -228,10 +228,16 @@ $('#search-bar').keyup(function() {
 function getArray(name) {
 
     //If array doesn't exist, create it
-    var arr = name || [];
+    if (name === undefined) {
+      console.log("Client array does not exist yet.");
+      console.log("Creating client array.");
+      var clientArray = [];
+      return clientArray;
+    }
+    else {
+      //return Array;
+      return name;
 
-    //Return array
-    return arr;
 }
 
 function addToArray(array, ingredient) {
