@@ -46,7 +46,7 @@ function getIngredientsFromCocktailDB() {
   $.getJSON(url, function(jsondata) {
     //Append console log about entering buildArray function, call function and pass json
     console.log("About to enter buildArray() function.");
-    //Test console log, see what jsondata looks like 
+    //Test console log, see what jsondata looks like
     console.log(jsondata);
     buildArray(jsondata);
   });
@@ -115,7 +115,7 @@ function displayArray(array) {
       console.log("Ingredient button added.");
 
       //Go to function for getting drink suggestions from theCocktailDB api
-      getDrinksFromCocktailDB();
+      //getDrinksFromCocktailDB();
 
       //********JQuery on click of ingredient once added from search********//
       $(".recipe-ingredient").click(function(){
@@ -237,6 +237,15 @@ function removeFromArray(array, ingredient) {
 }
 
 function getDrinksFromCocktailDB() {
+
+    var ingredientArray = [];
+    ingredientArray = getArray();
+
+    //For each ingredient in array
+    for (i = 0; i < ingredientArray.length; i++) {
+        //
+    }
+
 
     var url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchterms;
 
