@@ -115,7 +115,7 @@ function displayArray(array) {
       console.log("Ingredient button added.");
 
       //Go to function for getting drink suggestions from theCocktailDB api
-      //getDrinksFromCocktailDB();
+      getDrinksFromCocktailDB();
 
       //********JQuery on click of ingredient once added from search********//
       $(".recipe-ingredient").click(function(){
