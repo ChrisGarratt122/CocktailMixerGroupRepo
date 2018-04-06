@@ -115,6 +115,7 @@ function displayArray(array) {
       console.log("Ingredient button added.");
 
       //Go to function for getting drink suggestions from theCocktailDB api
+      console.log("Going to getDrinksFromCocktailDB()");
       getDrinksFromCocktailDB();
 
       //********JQuery on click of ingredient once added from search********//
@@ -252,6 +253,7 @@ function getDrinksFromCocktailDB() {
     //ingredientMatrix = [];
 
     //For each ingredient in array
+    console.log("About to enter for loop for every ingredient.");
     for (i = 0; i < ingredientArray.length; i++) {
         oldArray = printArray;
         //Build url to get json
@@ -266,9 +268,11 @@ function getDrinksFromCocktailDB() {
           currentArray = $.map(jsondata.drinks, function (el) {
           return el.strDrink;
           });
+          console.log("currentArrray");
 
           //If this isn't the first ingredient in list
           if (i > 0) {
+            console.log("i is more than 0");
             //For each drink in array for current ingredient do function
             $.each( currentArray, function( key, value ) {
                 //Reset print array
@@ -283,16 +287,18 @@ function getDrinksFromCocktailDB() {
               });
           }
           else {
+            console.log("i is 0");
             printArray = currentArray;
           }
-          //Send print array to function that will dispaly it's contents
-          displayCocktails(printArray);
         });
     }
-    var url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchterms;
+    //Send print array to function that will display it's contents
+    console.log("Going to displayCocktails()");
+    displayCocktails(printArray);
 }
 
 function displayCocktails(array) {
+  console.log("Entered displayCocktails")
   //Basic test version
   var text = "";
   $(array).each(function() {
