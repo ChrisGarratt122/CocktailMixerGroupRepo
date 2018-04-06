@@ -298,7 +298,7 @@ function displayCocktails(array) {
   $(array).each(function() {
     console.log($(this).text());
     text += $(this).text() + "/n";
-  )};
+  });
 
   $("#bordercontainer").append(text);
 }
