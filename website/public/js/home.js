@@ -253,7 +253,7 @@ function getDrinksFromCocktailDB() {
 
     //For each ingredient in array
     for (i = 0; i < ingredientArray.length; i++) {
-        oldArray = printArray[];
+        oldArray = printArray;
         //Build url to get json
         searchterms = ingredientArray[i].replace(/\s+/g, '_');
         searchterms = searchterms.replace(/'/g, '');
