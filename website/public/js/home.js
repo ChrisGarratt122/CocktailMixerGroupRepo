@@ -268,7 +268,7 @@ function getDrinksFromCocktailDB() {
           currentArray = $.map(jsondata.drinks, function (el) {
           return el.strDrink;
           });
-          console.log("currentArrray");
+          console.log("Array made from JSON data: " + currentArray);
 
           //If this isn't the first ingredient in list
           if (i > 0) {
