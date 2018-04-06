@@ -79,7 +79,7 @@ function displayArray(array) {
   //For each item in array: remove whitespace and apostrophes, construct and append button element to text
 	for (i = 0; i < aLength; i++) {
   var ingName = array[i].replace(/\s+/g, '');
-  ingName = ingId.replace(/'/g, '');
+  ingName = ingName.replace(/'/g, '');
   text  += "<button type='button' class='dropButton' name='btn" + ingName +"'>" + array[i] + "</button>";
   }
 
