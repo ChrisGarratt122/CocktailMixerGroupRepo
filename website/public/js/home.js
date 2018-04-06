@@ -237,26 +237,69 @@ function removeFromArray(array, ingredient) {
 }
 
 function getDrinksFromCocktailDB() {
-
+    console.log("getDrinksFromCocktailDB() entered.")
     var ingredientArray = [];
     ingredientArray = getArray();
+    console.log("Got array from getArray().");
+    console.log(ingredientArray);
+
+    var searchterms = "";
+    var url = "";
+    var currentArray = [];
+    var oldArray = [];
+    var printArray = [];
+
+    //ingredientMatrix = [];
 
     //For each ingredient in array
     for (i = 0; i < ingredientArray.length; i++) {
-        //
+        oldArray = printArray[];
+        //Build url to get json
+        searchterms = ingredientArray[i].replace(/\s+/g, '_');
+        searchterms = searchterms.replace(/'/g, '');
+        url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchterms;
+        console.log(url);
+        //Get json array using url
+        $.getJSON(url, function(jsondata) {
+          console.log("jsondata returned");
+          //Create array of drinks from jsondata
+          currentArray = $.map(jsondata.drinks, function (el) {
+          return el.strDrink;
+          });
+
+          //If this isn't the first ingredient in list
+          if (i > 0) {
+            //For each drink in array for current ingredient do function
+            $.each( currentArray, function( key, value ) {
+                //Reset print array
+                printArray = [];
+                //Get index of value in oldarray
+                var index = $.inArray( value, oldArray );
+                //If index is not -1, it is in the array. Push into new print array.
+                if( index != -1 ) {
+                  console.log( index );
+                  printArray.push(oldArray[index]);
+                }
+              });
+          else {
+            printArray = currentArray;
+          }
+          //Send print array to function that will dispaly it's contents
+          displayCocktails(printArray);
+        });
     }
-
-
     var url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchterms;
+}
 
-    $.getJSON(url, function(jsondata) {
-      //Test alert to show getJSON function has been entered
+function displayCocktails(array) {
+  //Basic test version
+  var text = "";
+  $(array).each(function) {
+    console.log($(this).text());
+    text += $(this).text() + "/n";
+  }
 
-
-      //Send jsondata and target number to printing function
-      printDescription(jsondata, targetno);
-    });
-
+  $("#bordercontainer").append(text);
 }
 
 function appendCocktailRowStart() {
