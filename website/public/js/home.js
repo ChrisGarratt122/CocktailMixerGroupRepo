@@ -281,6 +281,7 @@ function getDrinksFromCocktailDB() {
                   printArray.push(oldArray[index]);
                 }
               });
+          }
           else {
             printArray = currentArray;
           }
