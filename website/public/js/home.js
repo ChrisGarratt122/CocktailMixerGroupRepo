@@ -1,36 +1,12 @@
 $(function(){
 
-  // alert("document ready");
+  //Append log to console about document being ready (Entered js)
   console.log("Document Ready");
 
+  //Append log about entering function tog et api list, enter function
   console.log("About to enter getIngredientsFromCocktailDB()");
   getIngredientsFromCocktailDB();
 
-  console.log("About to get client array");
-  var clientArray = [];
-  console.log("Client array created: " + clientArray);
-
-
-  // $(".recipe-ingredient").click(function(){
-  //     console.log("Recipe Ingredient Clicked.");
-  //     console.log(this);
-  //
-  //     //******Remove button from page?
-  //
-  //     console.log("Dropdown hidden.");
-  //     var ingredient = $(this).text();
-  //     console.log(ingredient);
-  //
-  //     console.log("About to try splicing element from array.");
-  //     clientArray = removeFromArray(clientArray, ingredient);
-  //     console.log("ClientArray passed back.");
-  //     console.log("clientArray");
-  //
-  // });
-
-  //
-  // alert("Function entered, about to attempt start of row append");
-  //
   // //appendCocktailRowStart();
   //
   // alert("About to attempt box append");
@@ -42,7 +18,7 @@ $(function(){
   // alert("About to attempt end of row append.");
   //
   // // appendCocktailRowEnd();
-  //
+
   // alert("Returned after appends;");
 
   //document.getElementById("bordercontainer").appendChild=
@@ -56,45 +32,36 @@ $(function(){
 
 //Function gets data from theCocktailDB API
 function getIngredientsFromCocktailDB() {
-  //Test alert telling that function has been entered
-  //alert("getResultFromCocktailDB entered");
+  //Append log to console that function has been entered
+  console.log("getResultFromCocktailDB entered");
 
   //call cocktail API using Ajax
   //build url for the request
-  console.log("Entered getIngredientsFromCocktailDB()");
-
   var url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 
-  //Test alert to display url variable
-  //alert("Url built: " + url);
+  //Append new url variable log to console
   console.log("Url: " + url);
 
   //use jquery json shortcut
   $.getJSON(url, function(jsondata) {
-    //Test alert to show getJSON function has been entered
-    //alert("getJson function has been entered");
-
-    //Send jsondata to array building function
-
+    //Append console log about entering buildArray function, call function and pass json
     console.log("About to enter buildArray() function.");
     buildArray(jsondata);
   });
 }
 
 function buildArray(jsondata) {
-
+  //Append log to console detailing entry into function
   console.log("Entered buildArray() function.");
 
+  //Make array from json data
   var array = $.map(jsondata.drinks, function (el) {
   return el.strIngredient1;
   });
 
-  // $.each(jsondata.drinks, function (index, drink) {
-  //       array.push(drinks.strInstructions); //push values here
-  // });
-
   console.log(array); // see the output here
 
+  //Append console log about entering displayArray function, call function and pass json
   console.log("About to enter displayArray() function.");
   displayArray(array);
 
@@ -102,53 +69,77 @@ function buildArray(jsondata) {
 
 function displayArray(array) {
 
+  //******Building and displaying ingredients from API in dropdown********//
+
   console.log("Entered displayArray() function.");
 
   aLength = array.length;
 	text = "";
 
+  //For each item in array: remove whitespace and apostrophes, construct and append button element to text
 	for (i = 0; i < aLength; i++) {
   ingName = array[i].replace(/\s+/g, '');
+  ingId = ingId.replace(/'/g, '');
   text  += "<button type='button' class='dropButton' name='btn" + ingName +"'>" + array[i] + "</button>";
-  //text += "<a href='' id='link" + ingName  + "'>" + array[i]  + "</a>";
   }
 
+  //Append text, containing all new button elements, to HTML
   console.log("Appending to myDropdown");
   $('#myDropdown').append(text);
 
+
+  //********JQuery on click of ingredient in dropdown menu********//
   $(".dropButton").click(function(){
+      //When button clicked append log to console
       console.log("A button has been clicked.");
-      alert("Button has been clicked.");
+      //alert("Button has been clicked.");
       console.log(this);
 
       //Make dropdown invisible again.
       document.getElementById("myDropdown").classList.toggle("show");
       console.log("Dropdown hidden.");
+      //Create variable to hold display name of ingredient from clicked button
       var ingredient = $(this).text();
+      //Create variable to hold altered name of ingredient for id (No whitespace)
       var ingId = ingredient.replace(/\s+/g, '');
       ingId = ingId.replace(/'/g, '');
+      //Add log to console of ingredient variable
       console.log(ingredient);
 
+      //Create variable to hold html string for new button element
       var text = "<button class='recipe-ingredient' type='button' name='button' id='btn" + ingId + "'>" + ingredient + "</button>";
+      //Append html string to page
       $('#button-container').append(text);
       console.log("Ingredient button added.");
 
+      //********JQuery on click of ingredient once added from search********//
       $(".recipe-ingredient").click(function(){
+          //Append to console a log that ingredient button has been clicked.
           console.log("Recipe Ingredient Clicked.");
           console.log(this);
 
-          //******Remove button from page?
-
+          //Append log to console that dropdown should be hidden
           console.log("Dropdown hidden.");
+          //Create variable to hold display name of ingredient from clicked button
           var ingredient = $(this).text();
+          //Append log to console of ingredient
           console.log(ingredient);
+          //Create variable to construct and hold ID of button clicked
           var ingId = "#btn" + ingredient.replace(/\s+/g, '');
+          //Append log to console of constructed ID
           console.log(ingId);
+          //Remove button
           $(ingId).remove();
 
+          //Splice ingredient of removed button from array
           console.log("About to try splicing element from array.");
+
+          //Get array of current ingredient buttons
           var clientArray = getArray();
+          //Remove element from array associated with ingredient to be removed
           clientArray = removeFromArray(clientArray, ingredient);
+
+          //Append altered array to console
           console.log("ClientArray passed back.");
           console.log(clientArray);
 
@@ -239,8 +230,6 @@ function removeFromArray(array, ingredient) {
     return array;
   }
 }
-
-
 
 function appendCocktailRowStart() {
 
