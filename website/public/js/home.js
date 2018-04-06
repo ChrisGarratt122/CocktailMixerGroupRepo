@@ -295,7 +295,7 @@ function getDrinksFromCocktailDB() {
 function displayCocktails(array) {
   //Basic test version
   var text = "";
-  $(array).each(function {
+  $(array).each(function() {
     console.log($(this).text());
     text += $(this).text() + "/n";
   )};
