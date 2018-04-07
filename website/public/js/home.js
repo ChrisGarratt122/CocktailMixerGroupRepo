@@ -303,7 +303,8 @@ function getDrinksFromCocktailDB() {
             console.log(count + ": i is less than 0? OH DEAR");
           }
         });
-        //count = count + 1;
+        console.log("INCREMENTING COUNT");
+        count = count + 1;
     }
     //Send print array to function that will display it's contents
     // console.log("Going to displayCocktails()");
