@@ -1,4 +1,5 @@
 const MongoClient = require('mongodb').MongoClient; //npm install mongodb@2.2.32
+const url = "mongodb://localhost:27017/profiles";
 const express = require('express'); //npm install express
 const session = require('express-session'); //npm install express-session
 const bodyParser = require('body-parser'); //npm install body-parser
@@ -16,6 +17,20 @@ app.set('view engine', 'ejs');
 
 //Telling express we are using sessions.
 app.use(session({ secret: 'example' }));
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+var db;
+
+//Setting connection to database, setting db var as database.
+MongoClient.connect(url, function(err, database) {
+  if (err) throw err;
+  db = database;
+  app.listen(8080);
+  console.log('listening on 8080');
+});
 
 //******GET ROUTES (Displaying Pages)*******
 app.get('/', function(req, res) {
