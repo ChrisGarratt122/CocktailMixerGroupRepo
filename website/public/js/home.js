@@ -267,6 +267,7 @@ function getDrinksFromCocktailDB() {
         console.log("1." + count);
         //********PROGRAM SKIPS THIS CHUNK VVVVVVV********
         console.log("About get json data.");
+        printArray = [];
         printArray = getPrintFromJSON(url);
         //********PROGRAM SKIPS DOWN TO HERE ^**************
         console.log("INCREMENTING COUNT");
