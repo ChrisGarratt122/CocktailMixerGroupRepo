@@ -279,6 +279,8 @@ function getDrinksFromCocktailDB() {
 }
 
 function getPrintFromJSON(url) {
+  var printArray = [];
+
   console.log("ENTERED getPrintFromJSON.");
   $.getJSON(url, function(jsondata) {
     console.log("2." + count);
