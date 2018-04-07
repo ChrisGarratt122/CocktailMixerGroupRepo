@@ -255,6 +255,7 @@ function getDrinksFromCocktailDB() {
     //For each ingredient in array
     console.log("About to enter for loop for every ingredient.");
     for (i = 0; i < ingredientArray.length; i++) {
+      console.log("Beginning of loop, i is: " + i);
         oldArray = printArray;
         //Build url to get json
         searchterms = ingredientArray[i].replace(/\s+/g, '_');
@@ -262,6 +263,7 @@ function getDrinksFromCocktailDB() {
         url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchterms;
         console.log(url);
         //Get json array using url
+        //****Gets to here, skips out of for****//
         $.getJSON(url, function(jsondata) {
           console.log("jsondata returned");
           //Create array of drinks from jsondata
@@ -272,8 +274,10 @@ function getDrinksFromCocktailDB() {
 
           //If this isn't the first ingredient in list
           if (i > 0) {
+            console.log(i);
             console.log("i is more than 0");
             //For each drink in array for current ingredient do function
+            console.log("Before Jquery.");
             $.each( currentArray, function( key, value ) {
                 //Reset print array
                 printArray = [];
@@ -285,6 +289,7 @@ function getDrinksFromCocktailDB() {
                   printArray.push(oldArray[index]);
                 }
               });
+            console.log("After Jquery.");
           }
           else {
             console.log("i is 0");
