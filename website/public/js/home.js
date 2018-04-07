@@ -322,8 +322,6 @@ function getPrintFromJSON(url, oldArray) {
     console.log("Finishing getjson function and returning printarray. before");
     return printArray;
   });
-  console.log("Finishing getjson function and returning printarray. after");
-  return printArray;
 }
 
 function displayCocktails(array) {
