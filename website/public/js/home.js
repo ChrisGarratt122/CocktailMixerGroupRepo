@@ -319,8 +319,10 @@ function getPrintFromJSON(url, oldArray) {
     else if (count < 0) {
       console.log(count + ": i is less than 0? OH DEAR");
     }
+    console.log("Finishing getjson function and returning printarray. before");
+    return printArray;
   });
-  console.log("Finishing getjson function and returning printarray.");
+  console.log("Finishing getjson function and returning printarray. after");
   return printArray;
 }
 
