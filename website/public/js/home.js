@@ -254,11 +254,11 @@ function getDrinksFromCocktailDB() {
 
     //For each ingredient in array
     console.log("About to enter for loop for every ingredient.");
-    for (i = 0; i < ingredientArray.length;) {
-      console.log("Beginning of loop, i is: " + i);
+    for (count = 0; count < ingredientArray.length;) {
+      console.log("Beginning of loop, i is: " + count);
         oldArray = printArray;
         //Build url to get json
-        searchterms = ingredientArray[i].replace(/\s+/g, '_');
+        searchterms = ingredientArray[count].replace(/\s+/g, '_');
         searchterms = searchterms.replace(/'/g, '');
         url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchterms;
         console.log(url);
@@ -274,9 +274,9 @@ function getDrinksFromCocktailDB() {
 
           //If this isn't the first ingredient in list
           console.log("Before if statement");
-          if (i > 0) {
-            console.log(i);
-            console.log(i + "i should be more than 0");
+          if (count > 0) {
+            console.log(count);
+            console.log(count + ": i should be more than 0");
             //For each drink in array for current ingredient do function
             console.log("Before Jquery.");
             $.each( currentArray, function( key, value ) {
@@ -286,21 +286,21 @@ function getDrinksFromCocktailDB() {
                 var index = $.inArray( value, oldArray );
                 //If index is not -1, it is in the array. Push into new print array.
                 if( index != -1 ) {
-                  console.log( index );
+                  console.log( "Index does not equal negative one: " + index );
                   printArray.push(oldArray[index]);
                 }
               });
             console.log("After Jquery.");
           }
-          else if (i = 0) {
-            console.log(i + "i is 0");
+          else if (count = 0) {
+            console.log(count + ": i is 0");
             printArray = currentArray;
           }
-          else if (i < 0) {
-            console.log(i + "i is less than 0? OH DEAR");
+          else if (count < 0) {
+            console.log(count + ": i is less than 0? OH DEAR");
           }
         });
-        i = i + 1;
+        count = count + 1;
     }
     //Send print array to function that will display it's contents
     console.log("Going to displayCocktails()");
