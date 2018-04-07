@@ -265,51 +265,60 @@ function getDrinksFromCocktailDB() {
         //Get json array using url
         //****Gets to here, skips out of for****//
         console.log("1." + count);
-        $.getJSON(url, function(jsondata) {
-          console.log("2." + count);
-          console.log("jsondata returned");
-          //Create array of drinks from jsondata
-          currentArray = $.map(jsondata.drinks, function (el) {
-          return el.strDrink;
-          console.log("3." + count);
-          });
-          console.log("Array made from JSON data: " + currentArray);
-
-          //If this isn't the first ingredient in list
-          console.log("Before if statement");
-          if (count > 0) {
-            console.log(count);
-            console.log(count + ": i should be more than 0");
-            //For each drink in array for current ingredient do function
-            console.log("Before Jquery.");
-            $.each( currentArray, function( key, value ) {
-                //Reset print array
-                printArray = [];
-                //Get index of value in oldarray
-                var index = $.inArray( value, oldArray );
-                //If index is not -1, it is in the array. Push into new print array.
-                if( index != -1 ) {
-                  console.log( "Index does not equal negative one: " + index );
-                  printArray.push(oldArray[index]);
-                }
-              });
-            console.log("After Jquery.");
-          }
-          else if (count = 0) {
-            console.log(count + ": i is 0");
-            printArray = currentArray;
-          }
-          else if (count < 0) {
-            console.log(count + ": i is less than 0? OH DEAR");
-          }
-        });
+        //********PROGRAM SKIPS THIS CHUNK VVVVVVV********
+        console.log("About get json data.");
+        printArray = getPrintFromJSON(url);
+        //********PROGRAM SKIPS DOWN TO HERE ^**************
         console.log("INCREMENTING COUNT");
         count = count + 1;
     }
     //Send print array to function that will display it's contents
-    // console.log("Going to displayCocktails()");
-    // displayCocktails(printArray);
+    console.log("Going to displayCocktails()");
+    displayCocktails(printArray);
 }
+
+function getPrintFromJSON() {
+  console.log("ENTERED getPrintFromJSON.");
+  $.getJSON(url, function(jsondata) {
+    console.log("2." + count);
+    console.log("jsondata returned");
+    //Create array of drinks from jsondata
+    currentArray = $.map(jsondata.drinks, function (el) {
+    return el.strDrink;
+    console.log("3." + count);
+    });
+    console.log("Array made from JSON data: " + currentArray);
+
+    //If this isn't the first ingredient in list
+    console.log("Before if statement");
+    if (count > 0) {
+      console.log(count);
+      console.log(count + ": i should be more than 0");
+      //For each drink in array for current ingredient do function
+      console.log("Before Jquery.");
+      $.each( currentArray, function( key, value ) {
+          //Reset print array
+          printArray = [];
+          //Get index of value in oldarray
+          var index = $.inArray( value, oldArray );
+          //If index is not -1, it is in the array. Push into new print array.
+          if( index != -1 ) {
+            console.log( "Index does not equal negative one: " + index );
+            printArray.push(oldArray[index]);
+          }
+        });
+      console.log("After Jquery.");
+    }
+    else if (count = 0) {
+      console.log(count + ": i is 0");
+      printArray = currentArray;
+    }
+    else if (count < 0) {
+      console.log(count + ": i is less than 0? OH DEAR");
+    }
+  });
+  console.log("Finishing getjson function and returning printarray.");
+  return printArray;
 
 function displayCocktails(array) {
   console.log("Entered displayCocktails")
