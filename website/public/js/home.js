@@ -264,11 +264,14 @@ function getDrinksFromCocktailDB() {
         console.log(url);
         //Get json array using url
         //****Gets to here, skips out of for****//
+        console.log("1." + count);
         $.getJSON(url, function(jsondata) {
+          console.log("2." + count);
           console.log("jsondata returned");
           //Create array of drinks from jsondata
           currentArray = $.map(jsondata.drinks, function (el) {
           return el.strDrink;
+          console.log("3." + count);
           });
           console.log("Array made from JSON data: " + currentArray);
 
