@@ -254,7 +254,7 @@ function getDrinksFromCocktailDB() {
 
     //For each ingredient in array
     console.log("About to enter for loop for every ingredient.");
-    for (i = 0; i < ingredientArray.length; i++) {
+    for (i = 0; i < ingredientArray.length;) {
       console.log("Beginning of loop, i is: " + i);
         oldArray = printArray;
         //Build url to get json
@@ -296,9 +296,11 @@ function getDrinksFromCocktailDB() {
             console.log(i + "i is 0");
             printArray = currentArray;
           }
-          else if (i < 0) {}y
+          else if (i < 0) {
             console.log(i + "i is less than 0? OH DEAR");
+          }
         });
+        i = i + 1;
     }
     //Send print array to function that will display it's contents
     console.log("Going to displayCocktails()");
