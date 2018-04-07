@@ -277,7 +277,7 @@ function getDrinksFromCocktailDB() {
     displayCocktails(printArray);
 }
 
-function getPrintFromJSON() {
+function getPrintFromJSON(url) {
   console.log("ENTERED getPrintFromJSON.");
   $.getJSON(url, function(jsondata) {
     console.log("2." + count);
@@ -319,6 +319,7 @@ function getPrintFromJSON() {
   });
   console.log("Finishing getjson function and returning printarray.");
   return printArray;
+}
 
 function displayCocktails(array) {
   console.log("Entered displayCocktails")
