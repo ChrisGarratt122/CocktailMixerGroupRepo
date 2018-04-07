@@ -273,9 +273,10 @@ function getDrinksFromCocktailDB() {
           console.log("Array made from JSON data: " + currentArray);
 
           //If this isn't the first ingredient in list
+          console.log("Before if statement");
           if (i > 0) {
             console.log(i);
-            console.log("i is more than 0");
+            console.log(i + "i should be more than 0");
             //For each drink in array for current ingredient do function
             console.log("Before Jquery.");
             $.each( currentArray, function( key, value ) {
@@ -291,10 +292,12 @@ function getDrinksFromCocktailDB() {
               });
             console.log("After Jquery.");
           }
-          else {
-            console.log("i is 0");
+          else if (i = 0) {
+            console.log(i + "i is 0");
             printArray = currentArray;
           }
+          else if (i < 0) {}y
+            console.log(i + "i is less than 0? OH DEAR");
         });
     }
     //Send print array to function that will display it's contents
