@@ -268,7 +268,7 @@ function getDrinksFromCocktailDB() {
         //********PROGRAM SKIPS THIS CHUNK VVVVVVV********
         console.log("About get json data.");
         printArray = [];
-        printArray = getPrintFromJSON(url);
+        printArray = getPrintFromJSON(url, oldArray);
         //********PROGRAM SKIPS DOWN TO HERE ^**************
         console.log("INCREMENTING COUNT");
         count = count + 1;
@@ -278,7 +278,7 @@ function getDrinksFromCocktailDB() {
     displayCocktails(printArray);
 }
 
-function getPrintFromJSON(url) {
+function getPrintFromJSON(url, oldArray) {
   var printArray = [];
 
   console.log("ENTERED getPrintFromJSON.");
