@@ -327,7 +327,6 @@ function getPrintFromJSON(url, oldArray) {
         console.log("******DELAY 0******");
         setTimeout(function()
         {
-          return printArray;
           console.log("******DELAY 0****** Finished");
         },delayInMilliseconds);
       console.log("After Jquery.");
