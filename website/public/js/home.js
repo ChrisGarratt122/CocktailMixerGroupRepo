@@ -269,7 +269,12 @@ function getDrinksFromCocktailDB() {
         console.log("About get json data.");
         printArray = [];
         printArray = getPrintFromJSON(url, oldArray);
-        console.log("")
+        var delayInMilliseconds = 2000;
+        setTimeout(function()
+        {
+          console.log("******DELAY 2*******");
+        },delayInMilliseconds);
+        });
 
         //********PROGRAM SKIPS DOWN TO HERE ^**************
         console.log("INCREMENTING COUNT");
