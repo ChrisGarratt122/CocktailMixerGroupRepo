@@ -266,23 +266,23 @@ function getDrinksFromCocktailDB() {
         //****Gets to here, skips out of for****//
         console.log("1." + count);
         //********PROGRAM SKIPS THIS CHUNK VVVVVVV********
-        console.log("About get json data.");
+        console.log("About to get json data.");
         printArray = [];
         printArray = getPrintFromJSON(url, oldArray);
-        var delayInMilliseconds = 2000;
-        console.log("ABOUT TO DO DELAY 2.");
-        setTimeout(function()
-        {
-          console.log("******DELAY 2*******");
-        },delayInMilliseconds);
+
+
         //********PROGRAM SKIPS DOWN TO HERE ^**************
         console.log("INCREMENTING COUNT");
         count = count + 1;
     }
     //Send print array to function that will display it's contents
-
+    var delayInMilliseconds = 1500;
+    setTimeout(function()
+    {
       console.log("Going to displayCocktails()");
       displayCocktails(printArray);
+    },delayInMilliseconds);
+
 }
 
 function getPrintFromJSON(url, oldArray) {
@@ -316,13 +316,6 @@ function getPrintFromJSON(url, oldArray) {
             console.log( "Index does not equal negative one: " + index );
             printArray.push(oldArray[index]);
           }
-          var delayInMilliseconds = 1000;
-          console.log("ABOUT TO DO DELAY 1");
-          setTimeout(function()
-          {
-            console.log("******DELAY*******");
-          },delayInMilliseconds);
-        });
       console.log("After Jquery.");
     }
     else if (count = 0) {
@@ -332,8 +325,12 @@ function getPrintFromJSON(url, oldArray) {
     else if (count < 0) {
       console.log(count + ": i is less than 0? OH DEAR");
     }
-    console.log("Finishing getjson function and returning printarray. before");
-    return printArray;
+    var delayInMilliseconds = 1000;
+    setTimeout(function()
+    {
+      console.log("Finishing getjson function and returning printarray. before");
+      return printArray;
+    },delayInMilliseconds);
   });
 }
 
