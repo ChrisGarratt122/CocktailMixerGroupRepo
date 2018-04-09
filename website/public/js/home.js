@@ -269,19 +269,22 @@ function getDrinksFromCocktailDB() {
         console.log("About get json data.");
         printArray = [];
         printArray = getPrintFromJSON(url, oldArray);
+        var delayInMilliseconds = 3000;
+        setTimeout(function()
+        {
+        console.log("Print Array after returned: " + printArray);
+        },delayInMilliseconds);
 
         //********PROGRAM SKIPS DOWN TO HERE ^**************
         console.log("INCREMENTING COUNT");
         count = count + 1;
     }
-    //Send print array to function that will display it's contents
-    var delayInMilliseconds = 3000;
     setTimeout(function()
     {
-      console.log("Going to displayCocktails()");
-      displayCocktails(printArray);
+      //Send print array to function that will display it's contents
+        console.log("Going to displayCocktails()");
+        displayCocktails(printArray);
     },delayInMilliseconds);
-
 }
 
 function getPrintFromJSON(url, oldArray) {
