@@ -288,11 +288,6 @@ function getPrintFromJSON(url, oldArray) {
   var printArray = [];
 
   console.log("ENTERED getPrintFromJSON.");
-
-  setTimeout(function()
-  {
-
-  },delayInMilliseconds);
   $.getJSON(url, function(jsondata) {
     console.log("2." + count);
     console.log("jsondata returned");
