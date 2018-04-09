@@ -274,8 +274,7 @@ function getDrinksFromCocktailDB() {
         {
           console.log("******DELAY 2*******");
         },delayInMilliseconds);
-        });
-
+        }
         //********PROGRAM SKIPS DOWN TO HERE ^**************
         console.log("INCREMENTING COUNT");
         count = count + 1;
