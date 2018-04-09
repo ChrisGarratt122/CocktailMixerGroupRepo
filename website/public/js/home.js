@@ -323,6 +323,13 @@ function getPrintFromJSON(url, oldArray) {
             printArray.push(oldArray[index]);
           }
         });
+        var delayInMilliseconds = 3000;
+        console.log("******DELAY 0******");
+        setTimeout(function()
+        {
+          return printArray;
+          console.log("******DELAY 0****** Finished");
+        },delayInMilliseconds);
       console.log("After Jquery.");
     }
     else if (count = 0) {
@@ -332,7 +339,6 @@ function getPrintFromJSON(url, oldArray) {
     else if (count < 0) {
       console.log(count + ": i is less than 0? OH DEAR");
     }
-    var delayInMilliseconds = 3000;
     console.log("******DELAY 1******");
     setTimeout(function()
     {
