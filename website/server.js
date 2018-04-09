@@ -18,6 +18,8 @@ app.set('view engine', 'ejs');
 //Telling express we are using sessions.
 app.use(session({ secret: 'example' }));
 
+//Comment to push
+
 // app.use(bodyParser.urlencoded({
 //   extended: true
 // }));
