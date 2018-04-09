@@ -270,6 +270,7 @@ function getDrinksFromCocktailDB() {
         printArray = [];
         printArray = getPrintFromJSON(url, oldArray);
         var delayInMilliseconds = 2000;
+        console.log("ABOUT TO DO DELAY 2.");
         setTimeout(function()
         {
           console.log("******DELAY 2*******");
@@ -316,6 +317,7 @@ function getPrintFromJSON(url, oldArray) {
             printArray.push(oldArray[index]);
           }
           var delayInMilliseconds = 1000;
+          console.log("ABOUT TO DO DELAY 1");
           setTimeout(function()
           {
             console.log("******DELAY*******");
