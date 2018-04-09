@@ -269,19 +269,30 @@ function getDrinksFromCocktailDB() {
         console.log("About get json data.");
         printArray = [];
         printArray = getPrintFromJSON(url, oldArray);
+
         //********PROGRAM SKIPS DOWN TO HERE ^**************
         console.log("INCREMENTING COUNT");
         count = count + 1;
     }
     //Send print array to function that will display it's contents
-    console.log("Going to displayCocktails()");
-    displayCocktails(printArray);
+    var delayInMilliseconds = 3000;
+    setTimeout(function()
+    {
+      console.log("Going to displayCocktails()");
+      displayCocktails(printArray);
+    },delayInMilliseconds);
+
 }
 
 function getPrintFromJSON(url, oldArray) {
   var printArray = [];
 
   console.log("ENTERED getPrintFromJSON.");
+
+  setTimeout(function()
+  {
+
+  },delayInMilliseconds);
   $.getJSON(url, function(jsondata) {
     console.log("2." + count);
     console.log("jsondata returned");
