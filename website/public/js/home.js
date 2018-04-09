@@ -269,26 +269,18 @@ function getDrinksFromCocktailDB() {
         console.log("About get json data.");
         printArray = [];
         printArray = getPrintFromJSON(url, oldArray);
-        var delayInMilliseconds = 3000;
-        console.log("******DELAY 2******");
-        setTimeout(function()
-        {
-        console.log("Print Array after returned: " + printArray);
-        console.log("******DELAY 2 finished******");
-        },delayInMilliseconds);
+        console.log("")
 
         //********PROGRAM SKIPS DOWN TO HERE ^**************
         console.log("INCREMENTING COUNT");
         count = count + 1;
     }
-    console.log("******DELAY 3 finished******");
-    setTimeout(function()
-    {
-      //Send print array to function that will display it's contents
-        console.log("Going to displayCocktails()");
-        displayCocktails(printArray);
-        console.log("******DELAY 3******");
+    //Send print array to function that will display it's contents
+
+      console.log("Going to displayCocktails()");
+      displayCocktails(printArray);
     },delayInMilliseconds);
+
 }
 
 function getPrintFromJSON(url, oldArray) {
@@ -322,13 +314,12 @@ function getPrintFromJSON(url, oldArray) {
             console.log( "Index does not equal negative one: " + index );
             printArray.push(oldArray[index]);
           }
+          var delayInMilliseconds = 3000;
+          setTimeout(function()
+          {
+            console.log("******DELAY*******");
+          },delayInMilliseconds);
         });
-        var delayInMilliseconds = 3000;
-        console.log("******DELAY 0******");
-        setTimeout(function()
-        {
-          console.log("******DELAY 0****** Finished");
-        },delayInMilliseconds);
       console.log("After Jquery.");
     }
     else if (count = 0) {
@@ -338,14 +329,8 @@ function getPrintFromJSON(url, oldArray) {
     else if (count < 0) {
       console.log(count + ": i is less than 0? OH DEAR");
     }
-    console.log("******DELAY 1******");
-    setTimeout(function()
-    {
-      console.log("Finishing getjson function and returning printarray. before");
-      return printArray;
-      console.log("******DELAY 1****** Finished");
-    },delayInMilliseconds);
-
+    console.log("Finishing getjson function and returning printarray. before");
+    return printArray;
   });
 }
 
