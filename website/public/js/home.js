@@ -279,8 +279,6 @@ function getDrinksFromCocktailDB() {
 
       console.log("Going to displayCocktails()");
       displayCocktails(printArray);
-    },delayInMilliseconds);
-
 }
 
 function getPrintFromJSON(url, oldArray) {
@@ -314,7 +312,7 @@ function getPrintFromJSON(url, oldArray) {
             console.log( "Index does not equal negative one: " + index );
             printArray.push(oldArray[index]);
           }
-          var delayInMilliseconds = 3000;
+          var delayInMilliseconds = 1000;
           setTimeout(function()
           {
             console.log("******DELAY*******");
