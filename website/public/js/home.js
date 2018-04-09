@@ -270,20 +270,24 @@ function getDrinksFromCocktailDB() {
         printArray = [];
         printArray = getPrintFromJSON(url, oldArray);
         var delayInMilliseconds = 3000;
+        console.log("******DELAY 2******");
         setTimeout(function()
         {
         console.log("Print Array after returned: " + printArray);
+        console.log("******DELAY 2 finished******");
         },delayInMilliseconds);
 
         //********PROGRAM SKIPS DOWN TO HERE ^**************
         console.log("INCREMENTING COUNT");
         count = count + 1;
     }
+    console.log("******DELAY 3 finished******");
     setTimeout(function()
     {
       //Send print array to function that will display it's contents
         console.log("Going to displayCocktails()");
         displayCocktails(printArray);
+        console.log("******DELAY 3******");
     },delayInMilliseconds);
 }
 
@@ -328,8 +332,15 @@ function getPrintFromJSON(url, oldArray) {
     else if (count < 0) {
       console.log(count + ": i is less than 0? OH DEAR");
     }
-    console.log("Finishing getjson function and returning printarray. before");
-    return printArray;
+    var delayInMilliseconds = 3000;
+    console.log("******DELAY 1******");
+    setTimeout(function()
+    {
+      console.log("Finishing getjson function and returning printarray. before");
+      return printArray;
+      console.log("******DELAY 1****** Finished");
+    },delayInMilliseconds);
+
   });
 }
 
