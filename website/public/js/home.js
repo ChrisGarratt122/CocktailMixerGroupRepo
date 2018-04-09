@@ -317,7 +317,7 @@ function getPrintFromJSON(url, oldArray) {
             printArray.push(oldArray[index]);
           }
       console.log("After Jquery.");
-    }
+    });
     else if (count = 0) {
       console.log(count + ": i is 0");
       printArray = currentArray;
