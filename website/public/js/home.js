@@ -278,6 +278,7 @@ function getDrinksFromCocktailDB() {
             });
             console.log("3." + count); //77777
             console.log("Array made from JSON data: " + currentArray); //888888
+            printArray = currentArray;
         });
         console.log("Before if statement");//3333333
         //If this isn't the first ingredient in list
