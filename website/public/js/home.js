@@ -313,7 +313,7 @@ function getDrinksFromCocktailDB() {
         else if (count < 0) {
           console.log(count + ": i is less than 0? OH DEAR");
           console.log("IF 3 DONE.");
-        });
+        }
     //var delayInMilliseconds = 1000;
     //setTimeout(function()
     //{
