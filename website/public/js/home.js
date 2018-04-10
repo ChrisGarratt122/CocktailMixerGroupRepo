@@ -310,7 +310,7 @@ function getDrinksFromCocktailDB() {
      console.log("INCREMENTING COUNT");
      count = count + 1;
     //  },delayInMilliseconds);
-    //}
+    }
 
       var delayInMilliseconds = 2000;
       setTimeout(function()
