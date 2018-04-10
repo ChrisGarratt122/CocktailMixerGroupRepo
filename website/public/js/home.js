@@ -432,7 +432,7 @@ function appendCocktailBox(htmlstring, name) {
   var url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchName;
   //use jquery json shortcut
   $.getJSON(url, function(jsondata) {
-    console.log(jsondata);
+
   });
   var image = jsondata.drinks[0].strDrinkThumb;
   var desc = jsondata.drinks[0].strInstructions;
