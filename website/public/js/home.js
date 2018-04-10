@@ -279,10 +279,6 @@ function getDrinksFromCocktailDB() {
             console.log("3." + count); //77777
             console.log("Array made from JSON data: " + currentArray); //888888
         });
-
-        var delayInMilliseconds = 3000;
-        setTimeout(function()
-        {
             console.log("Before if statement");//3333333
             //If this isn't the first ingredient in list
             if (count > 0) {
@@ -323,7 +319,6 @@ function getDrinksFromCocktailDB() {
               console.log("INCREMENTING COUNT"); //4444444444
               count = count + 1;
             }
-        }, delayInMilliseconds);
     // var delayInMilliseconds = 1000;
     // setTimeout(function()
     // {
@@ -331,6 +326,13 @@ function getDrinksFromCocktailDB() {
         // count = count + 1;
     //  },delayInMilliseconds);
     }
+
+    (function myLoop (i) {
+      setTimeout(function () {
+      alert('hello');          //  your code here
+      if (--i) myLoop(i);      //  decrement i and call myLoop again if i > 0
+    }, 3000)
+    })(10);
 
 
 
