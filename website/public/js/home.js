@@ -255,8 +255,11 @@ function getDrinksFromCocktailDB() {
     //For each ingredient in array
     console.log("About to enter for loop for every ingredient.");
     console.log("Ingredient Array length : " + ingredientArray.length);
-    for (count = 0; count < ingredientArray.length;) {
-      console.log("Beginning of loop, i is: " + count);
+    var length = ingredientArray.length;
+    console.log("Before for length is: " + length);
+    for (count = 0; count < length;) {
+        console.log("Beginning of loop, i is: " + count);
+        console.log("Beginning of loop, length is:" + length);
         oldArray = printArray;
         //Build url to get json
         searchterms = ingredientArray[count].replace(/\s+/g, '_');
@@ -272,8 +275,8 @@ function getDrinksFromCocktailDB() {
           //Create array of drinks from jsondata
           currentArray = $.map(jsondata.drinks, function (el) {
           return el.strDrink;
-          console.log("3." + count);
           });
+          console.log("3." + count);
           console.log("Array made from JSON data: " + currentArray);
 
           //If this isn't the first ingredient in list
