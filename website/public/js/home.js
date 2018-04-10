@@ -265,22 +265,22 @@ function getDrinksFromCocktailDB() {
         searchterms = ingredientArray[count].replace(/\s+/g, '_');
         searchterms = searchterms.replace(/'/g, '');
         url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchterms;
-        console.log(url);
+        console.log(url); //1111111111
         //Get json array using url
         //****Gets to here, skips out of for****//
-        console.log("1." + count);
+        console.log("1." + count); //2222222
         $.getJSON(url, function(jsondata) {
-        console.log("2." + count);
-        console.log("jsondata returned");
-        //Create array of drinks from jsondata
-        currentArray = $.map(jsondata.drinks, function (el) {
-        return el.strDrink;
-        });
-        console.log("3." + count);
-        console.log("Array made from JSON data: " + currentArray);
+            console.log("2." + count); //5555555
+            console.log("jsondata returned"); //666666
+            //Create array of drinks from jsondata
+            currentArray = $.map(jsondata.drinks, function (el) {
+            return el.strDrink;
+            });
+            console.log("3." + count); //77777
+            console.log("Array made from JSON data: " + currentArray); //888888
         });
 
-        console.log("Before if statement");
+        console.log("Before if statement");//3333333
         //If this isn't the first ingredient in list
         if (count > 0) {
           console.log(count);
@@ -301,6 +301,8 @@ function getDrinksFromCocktailDB() {
             });
           console.log("After Jquery.");
           console.log("IF 1 DONE.");
+          console.log("INCREMENTING COUNT"); //4444444444
+          count = count + 1;
         }
         //If this is the first ingredient in the list
         else if (count = 0) {
@@ -309,16 +311,20 @@ function getDrinksFromCocktailDB() {
           printArray = currentArray;
           console.log("printArray: " + printArray);
           console.log("IF 2 DONE.");
+          console.log("INCREMENTING COUNT"); //4444444444
+          count = count + 1;
         }
         else if (count < 0) {
           console.log(count + ": i is less than 0? OH DEAR");
           console.log("IF 3 DONE.");
+          console.log("INCREMENTING COUNT"); //4444444444
+          count = count + 1;
         }
     //var delayInMilliseconds = 1000;
     //setTimeout(function()
     //{
-     console.log("INCREMENTING COUNT");
-     count = count + 1;
+        // console.log("INCREMENTING COUNT"); //4444444444
+        // count = count + 1;
     //  },delayInMilliseconds);
     }
 
@@ -327,8 +333,8 @@ function getDrinksFromCocktailDB() {
       var delayInMilliseconds = 3000;
       setTimeout(function()
       {
-        console.log("Going to displayCocktails()");
-        console.log("Current PrintArray: " + printArray);
+        console.log("Going to displayCocktails()"); //99999999
+        console.log("Current PrintArray: " + printArray); //101010101010
         displayCocktails(printArray);
       },delayInMilliseconds);
 
