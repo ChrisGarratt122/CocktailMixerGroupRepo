@@ -328,7 +328,7 @@ function getDrinksFromCocktailDB() {
     //  },delayInMilliseconds);
       }
 
-      var delayInMilliseconds = 3000;
+      var delayInMilliseconds = 500;
       setTimeout(function()
       {
         console.log("Going to displayCocktails()"); //99999999
@@ -404,10 +404,10 @@ function displayCocktails(array) {
 
     } else if (counter == 2) {
       text = appendCocktailBox(text, name);
+      text = appendCocktailRowEnd(text);
       counter = -1;
     } else {
       text = appendCocktailBox(text, name);
-      text = appendCocktailRowEnd(text);
     }
     console.log(text);
     counter = counter + 1;
@@ -419,7 +419,7 @@ function displayCocktails(array) {
 
 function appendCocktailRowStart(htmlstring) {
 
-  alert("appendCocktailRowStart entered.");
+  console.log("appendCocktailRowStart entered.");
   htmlstring += '<div class=\"row text-center\">';
   return htmlstring;
 
@@ -427,7 +427,7 @@ function appendCocktailRowStart(htmlstring) {
 
 function appendCocktailBox(htmlstring, name) {
 
-  alert("appendCocktailBox entered.");
+  console.log("appendCocktailBox entered.");
   htmlstring += "<div class=\"col-sm\">";
   htmlstring += "<img src=\"img/Mojito.jpg\" alt=\"...\" class=\"img-thumbnail\">";
   htmlstring += "<h3>" + name + "</h3>";
@@ -439,7 +439,7 @@ function appendCocktailBox(htmlstring, name) {
 
 function appendCocktailRowEnd(htmlstring) {
 
-  alert("appendCocktailRowEnd entered.");
+  console.log("appendCocktailRowEnd entered.");
   htmlstring += "</div>";
   return htmlstring;
 
