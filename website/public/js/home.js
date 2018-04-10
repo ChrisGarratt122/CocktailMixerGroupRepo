@@ -254,6 +254,7 @@ function getDrinksFromCocktailDB() {
 
     //For each ingredient in array
     console.log("About to enter for loop for every ingredient.");
+    console.log("Ingredient Array length : " + ingredientArray.length);
     for (count = 0; count < ingredientArray.length;) {
       console.log("Beginning of loop, i is: " + count);
         oldArray = printArray;
@@ -277,6 +278,8 @@ function getDrinksFromCocktailDB() {
 
           //If this isn't the first ingredient in list
           console.log("Before if statement");
+
+
           if (count > 0) {
             console.log(count);
             console.log(count + ": i should be more than 0");
@@ -291,6 +294,7 @@ function getDrinksFromCocktailDB() {
                 if( index != -1 ) {
                   console.log( "Index does not equal negative one: " + index );
                   printArray.push(oldArray[index]);
+                  console.log("Just pushed:" + oldArrat)
                 }
               });
 
@@ -298,12 +302,17 @@ function getDrinksFromCocktailDB() {
           }
          else if (count = 0) {
             console.log(count + ": i is 0");
+            console.log("Making printArray equal to current Array.");
             printArray = currentArray;
+            console.log("printArray: " + printArray);
           }
           else if (count < 0) {
             console.log(count + ": i is less than 0? OH DEAR");
           }
          });
+
+
+
     //var delayInMilliseconds = 1000;
     //setTimeout(function()
     //{
@@ -312,7 +321,9 @@ function getDrinksFromCocktailDB() {
     //  },delayInMilliseconds);
     }
 
-      var delayInMilliseconds = 2000;
+
+
+      var delayInMilliseconds = 3000;
       setTimeout(function()
       {
         console.log("Going to displayCocktails()");
@@ -321,6 +332,8 @@ function getDrinksFromCocktailDB() {
       },delayInMilliseconds);
 
     }
+
+
 
 // function getPrintFromJSON(url, oldArray) {
 //   var printArray = [];
