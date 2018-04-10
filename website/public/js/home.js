@@ -263,76 +263,108 @@ function getDrinksFromCocktailDB() {
         url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchterms;
         console.log(url);
         //Get json array using url
-        //****Gets to here, skips out of for****//
-        console.log("1." + count);
-        //********PROGRAM SKIPS THIS CHUNK VVVVVVV********
-        console.log("About to get json data.");
-        printArray = [];
-        printArray = getPrintFromJSON(url, oldArray);
+          //****Gets to here, skips out of for****//
+          console.log("1." + count);
+        $.getJSON(url, function(jsondata) {
+          console.log("2." + count);
+          console.log("jsondata returned");
+          //Create array of drinks from jsondata
+          currentArray = $.map(jsondata.drinks, function (el) {
+          return el.strDrink;
+          console.log("3." + count);
+          });
+          console.log("Array made from JSON data: " + currentArray);
 
+          //If this isn't the first ingredient in list
+          console.log("Before if statement");
+          if (count > 0) {
+            console.log(count);
+            console.log(count + ": i should be more than 0");
+            //For each drink in array for current ingredient do function
+            console.log("Before Jquery.");
+            $.each( currentArray, function( key, value ) {
+                //Reset print array
+                printArray = [];
+                //Get index of value in oldarray
+                var index = $.inArray( value, oldArray );
+                //If index is not -1, it is in the array. Push into new print array.
+                if( index != -1 ) {
+                  console.log( "Index does not equal negative one: " + index );
+                  printArray.push(oldArray[index]);
+                }
+              });
 
-        //********PROGRAM SKIPS DOWN TO HERE ^**************
-        console.log("INCREMENTING COUNT");
-        count = count + 1;
-    }
-    //Send print array to function that will display it's contents
-    var delayInMilliseconds = 1500;
-    setTimeout(function()
-    {
-      console.log("Going to displayCocktails()");
-      displayCocktails(printArray);
-    },delayInMilliseconds);
-
-}
-
-function getPrintFromJSON(url, oldArray) {
-  var printArray = [];
-
-  console.log("ENTERED getPrintFromJSON.");
-  $.getJSON(url, function(jsondata) {
-    console.log("2." + count);
-    console.log("jsondata returned");
-    //Create array of drinks from jsondata
-    currentArray = $.map(jsondata.drinks, function (el) {
-    return el.strDrink;
-    console.log("3." + count);
-    });
-    console.log("Array made from JSON data: " + currentArray);
-
-    //If this isn't the first ingredient in list
-    console.log("Before if statement");
-    if (count > 0) {
-      console.log(count);
-      console.log(count + ": i should be more than 0");
-      //For each drink in array for current ingredient do function
-      console.log("Before Jquery.");
-      $.each( currentArray, function( key, value ) {
-          //Reset print array
-          printArray = [];
-          //Get index of value in oldarray
-          var index = $.inArray( value, oldArray );
-          //If index is not -1, it is in the array. Push into new print array.
-          if( index != -1 ) {
-            console.log( "Index does not equal negative one: " + index );
-            printArray.push(oldArray[index]);
+            console.log("After Jquery.");
           }
-      console.log("After Jquery.");
-    });
-    else if (count = 0) {
-      console.log(count + ": i is 0");
-      printArray = currentArray;
+         else if (count = 0) {
+            console.log(count + ": i is 0");
+            printArray = currentArray;
+          }
+          else if (count < 0) {
+            console.log(count + ": i is less than 0? OH DEAR");
+          }
+         });
+ console.log("INCREMENTING COUNT");
+   count = count + 1;
+      }
+
+      var delayInMilliseconds = 2000;
+      setTimeout(function()
+      {
+        console.log("Going to displayCocktails()");
+        displayCocktails(printArray);
+      },delayInMilliseconds);
+
     }
-    else if (count < 0) {
-      console.log(count + ": i is less than 0? OH DEAR");
-    }
-    var delayInMilliseconds = 1000;
-    setTimeout(function()
-    {
-      console.log("Finishing getjson function and returning printarray. before");
-      return printArray;
-    },delayInMilliseconds);
-  });
-}
+
+// function getPrintFromJSON(url, oldArray) {
+//   var printArray = [];
+//
+//   console.log("ENTERED getPrintFromJSON.");
+//   $.getJSON(url, function(jsondata) {
+//     console.log("2." + count);
+//     console.log("jsondata returned");
+//     //Create array of drinks from jsondata
+//     currentArray = $.map(jsondata.drinks, function (el) {
+//     return el.strDrink;
+//     console.log("3." + count);
+//     });
+//     console.log("Array made from JSON data: " + currentArray);
+//
+//     //If this isn't the first ingredient in list
+//     console.log("Before if statement");
+//     if (count > 0) {
+//       console.log(count);
+//       console.log(count + ": i should be more than 0");
+//       //For each drink in array for current ingredient do function
+//       console.log("Before Jquery.");
+//       $.each( currentArray, function( key, value ) {
+//           //Reset print array
+//           printArray = [];
+//           //Get index of value in oldarray
+//           var index = $.inArray( value, oldArray );
+//           //If index is not -1, it is in the array. Push into new print array.
+//           if( index != -1 ) {
+//             console.log( "Index does not equal negative one: " + index );
+//             printArray.push(oldArray[index]);
+//           }
+//       console.log("After Jquery.");
+//     });
+//     else if (count = 0) {
+//       console.log(count + ": i is 0");
+//       printArray = currentArray;
+//     }
+//     else if (count < 0) {
+//       console.log(count + ": i is less than 0? OH DEAR");
+//     }
+//     var delayInMilliseconds = 1000;
+//     setTimeout(function()
+//     {
+//       console.log("Finishing getjson function and returning printarray. before");
+//       return printArray;
+//     },delayInMilliseconds);
+//   });
+// }
 
 function displayCocktails(array) {
   console.log("Entered displayCocktails")
