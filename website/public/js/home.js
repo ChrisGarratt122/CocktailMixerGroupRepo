@@ -401,7 +401,6 @@ function displayCocktails(array) {
     if (counter == 0) {
       text = appendCocktailRowStart(text);
       text = appendCocktailBox(text, name);
-
     } else if (counter == 2) {
       text = appendCocktailBox(text, name);
       text = appendCocktailRowEnd(text);
@@ -428,10 +427,21 @@ function appendCocktailRowStart(htmlstring) {
 function appendCocktailBox(htmlstring, name) {
 
   console.log("appendCocktailBox entered.");
+  searchName = name.replace(/\s+/g, '_');
+  searchName = searchName.replace(/'/g, '');
+  var url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchName;
+  //use jquery json shortcut
+  $.getJSON(url, function(jsondata) {
+  });
+  var image = jsondata.drinks[0].strDrinkThumb;
+  var desc = jsondata.drinks[0].strInstructions;
+
+
+
   htmlstring += "<div class=\"col-sm\">";
-  htmlstring += "<img src=\"img/Mojito.jpg\" alt=\"...\" class=\"img-thumbnail\">";
+  htmlstring += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
   htmlstring += "<h3>" + name + "</h3>";
-  htmlstring += "<p>Test text</p>";
+  htmlstring += "<p>" + desc + "</p>";
   htmlstring += "</div>";
   return htmlstring;
 
