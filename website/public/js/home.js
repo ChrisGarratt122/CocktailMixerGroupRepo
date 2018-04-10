@@ -393,10 +393,10 @@ function displayCocktails(array) {
   console.log("Entered displayCocktails")
   //Basic test version
   var text = "";
-  $(array).each(function() {
-    console.log($(this).text());
-    text += $(this).text() + "/n";
-  });
+  $.each(array, function(index, val) {
+    console.log(array[index]);
+    text += array[index];
+});
 
   $("#bordercontainer").append(text);
 }
