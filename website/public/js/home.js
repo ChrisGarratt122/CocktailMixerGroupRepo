@@ -433,7 +433,7 @@ function appendCocktailBox(htmlstring, name) {
   htmlstring += "<h3>" + name + "</h3>";
   htmlstring += "<p>Test text</p>";
   htmlstring += "</div>";
-  return htlmstring;
+  return htmlstring;
 
 }
 
