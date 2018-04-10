@@ -393,44 +393,54 @@ function displayCocktails(array) {
   console.log("Entered displayCocktails")
   //Basic test version
   var text = "";
+  var name = "";
+  var counter = 0;
   $.each(array, function(index, val) {
     console.log(array[index]);
-    text += array[index];
-});
+    name  = array[index];
+    if (counter == 0) {
+      text = appendCocktailRowStart(text);
+      text = appendCocktailBox(text, name);
+
+    } else if (counter == 2) {
+      text = appendCocktailBox(text, name);
+      counter = -1;
+    } else {
+      text = appendCocktailBox(text, name);
+      text = appendCocktailRowEnd(text);
+    }
+    console.log(text);
+    counter = counter + 1;
+
+    });
 
   $("#bordercontainer").append(text);
 }
 
-function appendCocktailRowStart() {
+function appendCocktailRowStart(htmlstring) {
 
   alert("appendCocktailRowStart entered.");
-  var htmlstring = "";
   htmlstring += '<div class=\"row text-center\">';
-
-  $("#bordercontainer").append(htmlstring);
+  return htmlstring;
 
 }
 
-function appendCocktailBox(name) {
+function appendCocktailBox(htmlstring, name) {
 
   alert("appendCocktailBox entered.");
-  var htmlstring = "";
   htmlstring += "<div class=\"col-sm\">";
   htmlstring += "<img src=\"img/Mojito.jpg\" alt=\"...\" class=\"img-thumbnail\">";
   htmlstring += "<h3>" + name + "</h3>";
   htmlstring += "<p>Test text</p>";
   htmlstring += "</div>";
-
-  $("#bordercontainer").append(htmlstring);
-
+  return htlmstring;
 
 }
 
-function appendCocktailRowEnd() {
+function appendCocktailRowEnd(htmlstring) {
 
   alert("appendCocktailRowEnd entered.");
-  var htmlstring = "</div>";
-
-  $("#bordercontainer").append(htmlstring);
+  htmlstring += "</div>";
+  return htmlstring;
 
 }
