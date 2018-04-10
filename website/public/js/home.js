@@ -305,7 +305,7 @@ function getDrinksFromCocktailDB() {
           count = count + 1;
         }
         //If this is the first ingredient in the list
-        else if (count = 0) {
+        else if (count == 0) {
           console.log(count + ": i is 0");
           console.log("Making printArray equal to current Array ( Unedited JSON array).");
           printArray = currentArray;
