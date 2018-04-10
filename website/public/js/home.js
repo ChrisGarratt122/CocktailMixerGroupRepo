@@ -304,14 +304,19 @@ function getDrinksFromCocktailDB() {
             console.log(count + ": i is less than 0? OH DEAR");
           }
          });
- console.log("INCREMENTING COUNT");
-   count = count + 1;
-      }
+    var delayInMilliseconds = 1000;
+    setTimeout(function()
+    {
+     console.log("INCREMENTING COUNT");
+     count = count + 1;
+      },delayInMilliseconds);
+    }
 
       var delayInMilliseconds = 2000;
       setTimeout(function()
       {
         console.log("Going to displayCocktails()");
+        console.log("Current PrintArray: " + printArray);
         displayCocktails(printArray);
       },delayInMilliseconds);
 
