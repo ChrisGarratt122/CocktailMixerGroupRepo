@@ -267,55 +267,53 @@ function getDrinksFromCocktailDB() {
         url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchterms;
         console.log(url);
         //Get json array using url
-          //****Gets to here, skips out of for****//
-          console.log("1." + count);
+        //****Gets to here, skips out of for****//
+        console.log("1." + count);
         $.getJSON(url, function(jsondata) {
-          console.log("2." + count);
-          console.log("jsondata returned");
-          //Create array of drinks from jsondata
-          currentArray = $.map(jsondata.drinks, function (el) {
-          return el.strDrink;
-          });
-          console.log("3." + count);
-          console.log("Array made from JSON data: " + currentArray);
+        console.log("2." + count);
+        console.log("jsondata returned");
+        //Create array of drinks from jsondata
+        currentArray = $.map(jsondata.drinks, function (el) {
+        return el.strDrink;
+        });
+        console.log("3." + count);
+        console.log("Array made from JSON data: " + currentArray);
+        });
 
-          //If this isn't the first ingredient in list
-          console.log("Before if statement");
-
-
-          if (count > 0) {
-            console.log(count);
-            console.log(count + ": i should be more than 0");
-            //For each drink in array for current ingredient do function
-            console.log("Before Jquery.");
-            $.each( currentArray, function( key, value ) {
-                //Reset print array
-                printArray = [];
-                //Get index of value in oldarray
-                var index = $.inArray( value, oldArray );
-                //If index is not -1, it is in the array. Push into new print array.
-                if( index != -1 ) {
-                  console.log( "Index does not equal negative one: " + index );
-                  printArray.push(oldArray[index]);
-                  console.log("Just pushed:" + oldArrat)
-                }
-              });
-
-            console.log("After Jquery.");
-          }
-         else if (count = 0) {
-            console.log(count + ": i is 0");
-            console.log("Making printArray equal to current Array.");
-            printArray = currentArray;
-            console.log("printArray: " + printArray);
-          }
-          else if (count < 0) {
-            console.log(count + ": i is less than 0? OH DEAR");
-          }
-         });
-
-
-
+        console.log("Before if statement");
+        //If this isn't the first ingredient in list
+        if (count > 0) {
+          console.log(count);
+          console.log(count + ": i should be more than 0");
+          //For each drink in array for current ingredient do function
+          console.log("Before Jquery.");
+          $.each( currentArray, function( key, value ) {
+              //Reset print array
+              printArray = [];
+              //Get index of value in oldarray
+              var index = $.inArray( value, oldArray );
+              //If index is not -1, it is in the array. Push into new print array.
+              if( index != -1 ) {
+                console.log( "Index does not equal negative one: " + index );
+                printArray.push(oldArray[index]);
+                console.log("Just pushed:" + oldArray[index]);
+              }
+            });
+          console.log("After Jquery.");
+          console.log("IF 1 DONE.");
+        }
+        //If this is the first ingredient in the list
+        else if (count = 0) {
+          console.log(count + ": i is 0");
+          console.log("Making printArray equal to current Array ( Unedited JSON array).");
+          printArray = currentArray;
+          console.log("printArray: " + printArray);
+          console.log("IF 2 DONE.");
+        }
+        else if (count < 0) {
+          console.log(count + ": i is less than 0? OH DEAR");
+          console.log("IF 3 DONE.");
+        });
     //var delayInMilliseconds = 1000;
     //setTimeout(function()
     //{
