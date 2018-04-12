@@ -237,7 +237,7 @@ function getDrinksFromCocktailDB() {
     console.log("Before for length is: " + length);
     var count =  ingredientArray.length;
     $.each( ingredientArray, function( i, value ) {
-        console.log("Beginning of loop, i is: " + count);
+        console.log("Beginning of loop, i is: " + i);
         console.log("Beginning of loop, length is:" + length);
         //oldArray = printArray;
         //Build url to get json
@@ -247,15 +247,12 @@ function getDrinksFromCocktailDB() {
         console.log(url);
         //Get json array using url
         //****Gets to here, skips out of for****//
-        console.log("1." + count);
         $.getJSON(url, function(jsondata) {
-            console.log("2." + count);
             console.log("jsondata returned");
             //Create array of drinks from jsondata
             currentArray = $.map(jsondata.drinks, function (el) {
             return el.strDrink;
             });
-            console.log("3." + count);
             console.log("Array made from JSON data: " + currentArray);
 
             if (i === 0) {
@@ -271,7 +268,7 @@ function getDrinksFromCocktailDB() {
               }
             }
         });
-        if (i === count) {
+        if (i === count - 1) {
           console.log("Going to displayCocktails()");
           console.log("Current PrintArray: " + printArray);
           //displayCocktails(printArray);
