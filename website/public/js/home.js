@@ -424,15 +424,19 @@ function displayCocktails(array) {
 
 function appendCocktailRowStart(text) {
 
+  var string = "";
   console.log("appendCocktailRowStart entered.");
-  text += '<div class=\"row text-center\">';
-  console.log("HTMLstring: " + text);
+  string += '<div class=\"row text-center\">';
+  console.log("HTMLstring: " + string);
+  text += string;
+
   return text;
 
 }
 
 function appendCocktailBox(text, name) {
 
+  var string = "";
   console.log("appendCocktailBox entered.");
   searchName = name.replace(/\s+/g, '_');
   searchName = searchName.replace(/'/g, '');
@@ -447,12 +451,13 @@ function appendCocktailBox(text, name) {
 
 
 
-    text += "<div class=\"col-sm\">";
-    text += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
-    text += "<h3>" + name + "</h3>";
-    text += "<p>" + desc + "</p>";
-    text += "</div>";
-    console.log("HTMLstring: " + text);
+    string += "<div class=\"col-sm\">";
+    string += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
+    string += "<h3>" + name + "</h3>";
+    string += "<p>" + desc + "</p>";
+    string += "</div>";
+    console.log("HTMLstring: " + string);
+    text += string;
     return text;
   });
 
@@ -460,9 +465,11 @@ function appendCocktailBox(text, name) {
 
 function appendCocktailRowEnd(text) {
 
+  var string = "";
   console.log("appendCocktailRowEnd entered.");
-  console.log("HTMLstring: " + text);
-  text += "</div>";
+  string += "</div>";
+  console.log("HTMLstring: " + string);
+  text += string;
   return text;
 
 }
