@@ -402,7 +402,7 @@ function displayCocktails(array) {
     name  = array[index];
 
     if (index === (length - 1)) {
-        text += appendcocktailRowEnd(text);
+        text += appendCocktailRowEnd(text);
 
     } else {
       if (counter == 0) {
