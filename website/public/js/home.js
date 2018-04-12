@@ -414,7 +414,8 @@ function displayCocktails(array) {
       } else {
         text += appendCocktailBox(text, name);
       }
-      console.log(text);
+      //Print all text freezes chrome
+      //console.log(text);
       counter = counter + 1;
     }
   });
@@ -438,6 +439,7 @@ function appendCocktailBox(text, name) {
 
   var string = "";
   console.log("appendCocktailBox entered.");
+  var searchName = "";
   searchName = name.replace(/\s+/g, '_');
   searchName = searchName.replace(/'/g, '');
   var url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchName;
