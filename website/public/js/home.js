@@ -266,6 +266,7 @@ function getDrinksFromCocktailDB() {
                 //If index is not -1, it is in the array. Push into new print array.
                 if( index != -1 ) {
                   console.log( "Index does not equal negative one: " + index );
+                  console.log(printArray);
                   newArray.push(currentArray[index]);
                   console.log("Just pushed:" + currentArray[index]);
                 }
@@ -282,7 +283,6 @@ function getDrinksFromCocktailDB() {
           console.log("Going to displayCocktails()");
           console.log("Current PrintArray: " + printArray);
           //displayCocktails(printArray);
-
           },delayInMilliseconds);
 
         }
