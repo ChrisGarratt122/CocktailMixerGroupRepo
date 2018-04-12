@@ -224,6 +224,7 @@ function getDrinksFromCocktailDB() {
     var currentArray = [];
     var oldArray = [];
     var printArray = [];
+    var newArray = [];
 
     console.log("getDrinksFromCocktailDB() entered.")
     var ingredientArray = [];
@@ -262,24 +263,26 @@ function getDrinksFromCocktailDB() {
               $.each( currentArray, function( key, value ) {
                 console.log("Entered each for creating updated printArray.");
                 var index = $.inArray( value, printArray );
-              //If index is not -1, it is in the array. Push into new print array.
+                //If index is not -1, it is in the array. Push into new print array.
                 if( index != -1 ) {
                   console.log( "Index does not equal negative one: " + index );
-                  printArray = [];
-                  printArray.push(currentArray[index]);
+                  newArray.push(currentArray[index]);
                   console.log("Just pushed:" + currentArray[index]);
                 }
               });
             }
         });
         if (i === count-1) {
-
           var delayInMilliseconds = 500;
           setTimeout(function()
           {
+          if (newArray.length > 2 ) {
+            printArray = newArray;
+          }
           console.log("Going to displayCocktails()");
           console.log("Current PrintArray: " + printArray);
           //displayCocktails(printArray);
+
           },delayInMilliseconds);
 
         }
