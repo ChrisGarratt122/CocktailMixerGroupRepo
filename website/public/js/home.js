@@ -4,7 +4,7 @@ $(function(){
 
   //Append log about entering function tog et api list, enter function
   console.log("About to enter getIngredientsFromCocktailDB()");
-  //getIngredientsFromCocktailDB();
+  getIngredientsFromCocktailDB();
 
 });
 
@@ -93,7 +93,7 @@ function displayArray(array) {
 
       //Go to function for getting drink suggestions from theCocktailDB api
       console.log("Going to getDrinksFromCocktailDB()");
-      getDrinksFromCocktailDB();
+      //getDrinksFromCocktailDB();
 
       //********JQuery on click of ingredient once added from search********//
       $(".recipe-ingredient").click(function(){
