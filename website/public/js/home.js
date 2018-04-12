@@ -254,24 +254,33 @@ function getDrinksFromCocktailDB() {
             return el.strDrink;
             });
             console.log("Array made from JSON data: " + currentArray);
-
             if (i === 0) {
+              console.log("i = 0, making printArray equal to currentArray.")
               printArray = currentArray;
             }
             else {
-              var index = $.inArray( value, printArray );
+              $.each( currentArray, function( key, value ) {
+                console.log("Entered each for creating updated printArray.");
+                var index = $.inArray( value, printArray );
               //If index is not -1, it is in the array. Push into new print array.
-              if( index != -1 ) {
-                console.log( "Index does not equal negative one: " + index );
-                printArray.push(currentArray[index]);
-                console.log("Just pushed:" + currentArray[index]);
-              }
+                if( index != -1 ) {
+                  console.log( "Index does not equal negative one: " + index );
+                  printArray.push(currentArray[index]);
+                  console.log("Just pushed:" + currentArray[index]);
+                }
+              });
             }
         });
-        if (i === count - 1) {
+        if (i === count-1) {
+
+          var delayInMilliseconds = 500;
+          setTimeout(function()
+          {
           console.log("Going to displayCocktails()");
           console.log("Current PrintArray: " + printArray);
           //displayCocktails(printArray);
+          },delayInMilliseconds);
+
         }
     });
 
