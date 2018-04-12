@@ -395,36 +395,43 @@ function displayCocktails(array) {
   var text = "";
   var name = "";
   var counter = 0;
+  var length = array.length;
   $.each(array, function(index, val) {
     console.log(array[index]);
     name  = array[index];
-    if (counter == 0) {
-      text = appendCocktailRowStart(text);
-      text = appendCocktailBox(text, name);
-    } else if (counter == 2) {
-      text = appendCocktailBox(text, name);
-      text = appendCocktailRowEnd(text);
-      counter = -1;
-    } else {
-      text = appendCocktailBox(text, name);
-    }
-    console.log(text);
-    counter = counter + 1;
 
-    });
+    if (index === (length - 1)) {
+        text += appendcocktailRowEnd(text);
+
+    } else {
+      if (counter == 0) {
+        text += appendCocktailRowStart(text);
+        text += appendCocktailBox(text, name);
+      } else if (counter == 2) {
+        text += appendCocktailBox(text, name);
+        text += appendCocktailRowEnd(text);
+        counter = -1;
+      } else {
+        text += appendCocktailBox(text, name);
+      }
+      console.log(text);
+      counter = counter + 1;
+    }
+  });
 
   $("#bordercontainer").append(text);
 }
 
-function appendCocktailRowStart(htmlstring) {
+function appendCocktailRowStart(text) {
 
   console.log("appendCocktailRowStart entered.");
-  htmlstring += '<div class=\"row text-center\">';
-  return htmlstring;
+  text += '<div class=\"row text-center\">';
+  console.log("HTMLstring: " + text);
+  return text;
 
 }
 
-function appendCocktailBox(htmlstring, name) {
+function appendCocktailBox(text, name) {
 
   console.log("appendCocktailBox entered.");
   searchName = name.replace(/\s+/g, '_');
@@ -438,20 +445,22 @@ function appendCocktailBox(htmlstring, name) {
 
 
 
-    htmlstring += "<div class=\"col-sm\">";
-    htmlstring += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
-    htmlstring += "<h3>" + name + "</h3>";
-    htmlstring += "<p>" + desc + "</p>";
-    htmlstring += "</div>";
-    return htmlstring;
+    text += "<div class=\"col-sm\">";
+    text += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
+    text += "<h3>" + name + "</h3>";
+    text += "<p>" + desc + "</p>";
+    text += "</div>";
+    console.log("HTMLstring: " + text);
+    return text;
   });
 
 }
 
-function appendCocktailRowEnd(htmlstring) {
+function appendCocktailRowEnd(text) {
 
   console.log("appendCocktailRowEnd entered.");
-  htmlstring += "</div>";
-  return htmlstring;
+  console.log("HTMLstring: " + text);
+  text += "</div>";
+  return text;
 
 }
