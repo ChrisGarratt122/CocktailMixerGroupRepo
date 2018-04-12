@@ -397,29 +397,41 @@ function displayCocktails(array) {
   var counter = 0;
   array.length = 11;
   var length = array.length;
+  var tempStr = "";
   $.each(array, function(index, val) {
     console.log(array[index]);
     name  = array[index];
 
     if (index === (length - 1)) {
-        text += appendCocktailRowEnd(text);
+        tempStr = "";
+        tempStr += appendCocktailRowEnd(text);
 
     } else {
       if (counter == 0) {
-        text += appendCocktailRowStart(text);
-        text += appendCocktailBox(text, name);
+        tempStr = "";
+        tempStr += appendCocktailRowStart(text);
+        tempStr += appendCocktailBox(text, name);
+        console.log("TEMP STRING: " + tempStr);
+        text += tempStr;
       } else if (counter == 2) {
-        text += appendCocktailBox(text, name);
-        text += appendCocktailRowEnd(text);
+        tempStr = "";
+        tempStr += appendCocktailBox(text, name);
+        tempStr += appendCocktailRowEnd(text);
         counter = -1;
+        console.log("TEMP STRING: " + tempStr);
+        text += tempStr;
       } else {
-        text += appendCocktailBox(text, name);
+        tempStr = "";
+        tempStr += appendCocktailBox(text, name);
+        console.log("TEMP STRING: " + tempStr);
+        text += tempStr;
       }
       //Print all text freezes chrome
       //console.log(text);
       counter = counter + 1;
     }
   });
+  console.log(text);
   console.log("About to append full html string.");
   $("#bordercontainer").append(text);
 }
