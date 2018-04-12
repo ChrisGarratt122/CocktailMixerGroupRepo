@@ -1,3 +1,13 @@
+$(function(){
+  //Append log to console about document being ready (Entered js)
+  console.log("Document Ready");
+
+  //Append log about entering function tog et api list, enter function
+  console.log("About to enter getIngredientsFromCocktailDB()");
+  getIngredientsFromCocktailDB();
+
+});
+
 function getDrinksFromCocktailDB() {
 
     var ingredientArray = getArray();

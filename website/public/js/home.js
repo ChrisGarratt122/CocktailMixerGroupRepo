@@ -241,7 +241,7 @@ function getDrinksFromCocktailDB() {
         console.log("Beginning of loop, length is:" + length);
         //oldArray = printArray;
         //Build url to get json
-        searchterms = ingredientArray[count].replace(/\s+/g, '_');
+        searchterms = ingredientArray[i].replace(/\s+/g, '_');
         searchterms = searchterms.replace(/'/g, '');
         url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchterms;
         console.log(url);
