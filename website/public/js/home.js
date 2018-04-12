@@ -4,7 +4,7 @@ $(function(){
 
   //Append log about entering function tog et api list, enter function
   console.log("About to enter getIngredientsFromCocktailDB()");
-  getIngredientsFromCocktailDB();
+  //getIngredientsFromCocktailDB();
 
 });
 
