@@ -1,4 +1,5 @@
 $(function(){
+
   //Append log to console about document being ready (Entered js)
   console.log("Document Ready");
 
@@ -6,7 +7,28 @@ $(function(){
   console.log("About to enter getIngredientsFromCocktailDB()");
   getIngredientsFromCocktailDB();
 
+  // //appendCocktailRowStart();
+  //
+  // alert("About to attempt box append");
+  //
+  // // appendCocktailBox('Mojito');
+  // // appendCocktailBox('Margarita');
+  // // appendCocktailBox('Black Russian');
+  //
+  // alert("About to attempt end of row append.");
+  //
+  // // appendCocktailRowEnd();
+
+  // alert("Returned after appends;");
+
+  //document.getElementById("bordercontainer").appendChild=
+  // <%- include("../partials/cocktailbox",{name1:"MojitoTest1",name2:"MargaritaTest1",name3:"Black RussianTest1"}) %>
+  // <%- include("../partials/cocktailbox",{name1:"MojitoTest2",name2:"MargaritaTest2",name3:"Black RussianTest2"}) %>
+  // <%- include("../partials/cocktailbox",{name1:"MojitoTest3",name2:"MargaritaTest3",name3:"Black RussianTest3"}) %>;
+
+
 });
+
 
 //Function gets data from theCocktailDB API
 function getIngredientsFromCocktailDB() {
@@ -44,6 +66,7 @@ function buildArray(jsondata) {
   //Append console log about entering displayArray function, call function and pass json
   console.log("About to enter displayArray() function.");
   displayArray(array);
+
 }
 
 function displayArray(array) {
@@ -93,7 +116,7 @@ function displayArray(array) {
 
       //Go to function for getting drink suggestions from theCocktailDB api
       console.log("Going to getDrinksFromCocktailDB()");
-      //getDrinksFromCocktailDB();
+      getDrinksFromCocktailDB();
 
       //********JQuery on click of ingredient once added from search********//
       $(".recipe-ingredient").click(function(){
@@ -158,56 +181,310 @@ $('#search-bar').keyup(function() {
   }
   });
 
-  function getArray() {
+function getArray() {
 
-      var clientArray = [];
+    var clientArray = [];
 
-      $("#button-container").find(":button").each(function(){ clientArray.push($(this).text()); });
-      console.log(clientArray);
-      console.log("getArray() returning clientArray");
-      return clientArray;
+    $("#button-container").find(":button").each(function(){ clientArray.push($(this).text()); });
+    console.log(clientArray);
+    console.log("getArray() returning clientArray");
+    return clientArray;
 
+}
+
+//}
+
+function addToArray(array, ingredient) {
+
+  if (array === undefined) {
+  //If array does not exist.
+  console.log("Array is does not exist, breaking from function.");
+  break;
+  }
+  else {
+  //Else array does exist.
+  array.push(ingredient);
+  console.log("Pushed " + ingredient + " into array.");
+  }
+  //return updated array
+  return array;
+}
+
+function removeFromArray(array, ingredient) {
+
+  if (array === undefined) {
+    //If array does not exist
+    console.log("Array does not exist. Breaking from function.");
   }
 
-  function addToArray(array, ingredient) {
-
-    if (array === undefined) {
-    //If array does not exist.
-    console.log("Array is does not exist, breaking from function.");
-    break;
+  else if (array.length == 0) {
+    //If array is empty
+    console.log("Array is empty. Breaking from function.");
+  }
+  else {
+    //Else array exists and is not empty
+    //For each element in array (Beginning from last element)
+    for(var i = array.length - 1; i >= 0; i--) {
+    //If current array item matches ingredient
+    if(array[i] === ingredient) {
+      //Splice item out of array
+       array.splice(i, 1);
+       console.log("Spliced " + ingredient + " out of array.");
     }
-    else {
-    //Else array does exist.
-    array.push(ingredient);
-    console.log("Pushed " + ingredient + " into array.");
     }
     //return updated array
     return array;
   }
+}
 
-  function removeFromArray(array, ingredient) {
+function getDrinksFromCocktailDB() {
+    console.log("getDrinksFromCocktailDB() entered.")
+    var ingredientArray = [];
+    ingredientArray = getArray();
+    console.log("Got array from getArray().");
+    console.log(ingredientArray);
 
-    if (array === undefined) {
-      //If array does not exist
-      console.log("Array does not exist. Breaking from function.");
-    }
+    var searchterms = "";
+    var url = "";
+    var currentArray = [];
+    var oldArray = [];
+    var printArray = [];
 
-    else if (array.length == 0) {
-      //If array is empty
-      console.log("Array is empty. Breaking from function.");
-    }
-    else {
-      //Else array exists and is not empty
-      //For each element in array (Beginning from last element)
-      for(var i = array.length - 1; i >= 0; i--) {
-      //If current array item matches ingredient
-      if(array[i] === ingredient) {
-        //Splice item out of array
-         array.splice(i, 1);
-         console.log("Spliced " + ingredient + " out of array.");
+    //ingredientMatrix = [];
+
+    //For each ingredient in array
+    console.log("About to enter for loop for every ingredient.");
+    console.log("Ingredient Array length : " + ingredientArray.length);
+    var length = ingredientArray.length;
+    console.log("Before for length is: " + length);
+    for (count = 0; count < length;) {
+        console.log("Beginning of loop, i is: " + count);
+        console.log("Beginning of loop, length is:" + length);
+        oldArray = printArray;
+        //Build url to get json
+        searchterms = ingredientArray[count].replace(/\s+/g, '_');
+        searchterms = searchterms.replace(/'/g, '');
+        url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchterms;
+        console.log(url); //1111111111
+        //Get json array using url
+        //****Gets to here, skips out of for****//
+        console.log("1." + count); //2222222
+        $.getJSON(url, function(jsondata) {
+            console.log("2." + count); //5555555
+            console.log("jsondata returned"); //666666
+            //Create array of drinks from jsondata
+            currentArray = $.map(jsondata.drinks, function (el) {
+            return el.strDrink;
+            });
+            console.log("3." + count); //77777
+            console.log("Array made from JSON data: " + currentArray); //888888
+            printArray = currentArray;
+        });
+        console.log("Before if statement");//3333333
+        //If this isn't the first ingredient in list
+        if (count > 0) {
+          console.log(count);
+          console.log(count + ": i should be more than 0");
+          //For each drink in array for current ingredient do function
+          console.log("Before Jquery.");
+          $.each( currentArray, function( key, value ) {
+              //Reset print array
+              printArray = [];
+              //Get index of value in oldarray
+              var index = $.inArray( value, oldArray );
+              //If index is not -1, it is in the array. Push into new print array.
+              if( index != -1 ) {
+                console.log( "Index does not equal negative one: " + index );
+                printArray.push(oldArray[index]);
+                console.log("Just pushed:" + oldArray[index]);
+              }
+            });
+          console.log("After Jquery.");
+          console.log("IF 1 DONE.");
+          console.log("INCREMENTING COUNT"); //4444444444
+          count = count + 1;
+        }
+        //If this is the first ingredient in the list
+        else if (count == 0) {
+          console.log(count + ": i is 0");
+          console.log("Making printArray equal to current Array ( Unedited JSON array).");
+          printArray = currentArray;
+          console.log("printArray: " + printArray);
+          console.log("IF 2 DONE.");
+          console.log("INCREMENTING COUNT"); //4444444444
+          count = count + 1;
+        }
+        else if (count < 0) {
+          console.log(count + ": i is less than 0? OH DEAR");
+          console.log("IF 3 DONE.");
+          console.log("INCREMENTING COUNT"); //4444444444
+          count = count + 1;
+        }
+    // var delayInMilliseconds = 1000;
+    // setTimeout(function()
+    // {
+        // console.log("INCREMENTING COUNT"); //4444444444
+        // count = count + 1;
+    //  },delayInMilliseconds);
       }
-      }
-      //return updated array
-      return array;
+
+      var delayInMilliseconds = 500;
+      setTimeout(function()
+      {
+        console.log("Going to displayCocktails()"); //99999999
+        console.log("Current PrintArray: " + printArray); //101010101010
+        displayCocktails(printArray);
+      },delayInMilliseconds);
+
     }
-  }
+
+
+
+// function getPrintFromJSON(url, oldArray) {
+//   var printArray = [];
+//
+//   console.log("ENTERED getPrintFromJSON.");
+//   $.getJSON(url, function(jsondata) {
+//     console.log("2." + count);
+//     console.log("jsondata returned");
+//     //Create array of drinks from jsondata
+//     currentArray = $.map(jsondata.drinks, function (el) {
+//     return el.strDrink;
+//     console.log("3." + count);
+//     });
+//     console.log("Array made from JSON data: " + currentArray);
+//
+//     //If this isn't the first ingredient in list
+//     console.log("Before if statement");
+//     if (count > 0) {
+//       console.log(count);
+//       console.log(count + ": i should be more than 0");
+//       //For each drink in array for current ingredient do function
+//       console.log("Before Jquery.");
+//       $.each( currentArray, function( key, value ) {
+//           //Reset print array
+//           printArray = [];
+//           //Get index of value in oldarray
+//           var index = $.inArray( value, oldArray );
+//           //If index is not -1, it is in the array. Push into new print array.
+//           if( index != -1 ) {
+//             console.log( "Index does not equal negative one: " + index );
+//             printArray.push(oldArray[index]);
+//           }
+//       console.log("After Jquery.");
+//     });
+//     else if (count = 0) {
+//       console.log(count + ": i is 0");
+//       printArray = currentArray;
+//     }
+//     else if (count < 0) {
+//       console.log(count + ": i is less than 0? OH DEAR");
+//     }
+//     var delayInMilliseconds = 1000;
+//     setTimeout(function()
+//     {
+//       console.log("Finishing getjson function and returning printarray. before");
+//       return printArray;
+//     },delayInMilliseconds);
+//   });
+// }
+
+function displayCocktails(array) {
+  console.log("Entered displayCocktails")
+  //Basic test version
+  var text = "";
+  var name = "";
+  var counter = 0;
+  array.length = 11;
+  var length = array.length;
+  var tempStr = "";
+  $.each(array, function(index, val) {
+    console.log(array[index]);
+    name  = array[index];
+
+    if (index === (length - 1)) {
+        tempStr = "";
+        tempStr += appendCocktailRowEnd(text);
+
+    } else {
+      if (counter == 0) {
+        tempStr = "";
+        tempStr += appendCocktailRowStart(text);
+        tempStr += appendCocktailBox(text, name);
+        console.log("TEMP STRING: " + tempStr);
+        text += tempStr;
+      } else if (counter == 2) {
+        tempStr = "";
+        tempStr += appendCocktailBox(text, name);
+        tempStr += appendCocktailRowEnd(text);
+        counter = -1;
+        console.log("TEMP STRING: " + tempStr);
+        text += tempStr;
+      } else {
+        tempStr = "";
+        tempStr += appendCocktailBox(text, name);
+        console.log("TEMP STRING: " + tempStr);
+        text += tempStr;
+      }
+      //Print all text freezes chrome
+      //console.log(text);
+      counter = counter + 1;
+    }
+  });
+  console.log(text);
+  console.log("About to append full html string.");
+  $("#bordercontainer").append(text);
+}
+
+function appendCocktailRowStart(text) {
+
+  var string = "";
+  console.log("appendCocktailRowStart entered.");
+  string += '<div class=\"row text-center\">';
+  console.log("HTMLstring: " + string);
+  text += string;
+
+  return text;
+
+}
+
+function appendCocktailBox(text, name) {
+
+  var string = "";
+  console.log("appendCocktailBox entered.");
+  var searchName = "";
+  searchName = name.replace(/\s+/g, '_');
+  searchName = searchName.replace(/'/g, '');
+  var url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchName;
+  console.log("Url: " + url)
+  //use jquery json shortcut
+  $.getJSON(url, function(jsondata) {
+    var image = jsondata.drinks[0].strDrinkThumb;
+    var desc = jsondata.drinks[0].strInstructions;
+    console.log("Image: " + image);
+    console.log("Desc: " + desc);
+
+
+
+    string += "<div class=\"col-sm\">";
+    string += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
+    string += "<h3>" + name + "</h3>";
+    string += "<p>" + desc + "</p>";
+    string += "</div>";
+    console.log("HTMLstring: " + string);
+    text += string;
+    return text;
+  });
+
+}
+
+function appendCocktailRowEnd(text) {
+
+  var string = "";
+  console.log("appendCocktailRowEnd entered.");
+  string += "</div>";
+  console.log("HTMLstring: " + string);
+  text += string;
+  return text;
+
+}
