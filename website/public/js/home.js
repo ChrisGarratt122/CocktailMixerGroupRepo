@@ -395,6 +395,7 @@ function displayCocktails(array) {
   var text = "";
   var name = "";
   var counter = 0;
+  array.length = 11;
   var length = array.length;
   $.each(array, function(index, val) {
     console.log(array[index]);
@@ -419,7 +420,7 @@ function displayCocktails(array) {
       counter = counter + 1;
     }
   });
-
+  console.log("About to append full html string.");
   $("#bordercontainer").append(text);
 }
 
