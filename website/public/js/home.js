@@ -442,6 +442,8 @@ function appendCocktailBox(text, name) {
   $.getJSON(url, function(jsondata) {
     var image = jsondata.drinks[0].strDrinkThumb;
     var desc = jsondata.drinks[0].strInstructions;
+    console.log("Image: " + image);
+    console.log("Desc: " + desc);
 
 
 
