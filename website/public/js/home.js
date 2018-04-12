@@ -63,6 +63,8 @@ function getDrinksFromCocktailDB() {
         }
     });
 
+}
+
 function displayCocktails(array) {
   console.log("Entered displayCocktails")
   //Basic test version
@@ -79,7 +81,6 @@ function displayCocktails(array) {
     if (index === (length - 1)) {
         tempStr = "";
         tempStr += appendCocktailRowEnd(text);
-
     } else {
       if (counter == 0) {
         tempStr = "";
@@ -119,7 +120,6 @@ function appendCocktailRowStart(text) {
   text += string;
 
   return text;
-
 }
 
 function appendCocktailBox(text, name) {
@@ -138,8 +138,6 @@ function appendCocktailBox(text, name) {
     console.log("Image: " + image);
     console.log("Desc: " + desc);
 
-
-
     string += "<div class=\"col-sm\">";
     string += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
     string += "<h3>" + name + "</h3>";
@@ -149,7 +147,6 @@ function appendCocktailBox(text, name) {
     text += string;
     return text;
   });
-
 }
 
 function appendCocktailRowEnd(text) {
@@ -160,5 +157,4 @@ function appendCocktailRowEnd(text) {
   console.log("HTMLstring: " + string);
   text += string;
   return text;
-
 }
