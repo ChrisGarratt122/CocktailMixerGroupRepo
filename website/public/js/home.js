@@ -432,19 +432,18 @@ function appendCocktailBox(htmlstring, name) {
   var url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchName;
   //use jquery json shortcut
   $.getJSON(url, function(jsondata) {
+    var image = jsondata.drinks[0].strDrinkThumb;
+    var desc = jsondata.drinks[0].strInstructions;
 
+
+
+    htmlstring += "<div class=\"col-sm\">";
+    htmlstring += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
+    htmlstring += "<h3>" + name + "</h3>";
+    htmlstring += "<p>" + desc + "</p>";
+    htmlstring += "</div>";
+    return htmlstring;
   });
-  var image = jsondata.drinks[0].strDrinkThumb;
-  var desc = jsondata.drinks[0].strInstructions;
-
-
-
-  htmlstring += "<div class=\"col-sm\">";
-  htmlstring += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
-  htmlstring += "<h3>" + name + "</h3>";
-  htmlstring += "<p>" + desc + "</p>";
-  htmlstring += "</div>";
-  return htmlstring;
 
 }
 
