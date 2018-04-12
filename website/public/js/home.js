@@ -430,6 +430,7 @@ function appendCocktailBox(htmlstring, name) {
   searchName = name.replace(/\s+/g, '_');
   searchName = searchName.replace(/'/g, '');
   var url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchName;
+  console.log("Url: " + url)
   //use jquery json shortcut
   $.getJSON(url, function(jsondata) {
     var image = jsondata.drinks[0].strDrinkThumb;
