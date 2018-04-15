@@ -361,7 +361,7 @@ function appendCocktailBox(text, name) {
   url: myUrl,
   dataType: 'json',
   async: false,
-  data: jsondata,
+  data: data,
   success: function(data) {
     //console.log("jsondata = " + data);
     var image = jsondata.drinks[0].strDrinkThumb;
