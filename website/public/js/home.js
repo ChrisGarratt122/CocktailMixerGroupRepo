@@ -308,6 +308,7 @@ function displayCocktails(printArray) {
         tempStr += appendCocktailRowEnd(text);
     } else {
       if (counter == 0) {
+        jsondata = "";
         tempStr = "";
         tempStr = appendCocktailRowStart(text);
         tempStr = appendCocktailBox(text, name);
@@ -364,6 +365,8 @@ function appendCocktailBox(text, name) {
   //data: data,
   success: function(data) {
     console.log("jsondata = " + data);
+    buildBoxString(data, text);
+
     var image = data.drinks[0].strDrinkThumb;
     var desc = data.drinks[0].strInstructions;
     console.log("Image: " + image);
@@ -403,6 +406,11 @@ function appendCocktailBox(text, name) {
   //
   //   },delayInMilliseconds);
   // });
+}
+
+function buildBoxString(data, text) {
+
+
 }
 
 function appendCocktailRowEnd(text) {
