@@ -354,7 +354,7 @@ function appendCocktailBox(text, name) {
   searchName = name.replace(/\s+/g, '_');
   searchName = searchName.replace(/'/g, '');
   var myUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchName;
-  console.log("Url: " + url)
+  console.log("Url: " + myUrl)
 
   //Using ajax call to not be asynchronous
   $.ajax({
