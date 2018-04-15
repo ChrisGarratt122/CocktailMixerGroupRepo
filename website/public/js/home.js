@@ -308,6 +308,7 @@ function displayCocktails(printArray) {
     if (index === (length - 1)) {
         tempStr = "";
         tempStr += appendCocktailRowEnd(text);
+        console.log("Appending final row end.");
     } else {
       if (counter == 0) {
         jsondata = "";
