@@ -282,7 +282,7 @@ function getDrinksFromCocktailDB() {
           }
           console.log("Going to displayCocktails()");
           console.log("Current PrintArray: " + printArray);
-          //displayCocktails(printArray);
+          displayCocktails(printArray);
           },delayInMilliseconds);
 
         }
@@ -290,18 +290,18 @@ function getDrinksFromCocktailDB() {
 
 }
 
-function displayCocktails(array) {
+function displayCocktails(printArray) {
   console.log("Entered displayCocktails")
   //Basic test version
   var text = "";
   var name = "";
   var counter = 0;
-  array.length = 11;
-  var length = array.length;
+  printArray.length = 11;
+  var length = printArray.length;
   var tempStr = "";
-  $.each(array, function(index, val) {
-    console.log(array[index]);
-    name  = array[index];
+  $.each(printArray, function(index, val) {
+    console.log(printArray[index]);
+    name  = printArray[index];
 
     if (index === (length - 1)) {
         tempStr = "";
