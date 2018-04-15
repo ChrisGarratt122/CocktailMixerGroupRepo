@@ -363,7 +363,7 @@ function appendCocktailBox(text, name) {
   async: false,
   //data: data,
   success: function(data) {
-    //console.log("jsondata = " + data);
+    console.log("jsondata = " + data);
     var image = data.drinks[0].strDrinkThumb;
     var desc = data.drinks[0].strInstructions;
     console.log("Image: " + image);
