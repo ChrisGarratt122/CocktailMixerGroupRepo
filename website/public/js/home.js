@@ -312,14 +312,16 @@ function displayCocktails(printArray) {
       if (counter == 0) {
         jsondata = "";
         tempStr = "";
-        tempStr = appendCocktailRowStart(text);
-        tempStr = appendCocktailBox(text, name);
+        //tempStr = appendCocktailRowStart(text);
+        tempStr = "<div class=\"row text-center\">";
+        tempStr += appendCocktailBox(text, name);
         //console.log("temporary STRING: " + tempStr);
         text += tempStr;
       } else if (counter == 2) {
         tempStr = "";
         tempStr = appendCocktailBox(text, name);
-        tempStr = appendCocktailRowEnd(text);
+        tempStr = "</div>";
+        //tempStr = appendCocktailRowEnd(text);
         counter = -1;
         //console.log("temporary STRING: " + tempStr);
         text += tempStr;
@@ -408,11 +410,6 @@ function appendCocktailBox(text, name) {
   //
   //   },delayInMilliseconds);
   // });
-}
-
-function buildBoxString(data, text) {
-
-
 }
 
 function appendCocktailRowEnd(text) {
