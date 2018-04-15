@@ -377,9 +377,10 @@ function appendCocktailBox(text, name) {
     string += "</div>";
     console.log("HTMLstring: " + string);
     //text += string;
-    return string;
+    //return string;
   }
   });
+  return string;
   // $.getJSON(url, function(jsondata) {
   //   var delayInMilliseconds = 500;
   //   setTimeout(function()
