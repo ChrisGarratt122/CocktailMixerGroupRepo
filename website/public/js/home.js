@@ -302,6 +302,8 @@ function displayCocktails(printArray) {
   $.each(printArray, function(index, val) {
     console.log(printArray[index]);
     name  = printArray[index];
+    console.log("Counter =" + counter);
+
 
     if (index === (length - 1)) {
         tempStr = "";
@@ -312,19 +314,19 @@ function displayCocktails(printArray) {
         tempStr = "";
         tempStr = appendCocktailRowStart(text);
         tempStr = appendCocktailBox(text, name);
-        console.log("TEMP STRING: " + tempStr);
+        //console.log("temporary STRING: " + tempStr);
         text += tempStr;
       } else if (counter == 2) {
         tempStr = "";
         tempStr = appendCocktailBox(text, name);
         tempStr = appendCocktailRowEnd(text);
         counter = -1;
-        console.log("TEMP STRING: " + tempStr);
+        //console.log("temporary STRING: " + tempStr);
         text += tempStr;
       } else {
         tempStr = "";
         tempStr = appendCocktailBox(text, name);
-        console.log("TEMP STRING: " + tempStr);
+        //console.log("temporary STRING: " + tempStr);
         text += tempStr;
       }
       //Print all text freezes chrome
@@ -332,7 +334,7 @@ function displayCocktails(printArray) {
       counter = counter + 1;
     }
   });
-  console.log(text);
+  //console.log(text);
   console.log("About to append full html string.");
   $("#bordercontainer").append(text);
 }
@@ -342,7 +344,7 @@ function appendCocktailRowStart(text) {
   var string = text;
   console.log("appendCocktailRowStart entered.");
   string += '<div class=\"row text-center\">';
-  console.log("HTMLstring: " + string);
+  //console.log("HTMLstring: " + string);
   //text += string;
 
   return string;
@@ -378,7 +380,7 @@ function appendCocktailBox(text, name) {
     string += "<h3>" + name + "</h3>";
     string += "<p>" + desc + "</p>";
     string += "</div>";
-    console.log("HTMLstring: " + string);
+    //console.log("HTMLstring: " + string);
     //text += string;
     //return string;
   }
@@ -418,7 +420,7 @@ function appendCocktailRowEnd(text) {
   var string = text;
   console.log("appendCocktailRowEnd entered.");
   string += "</div>";
-  console.log("HTMLstring: " + string);
+  //console.log("HTMLstring: " + string);
   //text += string;
   return string;
 }
