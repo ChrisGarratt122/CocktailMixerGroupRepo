@@ -309,20 +309,20 @@ function displayCocktails(printArray) {
     } else {
       if (counter == 0) {
         tempStr = "";
-        tempStr += appendCocktailRowStart(text);
-        tempStr += appendCocktailBox(text, name);
+        tempStr = appendCocktailRowStart(text);
+        tempStr = appendCocktailBox(text, name);
         console.log("TEMP STRING: " + tempStr);
         text += tempStr;
       } else if (counter == 2) {
         tempStr = "";
-        tempStr += appendCocktailBox(text, name);
-        tempStr += appendCocktailRowEnd(text);
+        tempStr = appendCocktailBox(text, name);
+        tempStr = appendCocktailRowEnd(text);
         counter = -1;
         console.log("TEMP STRING: " + tempStr);
         text += tempStr;
       } else {
         tempStr = "";
-        tempStr += appendCocktailBox(text, name);
+        tempStr = appendCocktailBox(text, name);
         console.log("TEMP STRING: " + tempStr);
         text += tempStr;
       }
@@ -342,9 +342,9 @@ function appendCocktailRowStart(text) {
   console.log("appendCocktailRowStart entered.");
   string += '<div class=\"row text-center\">';
   console.log("HTMLstring: " + string);
-  text += string;
+  //text += string;
 
-  return text;
+  return string;
 }
 
 function appendCocktailBox(text, name) {
@@ -376,8 +376,8 @@ function appendCocktailBox(text, name) {
     string += "<p>" + desc + "</p>";
     string += "</div>";
     console.log("HTMLstring: " + string);
-    text += string;
-    return text;
+    //text += string;
+    return string;
   }
   });
   // $.getJSON(url, function(jsondata) {
@@ -410,6 +410,6 @@ function appendCocktailRowEnd(text) {
   console.log("appendCocktailRowEnd entered.");
   string += "</div>";
   console.log("HTMLstring: " + string);
-  text += string;
-  return text;
+  //text += string;
+  return string;
 }
