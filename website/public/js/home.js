@@ -357,6 +357,7 @@ function appendCocktailBox(text, name) {
   var myUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchName;
   console.log("Url: " + myUrl)
 
+  var string = text;
   //Using ajax call to not be asynchronous
   $.ajax({
   url: myUrl,
@@ -372,7 +373,6 @@ function appendCocktailBox(text, name) {
     console.log("Image: " + image);
     console.log("Desc: " + desc);
 
-    var string = text;
     string += "<div class=\"col-sm\">";
     string += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
     string += "<h3>" + name + "</h3>";
