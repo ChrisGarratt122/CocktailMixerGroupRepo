@@ -349,7 +349,6 @@ function appendCocktailRowStart(text) {
 
 function appendCocktailBox(text, name) {
 
-  var string = "";
   console.log("appendCocktailBox entered.");
   var searchName = "";
   searchName = name.replace(/\s+/g, '_');
@@ -358,11 +357,16 @@ function appendCocktailBox(text, name) {
   console.log("Url: " + url)
   //use jquery json shortcut
   $.getJSON(url, function(jsondata) {
+    var delayInMilliseconds = 500;
+    setTimeout(function()
+    {
+
     var image = jsondata.drinks[0].strDrinkThumb;
     var desc = jsondata.drinks[0].strInstructions;
     console.log("Image: " + image);
     console.log("Desc: " + desc);
 
+    var string = "";
     string += "<div class=\"col-sm\">";
     string += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
     string += "<h3>" + name + "</h3>";
@@ -371,6 +375,8 @@ function appendCocktailBox(text, name) {
     console.log("HTMLstring: " + string);
     text += string;
     return text;
+
+    },delayInMilliseconds);
   });
 }
 
