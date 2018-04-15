@@ -339,7 +339,7 @@ function displayCocktails(printArray) {
 
 function appendCocktailRowStart(text) {
 
-  var string = "";
+  var string = text;
   console.log("appendCocktailRowStart entered.");
   string += '<div class=\"row text-center\">';
   console.log("HTMLstring: " + string);
@@ -415,7 +415,7 @@ function buildBoxString(data, text) {
 
 function appendCocktailRowEnd(text) {
 
-  var string = "";
+  var string = text;
   console.log("appendCocktailRowEnd entered.");
   string += "</div>";
   console.log("HTMLstring: " + string);
