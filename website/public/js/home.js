@@ -314,6 +314,7 @@ function displayCocktails(printArray) {
         tempStr = "";
         //tempStr = appendCocktailRowStart(text);
         tempStr = "<div class=\"row text-center\">";
+        console.log("Appending row start div.");
         tempStr += appendCocktailBox(text, name);
         //console.log("temporary STRING: " + tempStr);
         text += tempStr;
@@ -321,6 +322,7 @@ function displayCocktails(printArray) {
         tempStr = "";
         tempStr = appendCocktailBox(text, name);
         tempStr = "</div>";
+        console.log("Appending row end div.");
         //tempStr = appendCocktailRowEnd(text);
         counter = -1;
         //console.log("temporary STRING: " + tempStr);
