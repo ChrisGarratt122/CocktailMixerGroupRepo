@@ -357,10 +357,10 @@ function appendCocktailBox(text, name) {
   console.log("Url: " + url)
   //use jquery json shortcut
   $.getJSON(url, function(jsondata) {
-    var delayInMilliseconds = 500;
-    setTimeout(function()
-    {
-
+    //var delayInMilliseconds = 500;
+    //setTimeout(function()
+    //{
+    console.log("jsondata = " + jsondata);
     var image = jsondata.drinks[0].strDrinkThumb;
     var desc = jsondata.drinks[0].strInstructions;
     console.log("Image: " + image);
@@ -376,7 +376,7 @@ function appendCocktailBox(text, name) {
     text += string;
     return text;
 
-    },delayInMilliseconds);
+    //},delayInMilliseconds);
   });
 }
 
