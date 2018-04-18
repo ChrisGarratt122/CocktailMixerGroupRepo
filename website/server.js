@@ -114,28 +114,31 @@ app.post('/delete', function(req, res) {
   });
 });
 
+//the adduser route deals with adding a new user
+//dataformat for storing new users.
 
-// var express = require('express');
-// var app = express();
-//var oneLinerJoke = require('one-liner-joke');
+//{"_id":1,
+//"username":"admin",
+//"password":"mixerPa$$"",
+//"drinks":[]}
 
-// app.get('/', function(req, res){
-// res.send("Hello world! by express");
-// });
-// app.get('/test', function(req, res){
-//  res.send("this is route 2");
-// });
-// app.get('/joke', function(req, res){
-//   res.writeHead(200, {'Content-Type': 'text/html'});
-//    var randomJoke = oneLinerJoke.getRandomJoke();
-//    res.end(randomJoke.body);
-// });
-// app.get('/getform', function(req, res){
-// var name = req.query.name;
-// var quest = req.query.quest;
-//  res.send("Hi "+name+" I am sure you will "+quest) ;
-// });
-//     res.send(String(result));
-// })
-// app.use(express.static('public'))
-// app.listen(8080);
+app.post('/adduser', function(req, res) {
+  //check we are logged in
+  if(!req.session.loggedin){res.redirect('/login');return;}
+
+  //we create the data string from the form components that have been passed in
+
+var datatostore = {
+"username":req.body.username
+"password":req.body.password
+"drinks":req.body.drinks}
+
+
+//once created we just run the data string against the database and all our new data will be saved/
+  db.collection('profiles').save(datatostore, function(err, result) {
+    if (err) throw err;
+    console.log('saved to database')
+    //when complete redirect to the index
+    res.redirect('/')
+  })
+});
