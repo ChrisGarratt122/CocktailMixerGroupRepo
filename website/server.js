@@ -27,12 +27,12 @@ app.use(session({ secret: 'example' }));
 // var db;
 //
 // //Setting connection to database, setting db var as database.
-MongoClient.connect(url, function(err, database) {
-  if (err) throw err;
-  db = database;
-  app.listen(8080);
-  console.log('listening on 8080');
-});
+// MongoClient.connect(url, function(err, database) {
+//   if (err) throw err;
+//   db = database;
+//   app.listen(8080);
+//   console.log('listening on 8080');
+// });
 
 //******GET ROUTES (Displaying Pages)*******
 app.get('/', function(req, res) {
