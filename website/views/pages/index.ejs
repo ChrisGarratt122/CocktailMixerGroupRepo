@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <% include ../partials/head %>
+  </head>
+
+  <!-- Website
+  ================================================== -->
+
+<body>
+
+  <% include ../partials/logo %>
+
+<div class="nav-container">
+  <% include ../partials/header %>
+</div>
+
+
+<div class="container homepage-block">
+  <div class="homepage-form">
+    <div class="row search">
+      <div class="col-centered page-title">
+        <form>
+          <div class="dropdown">
+            <!-- <button onclick="myFunction()" class="dropbtn">Dropdown</button> -->
+            <input type="text"  class="form-control" placeholder="Add Ingredient..." id="search-bar">
+            <div id="myDropdown" class="dropdown-content">
+              <!-- <a href="#test example1">About</a>
+              <a href="#test example2">Base</a>
+              <a href="#test example3">Blog</a>
+              <a href="#test example4">Contact</a>
+              <a href="#test example5">Custom</a>
+              <a href="#test example6">Support</a>
+              <a href="#test example7">Tools</a> -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="button-container" class="row">
+      <!-- <button class="recipe-ingredient" type="button" name="button">Vodka</button> -->
+    </div>
+  </div>
+  <div class="homepage-cocktails">
+  <div id="bordercontainer" class="border-container">
+    <!-- ******Box partials go in here****** -->
+
+  </div>
+  </div>
+</div>
+
+<% include ../partials/footer %>
+
+<!--index.js only relevant to this page-->
+<script src="js/home.js"></script>
+
+
+  </body>
+</html>
