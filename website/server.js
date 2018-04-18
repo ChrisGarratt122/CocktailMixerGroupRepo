@@ -76,9 +76,6 @@ app.get('/signup', function(req, res) {
   res.render('pages/signup');
 });
 
-//*******Telling server to listen on port 8080*****
-//app.listen(8080);
-
 //********** POST ROUTES - Deal with processing data from forms ***************************
 
 //the dologin route detasl with the data from the login screen.
@@ -107,7 +104,7 @@ app.post('/delete', function(req, res) {
   var uname = req.body.username;
 
   //check for the username added in the form, if one exists then you can delete that doccument
-  db.collection('people').deleteOne({"login.username":uname}, function(err, result) {
+  db.collection('users').deleteOne({"username":uname}, function(err, result) {
     if (err) throw err;
     //when complete redirect to the index
     res.redirect('/');
@@ -128,14 +125,14 @@ app.post('/adduser', function(req, res) {
 
   //we create the data string from the form components that have been passed in
 
-var datatostore = {
-"username":req.body.username,
-"password":req.body.password,
-"drinks":req.body.drinks}
+  var datatostore = {
+  "username":req.body.username,
+  "password":req.body.password,
+  "drinks":req.body.drinks}
 
 
 //once created we just run the data string against the database and all our new data will be saved/
-  db.collection('accounts').save(datatostore, function(err, result) {
+  db.collection('users').save(datatostore, function(err, result) {
     if (err) throw err;
     console.log('saved to database')
     //when complete redirect to the index
