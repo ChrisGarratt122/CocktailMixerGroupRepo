@@ -1,0 +1,3 @@
+{ "name":"admin", "password":"mixerPa$$", "drinks":[] }
+{ "name":"testuser1", "password":"test1Pa$$", "drinks":[] }
+{ "name":"testuser2", "password":"test2Pa$$", "drinks":[] }
