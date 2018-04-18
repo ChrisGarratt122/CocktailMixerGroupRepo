@@ -91,7 +91,7 @@ app.post('/dologin', function(req, res) {
     if(!result){console.log("There was no result!");}
     //if(!result){res.redirect('/login');return}
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
-    if(result.login.password == pword){ req.session.loggedin = true; res.redirect('/') }
+    if(result.password == pword){ req.session.loggedin = true; res.redirect('/') }
     //otherwise send them back to login
     else{res.redirect('/login')}
   });
