@@ -129,8 +129,8 @@ app.post('/adduser', function(req, res) {
   //we create the data string from the form components that have been passed in
 
 var datatostore = {
-"username":req.body.username
-"password":req.body.password
+"username":req.body.username,
+"password":req.body.password,
 "drinks":req.body.drinks}
 
 
