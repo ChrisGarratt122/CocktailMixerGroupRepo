@@ -45,7 +45,7 @@ MongoClient.connect(url, function(err, database) {
 //******GET ROUTES (Displaying Pages)*******
 app.get('/', function(req, res) {
   //If user is not currently logged in, redirect them to login page.
-  if(!req.session.loggedin){res.redirect('/login');return;}
+  //if(!req.session.loggedin){res.redirect('/login');return;}
   //Otherwise if user is logged in, direct them to index page.
   res.render('pages/index');
 });
@@ -56,14 +56,14 @@ app.get('/contact', function(req, res) {
 
 app.get('/topcocktails', function(req, res) {
   //If user is not currently logged in, redirect them to login page.
-  if(!req.session.loggedin){res.redirect('/login');return;}
+  //if(!req.session.loggedin){res.redirect('/login');return;}
   //Otherwise if user is logged in, direct them to top cocktails page.
   res.render('pages/topCocktails');
 });
 
 app.get('/mycocktails', function(req, res) {
   //If user is not currently logged in, redirect them to login page.
-  if(!req.session.loggedin){res.redirect('/login');return;}
+  //if(!req.session.loggedin){res.redirect('/login');return;}
   //Otherwise if user is logged in, direct them to my cocktails page.
   res.render('pages/myCocktails');
 });
