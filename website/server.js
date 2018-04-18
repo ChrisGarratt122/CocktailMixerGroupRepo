@@ -77,7 +77,9 @@ app.get('/signup', function(req, res) {
 });
 
 //*******Telling server to listen on port 8080*****
-app.listen(8080);
+//app.listen(8080);
+
+//********** POST ROUTES - Deal with processing data from forms ***************************
 
 
 
