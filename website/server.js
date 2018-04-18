@@ -1,3 +1,11 @@
+/**
+ * @Author: Christopher Garratt <chris>
+ * @Date:
+ * @Filename: server.js
+ * @Last modified by: chris
+ * @Last modified time: 18-Apr-2018
+ */
+
 const MongoClient = require('mongodb').MongoClient; //npm install mongodb@2.2.32
 const url = "mongodb://localhost:27017/profiles";
 const express = require('express'); //npm install express
@@ -20,19 +28,19 @@ app.use(session({ secret: 'example' }));
 
 //Comment to push
 
-// app.use(bodyParser.urlencoded({
-//   extended: true
-// }));
-//
-// var db;
-//
-// //Setting connection to database, setting db var as database.
-// MongoClient.connect(url, function(err, database) {
-//   if (err) throw err;
-//   db = database;
-//   app.listen(8080);
-//   console.log('listening on 8080');
-// });
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+var db;
+
+//Setting connection to database, setting db var as database.
+MongoClient.connect(url, function(err, database) {
+  if (err) throw err;
+  db = database;
+  app.listen(8080);
+  console.log('listening on 8080');
+});
 
 //******GET ROUTES (Displaying Pages)*******
 app.get('/', function(req, res) {
