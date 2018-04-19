@@ -134,7 +134,7 @@ function displayArray(array) {
           resetCocktails();
 
           //Call get cocktails to update cocktail box, if ingredient array isn't empty.
-          if (clientArray.length > 0) {
+          if (clientArray != undefined) {
           getDrinkFromCocktailDB();
           }
 
