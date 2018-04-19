@@ -130,6 +130,14 @@ function displayArray(array) {
           console.log("ClientArray passed back.");
           console.log(clientArray);
 
+          //Reset cocktail box
+          resetCocktails();
+
+          //Call get cocktails to update cocktail box, if ingredient array isn't empty.
+          if (clientArray.length > 0) {
+          getDrinkFromCocktailDB();
+          }
+
       });
   });
 
