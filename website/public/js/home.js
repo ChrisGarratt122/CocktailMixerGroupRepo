@@ -259,7 +259,12 @@ function getDrinksFromCocktailDB() {
         url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchterms;
         console.log(url);
         //Get json array using url
-        $.getJSON(url, function(jsondata) {
+        $.ajax({
+          url: url,
+          dataType: 'jsondata',
+          async: false,
+          //data: data,
+          success: function(data) {
             console.log("jsondata returned");
             //Create array of drinks from jsondata
             currentArray = $.map(jsondata.drinks, function (el) {
@@ -284,6 +289,7 @@ function getDrinksFromCocktailDB() {
                 }
               });
             }
+          }
         });
         if (i === count-1) {
           var delayInMilliseconds = 500;
