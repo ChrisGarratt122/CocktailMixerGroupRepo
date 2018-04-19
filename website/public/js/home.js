@@ -307,7 +307,7 @@ function displayCocktails(printArray) {
 
     if (index === (length - 1) && index != 0) {
         tempStr = "";
-        tempStr += appendCocktailRowEnd(text);
+        tempStr += appendCocktailRowEnd();
         text += tempStr;
         console.log("Appending final row end.");
     } else {
@@ -317,12 +317,12 @@ function displayCocktails(printArray) {
         //tempStr = appendCocktailRowStart(text);
         tempStr = "<div class=\"row text-center\">";
         console.log("Appending row start div.");
-        tempStr += appendCocktailBox(text, name);
+        tempStr += appendCocktailBox(name);
         //console.log("temporary STRING: " + tempStr);
         text += tempStr;
       } else if (counter == 2) {
         tempStr = "";
-        tempStr = appendCocktailBox(text, name);
+        tempStr = appendCocktailBox(name);
         tempStr = "</div>";
         console.log("Appending row end div.");
         //tempStr = appendCocktailRowEnd(text);
@@ -331,7 +331,7 @@ function displayCocktails(printArray) {
         text += tempStr;
       } else {
         tempStr = "";
-        tempStr = appendCocktailBox(text, name);
+        tempStr = appendCocktailBox(name);
         //console.log("temporary STRING: " + tempStr);
         text += tempStr;
       }
@@ -345,19 +345,19 @@ function displayCocktails(printArray) {
   $("#bordercontainer").append(text);
 }
 
-function appendCocktailRowStart(text) {
+// function appendCocktailRowStart() {
+//
+//   // var string = text;
+//   var string = "";
+//   console.log("appendCocktailRowStart entered.");
+//   string += '<div class=\"row text-center\">';
+//   //console.log("HTMLstring: " + string);
+//   //text += string;
+//
+//   return string;
+// }
 
-  // var string = text;
-  var string = "";
-  console.log("appendCocktailRowStart entered.");
-  string += '<div class=\"row text-center\">';
-  //console.log("HTMLstring: " + string);
-  //text += string;
-
-  return string;
-}
-
-function appendCocktailBox(text, name) {
+function appendCocktailBox(name) {
 
   console.log("appendCocktailBox entered.");
   var searchName = "";
@@ -395,13 +395,13 @@ function appendCocktailBox(text, name) {
   return string;
 }
 
-function appendCocktailRowEnd(text) {
-
-  //var string = text;
-  var string="";
-  console.log("appendCocktailRowEnd entered.");
-  string += "</div>";
-  //console.log("HTMLstring: " + string);
-  //text += string;
-  return string;
-}
+// function appendCocktailRowEnd() {
+//
+//   //var string = text;
+//   var string="";
+//   console.log("appendCocktailRowEnd entered.");
+//   string += "</div>";
+//   //console.log("HTMLstring: " + string);
+//   //text += string;
+//   return string;
+// }
