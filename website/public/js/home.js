@@ -112,7 +112,9 @@ function displayArray(array) {
           //Append log to console of ingredient
           console.log(ingredient);
           //Create variable to construct and hold ID of button clicked
+          //Replace spaces with underscores, remove apostrophes
           var ingId = "#btn" + ingredient.replace(/\s+/g, '');
+          ingId = ingId.replace(/'/g, '');
           //Append log to console of constructed ID
           console.log(ingId);
           //Remove button
