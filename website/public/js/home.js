@@ -273,7 +273,7 @@ function getDrinksFromCocktailDB() {
             else {
               $.each( currentArray, function( key, value ) {
                 console.log("Entered each for creating updated printArray.");
-                console.log("Print Array:" + printarray)
+                console.log("Print Array:" + printArray);
                 var index = $.inArray( value, printArray );
                 //If index is not -1, it is in the array. Push into new print array.
                 if( index != -1 ) {
