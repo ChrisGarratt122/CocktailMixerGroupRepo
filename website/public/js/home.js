@@ -306,8 +306,7 @@ function displayCocktails(printArray) {
 
 
     if (index === (length - 1) && index != 0) {
-        tempStr = "";
-        tempStr += appendCocktailRowEnd();
+        tempStr = "</div>";
         text += tempStr;
         console.log("Appending final row end.");
     } else {
