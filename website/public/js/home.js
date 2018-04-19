@@ -347,7 +347,8 @@ function displayCocktails(printArray) {
 
 function appendCocktailRowStart(text) {
 
-  var string = text;
+  // var string = text;
+  var string = "";
   console.log("appendCocktailRowStart entered.");
   string += '<div class=\"row text-center\">';
   //console.log("HTMLstring: " + string);
@@ -365,7 +366,8 @@ function appendCocktailBox(text, name) {
   var myUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchName;
   console.log("Url: " + myUrl)
 
-  var string = text;
+  //var string = text;
+  var string ="";
   //Using ajax call to not be asynchronous
   $.ajax({
   url: myUrl,
@@ -391,33 +393,12 @@ function appendCocktailBox(text, name) {
   }
   });
   return string;
-  // $.getJSON(url, function(jsondata) {
-  //   var delayInMilliseconds = 500;
-  //   setTimeout(function()
-  //   {
-  //   console.log("jsondata = " + jsondata);
-  //   var image = jsondata.drinks[0].strDrinkThumb;
-  //   var desc = jsondata.drinks[0].strInstructions;
-  //   console.log("Image: " + image);
-  //   console.log("Desc: " + desc);
-  //
-  //   var string = "";
-  //   string += "<div class=\"col-sm\">";
-  //   string += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
-  //   string += "<h3>" + name + "</h3>";
-  //   string += "<p>" + desc + "</p>";
-  //   string += "</div>";
-  //   console.log("HTMLstring: " + string);
-  //   text += string;
-  //   return text;
-  //
-  //   },delayInMilliseconds);
-  // });
 }
 
 function appendCocktailRowEnd(text) {
 
-  var string = text;
+  //var string = text;
+  var string="";
   console.log("appendCocktailRowEnd entered.");
   string += "</div>";
   //console.log("HTMLstring: " + string);
