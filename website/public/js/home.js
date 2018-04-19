@@ -135,7 +135,7 @@ function displayArray(array) {
 
           //Call get cocktails to update cocktail box, if ingredient array isn't empty.
           if (clientArray != undefined) {
-          getDrinkFromCocktailDB();
+          getDrinksFromCocktailDB();
           }
 
       });
@@ -278,7 +278,7 @@ function getDrinksFromCocktailDB() {
                 if( index != -1 ) {
                   console.log( "Index does not equal negative one: " + index );
                   //console.log(printArray);
-                  newArray.push(currentArray[index - 1]);
+                  newArray.push(printArray[index - 1]);
                   console.log("Just pushed:" + currentArray[index]);
                   console.log(newArray);
                 }
