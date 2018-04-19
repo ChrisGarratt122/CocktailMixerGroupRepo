@@ -238,11 +238,6 @@ function getDrinksFromCocktailDB() {
     console.log("Before for length is: " + length);
     var count =  ingredientArray.length;
 
-    if (count === 1) {
-      console.log("There is only one entry in ingredient array.");
-    }
-    else {
-
     $.each( ingredientArray, function( i, value ) {
         console.log("Beginning of loop, i is: " + i);
         console.log("Beginning of loop, length is:" + length);
@@ -260,11 +255,11 @@ function getDrinksFromCocktailDB() {
             return el.strDrink;
             });
             console.log("Array made from JSON data: " + currentArray);
-            // if (i === 0) {
-            //   console.log("i = 0, making printArray equal to currentArray.")
-            //   printArray = currentArray;
-            // }
-            // else {
+            if (i === 0) {
+              console.log("i = 0, making printArray equal to currentArray.")
+              printArray = currentArray;
+            }
+            else {
               $.each( currentArray, function( key, value ) {
                 console.log("Entered each for creating updated printArray.");
                 var index = $.inArray( value, printArray );
@@ -276,7 +271,7 @@ function getDrinksFromCocktailDB() {
                   console.log("Just pushed:" + currentArray[index]);
                 }
               });
-            //}
+            }
         });
         if (i === count-1) {
           var delayInMilliseconds = 500;
@@ -291,8 +286,8 @@ function getDrinksFromCocktailDB() {
           },delayInMilliseconds);
 
         }
-      });
-    }
+    });
+
 }
 
 function displayCocktails(printArray) {
