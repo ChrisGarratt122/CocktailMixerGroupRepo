@@ -92,6 +92,9 @@ function displayArray(array) {
       $('#button-container').append(text);
       console.log("Ingredient button added.");
 
+      //Remove data ready for getCocktails
+      resetCocktails();
+
       //Go to function for getting drink suggestions from theCocktailDB api
       console.log("Going to getDrinksFromCocktailDB()");
       getDrinksFromCocktailDB();
@@ -381,4 +384,8 @@ function appendCocktailBox(name) {
   }
   });
   return string;
+}
+
+function resetCocktails() {
+  $("#bordercontainer").empty();
 }
