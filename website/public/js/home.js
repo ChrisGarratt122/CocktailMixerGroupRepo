@@ -278,7 +278,7 @@ function getDrinksFromCocktailDB() {
                 if( index != -1 ) {
                   console.log( "Index does not equal negative one: " + index );
                   //console.log(printArray);
-                  newArray.push(currentArray[index]);
+                  newArray.push(currentArray[index - 1]);
                   console.log("Just pushed:" + currentArray[index]);
                   console.log(newArray);
                 }
