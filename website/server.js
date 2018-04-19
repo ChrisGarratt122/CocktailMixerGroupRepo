@@ -136,7 +136,7 @@ app.post('/adduser', function(req, res) {
 
   var datatostore = {
   "login":{"username":req.body.username,"password":req.body.password},
-  "drinks":req.body.drinks}
+  "drinks":[]}
 
 
 //once created we just run the data string against the database and all our new data will be saved/
