@@ -237,6 +237,12 @@ function getDrinksFromCocktailDB() {
     var length = ingredientArray.length;
     console.log("Before for length is: " + length);
     var count =  ingredientArray.length;
+
+    if (count === 1) {
+      console.log("There is only one entry in ingredient array.");
+    }
+    else {
+
     $.each( ingredientArray, function( i, value ) {
         console.log("Beginning of loop, i is: " + i);
         console.log("Beginning of loop, length is:" + length);
@@ -247,7 +253,6 @@ function getDrinksFromCocktailDB() {
         url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchterms;
         console.log(url);
         //Get json array using url
-        //****Gets to here, skips out of for****//
         $.getJSON(url, function(jsondata) {
             console.log("jsondata returned");
             //Create array of drinks from jsondata
@@ -255,11 +260,11 @@ function getDrinksFromCocktailDB() {
             return el.strDrink;
             });
             console.log("Array made from JSON data: " + currentArray);
-            if (i === 0) {
-              console.log("i = 0, making printArray equal to currentArray.")
-              printArray = currentArray;
-            }
-            else {
+            // if (i === 0) {
+            //   console.log("i = 0, making printArray equal to currentArray.")
+            //   printArray = currentArray;
+            // }
+            // else {
               $.each( currentArray, function( key, value ) {
                 console.log("Entered each for creating updated printArray.");
                 var index = $.inArray( value, printArray );
@@ -271,7 +276,7 @@ function getDrinksFromCocktailDB() {
                   console.log("Just pushed:" + currentArray[index]);
                 }
               });
-            }
+            //}
         });
         if (i === count-1) {
           var delayInMilliseconds = 500;
@@ -286,8 +291,8 @@ function getDrinksFromCocktailDB() {
           },delayInMilliseconds);
 
         }
-    });
-
+      });
+    }
 }
 
 function displayCocktails(printArray) {
@@ -344,18 +349,6 @@ function displayCocktails(printArray) {
   $("#bordercontainer").append(text);
 }
 
-// function appendCocktailRowStart() {
-//
-//   // var string = text;
-//   var string = "";
-//   console.log("appendCocktailRowStart entered.");
-//   string += '<div class=\"row text-center\">';
-//   //console.log("HTMLstring: " + string);
-//   //text += string;
-//
-//   return string;
-// }
-
 function appendCocktailBox(name) {
 
   console.log("appendCocktailBox entered.");
@@ -393,14 +386,3 @@ function appendCocktailBox(name) {
   });
   return string;
 }
-
-// function appendCocktailRowEnd() {
-//
-//   //var string = text;
-//   var string="";
-//   console.log("appendCocktailRowEnd entered.");
-//   string += "</div>";
-//   //console.log("HTMLstring: " + string);
-//   //text += string;
-//   return string;
-// }
