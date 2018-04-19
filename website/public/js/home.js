@@ -262,7 +262,7 @@ function getDrinksFromCocktailDB() {
         $.ajax({
           url: url,
           dataType: 'jsondata',
-          async: false,
+          //async: false,
           //data: data,
           success: function(data) {
             console.log("jsondata returned");
@@ -377,7 +377,7 @@ function appendCocktailBox(name) {
   $.ajax({
   url: myUrl,
   dataType: 'json',
-  async: false,
+  //async: false,
   //data: data,
   success: function(data) {
     console.log("jsondata = " + data);
