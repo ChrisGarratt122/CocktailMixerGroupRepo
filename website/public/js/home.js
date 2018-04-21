@@ -270,7 +270,7 @@ function getDrinksFromCocktailDB() {
           });
           console.log("Array made from JSON data: " + currentArray);
 
-          {if (i === 0) {
+          if (i === 0) {
             console.log("i = 0, making printArray equal to currentArray.")
             printArray = currentArray;
           }
