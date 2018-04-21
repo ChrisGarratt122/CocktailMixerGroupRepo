@@ -310,7 +310,7 @@ function displayCocktails(printArray) {
   var text = "";
   var name = "";
   var counter = 0;
-  if (printArray > 11) {
+  if (printArray.length > 11) {
       printArray.length = 11;
   }
   var length = printArray.length;
