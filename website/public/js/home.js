@@ -258,61 +258,61 @@ function getDrinksFromCocktailDB() {
         url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchterms;
         console.log(url);
         //Get json array using url
-        $.ajax({
-        url: url,
-        dataType: 'json',
-        async: true,
-        success: function(data) {
-            console.log("jsondata returned");
-            //Create array of drinks from jsondata
-            currentArray = $.map(data.drinks, function (el) {
-            console.log("MAPPING");
-            return el.strDrink;
-            });
-            console.log("Array made from JSON data: " + currentArray);
-            if (i === 0) {
-              console.log("i = 0, making printArray equal to currentArray.")
-              printArray = currentArray;
-            }
-            else {
-              //**********EXPERIMENTAL CODE FOR MAKING ARRAY OF MUTUAL INGREDIENTS**********
-              // $.each( currentArray, function( key, value ) {
-              //   console.log("Entered each for creating updated printArray.");
-              //   //console.log("Print Array:" + printArray);
-              //   var index = $.inArray( value, printArray );
-              //   //If index is not -1, it is in the array. Push into new print array.
-              //   if( index != -1 ) {
-              //     console.log( "Index does not equal negative one: " + index );
-              //     //console.log(printArray);
-              //     newArray.push(printArray[index]);
-              //     console.log("Just pushed:" + currentArray[index]);
-              //     console.log(newArray);
-              //   }
-              // });
-              if (currentArray.length > (printArray.length / 2)) {
-                console.log("i > 0, function to make new array entered");
-                currentArray.length = printArray.length / 2;
-                printArray.length = printArray.length / 2;
-                var newArray = printArray.concat(currentArray);
-                printArray = newArray;
-                console.log("New print array:" + printArray);
-              }
-            }
 
-            if (i === count-1) {
-              var delayInMilliseconds = 500;
-              setTimeout(function()
-              {
-              // if (newArray.length > 2 ) {
-              //   printArray = newArray;
-              // }
-              console.log("Going to displayCocktails()");
-              console.log("Current PrintArray: " + printArray);
-              displayCocktails(printArray);
-              },delayInMilliseconds);
+      (function (currentArray, printArray) {
+        $.JSONget (url, function (data) {
+          console.log("jsondata returned");
+          //Create array of drinks from jsondata
+          currentArray = $.map(data.drinks, function (el) {
+          console.log("MAPPING");
+          return el.strDrink;
+          });
+          console.log("Array made from JSON data: " + currentArray);
+          if (i === 0) {
+            console.log("i = 0, making printArray equal to currentArray.")
+            printArray = currentArray;
+          }
+          else {
+            //**********EXPERIMENTAL CODE FOR MAKING ARRAY OF MUTUAL INGREDIENTS**********
+            // $.each( currentArray, function( key, value ) {
+            //   console.log("Entered each for creating updated printArray.");
+            //   //console.log("Print Array:" + printArray);
+            //   var index = $.inArray( value, printArray );
+            //   //If index is not -1, it is in the array. Push into new print array.
+            //   if( index != -1 ) {
+            //     console.log( "Index does not equal negative one: " + index );
+            //     //console.log(printArray);
+            //     newArray.push(printArray[index]);
+            //     console.log("Just pushed:" + currentArray[index]);
+            //     console.log(newArray);
+            //   }
+            // });
+            if (currentArray.length > (printArray.length / 2)) {
+              console.log("i > 0, function to make new array entered");
+              currentArray.length = printArray.length / 2;
+              printArray.length = printArray.length / 2;
+              var newArray = printArray.concat(currentArray);
+              printArray = newArray;
+              console.log("New print array:" + printArray);
             }
           }
+
+          if (i === count-1) {
+            var delayInMilliseconds = 500;
+            setTimeout(function()
+            {
+            // if (newArray.length > 2 ) {
+            //   printArray = newArray;
+            // }
+            console.log("Going to displayCocktails()");
+            console.log("Current PrintArray: " + printArray);
+            displayCocktails(printArray);
+            },delayInMilliseconds);
+          }
+        }
         });
+      })(currentArray, printArray);
+
         // if (i === count-1) {
         //   var delayInMilliseconds = 500;
         //   setTimeout(function()
