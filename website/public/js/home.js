@@ -270,9 +270,6 @@ function getDrinksFromCocktailDB() {
           });
           console.log("Array made from JSON data: " + currentArray);
 
-
-          var delayInMilliseconds = 500;
-          setTimeout(function()
           {if (i === 0) {
             console.log("i = 0, making printArray equal to currentArray.")
             printArray = currentArray;
@@ -292,6 +289,9 @@ function getDrinksFromCocktailDB() {
             //     console.log(newArray);
             //   }
             // });
+            var delayInMilliseconds = 500;
+            setTimeout(function()
+            {
             console.log("Print: " + printArray);
             console.log("Current: " + currentArray);
             console.log("Old: " + oldArray);
@@ -303,8 +303,9 @@ function getDrinksFromCocktailDB() {
               printArray = newArray;
               console.log("New print array:" + printArray);
             }
+            },delayInMilliseconds);
           }
-          },delayInMilliseconds);
+
 
           if (i === count-1) {
             var delayInMilliseconds = 1000;
