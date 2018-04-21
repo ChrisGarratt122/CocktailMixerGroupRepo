@@ -311,7 +311,8 @@ function getDrinksFromCocktailDB() {
       console.log("Current PrintArray: " + printArray);
       displayCocktails(printArray);
       },delayInMilliseconds);
-      }(currentArray);
+      }
+  }(currentArray);
 
         // if (i === count-1) {
         //   var delayInMilliseconds = 500;
