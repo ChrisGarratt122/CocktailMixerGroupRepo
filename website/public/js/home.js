@@ -258,7 +258,7 @@ function getDrinksFromCocktailDB() {
         url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchterms;
         console.log(url);
         //Get json array using url
-        $.getJSON(url, function(jsondata) {
+        $.getJSON(url, function(jsondata, i) {
             console.log("jsondata returned");
             //Create array of drinks from jsondata
             currentArray = $.map(jsondata.drinks, function (el) {
