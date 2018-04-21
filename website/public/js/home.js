@@ -311,7 +311,7 @@ function displayCocktails(printArray) {
   var name = "";
   var counter = 0;
   if (printArray.length > 11) {
-      printArray.length = 11;
+      printArray.length = 15;
   }
   var length = printArray.length;
   var tempStr = "";
