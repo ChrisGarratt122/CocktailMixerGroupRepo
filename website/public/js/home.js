@@ -271,6 +271,23 @@ function getDrinksFromCocktailDB() {
       console.log("Array made from JSON data: " + currentArray);
       console.log("i = 0, making printArray equal to currentArray.")
       printArray = currentArray;
+
+      var delayInMilliseconds = 200;
+      setTimeout(function()
+      {
+      // if (newArray.length > 2 ) {
+      //   printArray = newArray;
+      // }
+      console.log("Going to displayCocktails()");
+      console.log("Current PrintArray: " + printArray);
+      displayCocktails(printArray);
+      },delayInMilliseconds);
+      }(currentArray);
+
+  });
+}
+
+
           // else {
           //   //**********EXPERIMENTAL CODE FOR MAKING ARRAY OF MUTUAL INGREDIENTS**********
           //   // $.each( currentArray, function( key, value ) {
@@ -301,18 +318,6 @@ function getDrinksFromCocktailDB() {
           //   }
           //   },delayInMilliseconds);
           // }
-      var delayInMilliseconds = 200;
-      setTimeout(function()
-      {
-      // if (newArray.length > 2 ) {
-      //   printArray = newArray;
-      // }
-      console.log("Going to displayCocktails()");
-      console.log("Current PrintArray: " + printArray);
-      displayCocktails(printArray);
-      },delayInMilliseconds);
-      }
-  }(currentArray);
 
         // if (i === count-1) {
         //   var delayInMilliseconds = 500;
@@ -326,10 +331,6 @@ function getDrinksFromCocktailDB() {
         //   displayCocktails(printArray);
         //   },delayInMilliseconds);
         // }
-      });
-    )
-}
-
 
 
 function displayCocktails(printArray) {
