@@ -77,6 +77,7 @@ app.get('/mycocktails', function(req, res) {
     res.render('pages/myCocktails', {
       user: result
     })
+  });
 });
 
 app.get('/login', function(req, res) {
