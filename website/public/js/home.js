@@ -286,6 +286,8 @@ function getDrinksFromCocktailDB() {
             //     console.log(newArray);
             //   }
             // });
+            console.log("Print: " + printArray);
+            console.log("Current: " + currentArray);
             if (currentArray.length > (printArray.length / 2)) {
               console.log("i > 0, function to make new array entered");
               currentArray.length = printArray.length / 2;
