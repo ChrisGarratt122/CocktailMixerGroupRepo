@@ -328,6 +328,8 @@ function getDrinksFromCocktailDB() {
         // }
 });
 
+}
+
 
 
 function displayCocktails(printArray) {
