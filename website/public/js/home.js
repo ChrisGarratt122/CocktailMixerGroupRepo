@@ -93,7 +93,7 @@ function displayArray(array) {
       console.log("Ingredient button added.");
 
       //Remove data ready for getCocktails
-      resetCocktails();
+      //resetCocktails();
 
       //Go to function for getting drink suggestions from theCocktailDB api
       console.log("Going to getDrinksFromCocktailDB()");
@@ -133,7 +133,7 @@ function displayArray(array) {
           console.log(clientArray);
 
           //Reset cocktail box
-          resetCocktails();
+          //resetCocktails();
 
           //Call get cocktails to update cocktail box, if ingredient array isn't empty.
           if (clientArray != undefined) {
@@ -247,82 +247,73 @@ function getDrinksFromCocktailDB() {
     console.log("Ingredient Array length : " + ingredientArray.length);
     var length = ingredientArray.length;
     console.log("Before for length is: " + length);
-    var count =  ingredientArray.length;
 
-    $.each( ingredientArray, function( i, value, printArray ) {
-        if (currentArray != undefined ) {
-          printArray = currentArray;
-        }
-        console.log("Beginning of loop, i is: " + i);
-        console.log("Beginning of loop, length is:" + length);
-        //Build url to get json
-        searchterms = ingredientArray[i].replace(/\s+/g, '_');
-        searchterms = searchterms.replace(/'/g, '');
-        url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchterms;
-        console.log(url);
-        //Get json array using url
+    // if (currentArray != undefined ) {
+    //   printArray = currentArray;
+    // }
+    console.log("Beginning of loop, i is: " + i);
+    console.log("Beginning of loop, length is:" + length);
+    //Build url to get json
+    searchterms = ingredientArray[ingredientArray.length].replace(/\s+/g, '_');
+    searchterms = searchterms.replace(/'/g, '');
+    url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchterms;
+    console.log(url);
+    //Get json array using url
 
-      (function (currentArray) {
-        $.getJSON (url, function (data) {
-          console.log("jsondata returned");
-          //Create array of drinks from jsondata
-          currentArray = $.map(data.drinks, function (el) {
-          console.log("MAPPING");
-          return el.strDrink;
-          });
-          console.log("Array made from JSON data: " + currentArray);
+    (function (currentArray) {
+    $.getJSON (url, function (data) {
+      console.log("jsondata returned");
+      //Create array of drinks from jsondata
+      currentArray = $.map(data.drinks, function (el) {
+      console.log("MAPPING");
+      return el.strDrink;
+      });
+      console.log("Array made from JSON data: " + currentArray);
+      console.log("i = 0, making printArray equal to currentArray.")
+      printArray = currentArray;
 
-          if (i === 0) {
-            console.log("i = 0, making printArray equal to currentArray.")
-            printArray = currentArray;
-          }
-          else {
-            //**********EXPERIMENTAL CODE FOR MAKING ARRAY OF MUTUAL INGREDIENTS**********
-            // $.each( currentArray, function( key, value ) {
-            //   console.log("Entered each for creating updated printArray.");
-            //   //console.log("Print Array:" + printArray);
-            //   var index = $.inArray( value, printArray );
-            //   //If index is not -1, it is in the array. Push into new print array.
-            //   if( index != -1 ) {
-            //     console.log( "Index does not equal negative one: " + index );
-            //     //console.log(printArray);
-            //     newArray.push(printArray[index]);
-            //     console.log("Just pushed:" + currentArray[index]);
-            //     console.log(newArray);
-            //   }
-            // });
-            var delayInMilliseconds = 500;
-            setTimeout(function()
-            {
-            console.log("Print: " + printArray);
-            console.log("Current: " + currentArray);
-            if (currentArray.length > (printArray.length / 2)) {
-              console.log("i > 0, function to make new array entered");
-              currentArray.length = printArray.length / 2;
-              printArray.length = printArray.length / 2;
-              var newArray = printArray.concat(currentArray);
-              printArray = newArray;
-              console.log("New print array:" + printArray);
-            }
-            },delayInMilliseconds);
-          }
-
-
-          if (i === count-1) {
-            var delayInMilliseconds = 1000;
-            setTimeout(function()
-            {
-            // if (newArray.length > 2 ) {
-            //   printArray = newArray;
-            // }
-            console.log("Going to displayCocktails()");
-            console.log("Current PrintArray: " + printArray);
-            displayCocktails(printArray);
-            },delayInMilliseconds);
-          }
-
-        });
-      })(currentArray);
+          // else {
+          //   //**********EXPERIMENTAL CODE FOR MAKING ARRAY OF MUTUAL INGREDIENTS**********
+          //   // $.each( currentArray, function( key, value ) {
+          //   //   console.log("Entered each for creating updated printArray.");
+          //   //   //console.log("Print Array:" + printArray);
+          //   //   var index = $.inArray( value, printArray );
+          //   //   //If index is not -1, it is in the array. Push into new print array.
+          //   //   if( index != -1 ) {
+          //   //     console.log( "Index does not equal negative one: " + index );
+          //   //     //console.log(printArray);
+          //   //     newArray.push(printArray[index]);
+          //   //     console.log("Just pushed:" + currentArray[index]);
+          //   //     console.log(newArray);
+          //   //   }
+          //   // });
+          //   var delayInMilliseconds = 500;
+          //   setTimeout(function()
+          //   {
+          //   console.log("Print: " + printArray);
+          //   console.log("Current: " + currentArray);
+          //   if (currentArray.length > (printArray.length / 2)) {
+          //     console.log("i > 0, function to make new array entered");
+          //     currentArray.length = printArray.length / 2;
+          //     printArray.length = printArray.length / 2;
+          //     var newArray = printArray.concat(currentArray);
+          //     printArray = newArray;
+          //     console.log("New print array:" + printArray);
+          //   }
+          //   },delayInMilliseconds);
+          // }
+      var delayInMilliseconds = 200;
+      setTimeout(function()
+      {
+      // if (newArray.length > 2 ) {
+      //   printArray = newArray;
+      // }
+      console.log("Going to displayCocktails()");
+      console.log("Current PrintArray: " + printArray);
+      displayCocktails(printArray);
+      },delayInMilliseconds);
+      }
+      }(currentArray);
 
         // if (i === count-1) {
         //   var delayInMilliseconds = 500;
@@ -336,9 +327,9 @@ function getDrinksFromCocktailDB() {
         //   displayCocktails(printArray);
         //   },delayInMilliseconds);
         // }
-    });
+});
 
-}
+
 
 function displayCocktails(printArray) {
   console.log("Entered displayCocktails")
