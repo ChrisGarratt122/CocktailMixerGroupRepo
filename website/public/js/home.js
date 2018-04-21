@@ -260,7 +260,7 @@ function getDrinksFromCocktailDB() {
         //Get json array using url
 
       (function (currentArray, printArray) {
-        $.jsonget (url, function (data) {
+        $.getJSON (url, function (data) {
           console.log("jsondata returned");
           //Create array of drinks from jsondata
           currentArray = $.map(data.drinks, function (el) {
