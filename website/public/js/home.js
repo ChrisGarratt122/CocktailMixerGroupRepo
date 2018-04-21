@@ -289,14 +289,14 @@ function getDrinksFromCocktailDB() {
                 printArray.length = printArray.length / 2;
                 var newArray = printArray.concat(currentArray);
                 printArray = newArray;
-              
+
               }
             }
         });
         if (i === count-1) {
           var delayInMilliseconds = 500;
           setTimeout(function()
-          // {
+          {
           // if (newArray.length > 2 ) {
           //   printArray = newArray;
           // }
