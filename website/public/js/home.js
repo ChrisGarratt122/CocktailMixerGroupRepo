@@ -309,7 +309,7 @@ function getDrinksFromCocktailDB() {
             displayCocktails(printArray);
             },delayInMilliseconds);
           }
-        }
+        )}
         });
       })(currentArray, printArray);
 
