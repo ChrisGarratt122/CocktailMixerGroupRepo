@@ -269,7 +269,11 @@ function getDrinksFromCocktailDB() {
           return el.strDrink;
           });
           console.log("Array made from JSON data: " + currentArray);
-          if (i === 0) {
+
+
+          var delayInMilliseconds = 500;
+          setTimeout(function()
+          {if (i === 0) {
             console.log("i = 0, making printArray equal to currentArray.")
             printArray = currentArray;
           }
@@ -300,6 +304,7 @@ function getDrinksFromCocktailDB() {
               console.log("New print array:" + printArray);
             }
           }
+          },delayInMilliseconds);
 
           if (i === count-1) {
             var delayInMilliseconds = 1000;
