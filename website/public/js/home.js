@@ -360,6 +360,7 @@ function displayCocktails(printArray) {
 
 function appendCocktailBox(name) {
 
+  console.log("Name: " + name);
   console.log("appendCocktailBox entered.");
   var searchName = "";
   searchName = name.replace(/\s+/g, '_');
