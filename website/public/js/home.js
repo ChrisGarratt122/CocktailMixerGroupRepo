@@ -310,14 +310,20 @@ function displayCocktails(printArray) {
   var text = "";
   var name = "";
   var counter = 0;
-  printArray.length = 11;
+  if (printArray > 11) {
+      printArray.length = 11;
+  }
   var length = printArray.length;
   var tempStr = "";
   $.each(printArray, function(index, val) {
     console.log(printArray[index]);
     name  = printArray[index];
+    console.log("Name: " + name);
     console.log("Counter =" + counter);
-
+    //If array tries to append undefined item from JSON
+    // if (printArray[index] === undefined) {
+    //   return true;
+    // }
 
     if (index === (length - 1) && index != 0) {
         tempStr = "</div>";
