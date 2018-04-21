@@ -300,16 +300,16 @@ function getDrinksFromCocktailDB() {
             }
 
             if (i === count-1) {
-              //var delayInMilliseconds = 500;
-              //setTimeout(function()
-              //{
+              var delayInMilliseconds = 500;
+              setTimeout(function()
+              {
               // if (newArray.length > 2 ) {
               //   printArray = newArray;
               // }
               console.log("Going to displayCocktails()");
               console.log("Current PrintArray: " + printArray);
               displayCocktails(printArray);
-              //},delayInMilliseconds);
+              },delayInMilliseconds);
             }
           }
         });
