@@ -235,7 +235,6 @@ function getDrinksFromCocktailDB() {
     var searchterms = "";
     var url = "";
     var currentArray = [];
-    var printArray = [];
 
     console.log("getDrinksFromCocktailDB() entered.")
     var ingredientArray = [];
@@ -270,7 +269,7 @@ function getDrinksFromCocktailDB() {
           console.log("Array made from JSON data: " + currentArray);
           if (i === 0) {
             console.log("i = 0, making printArray equal to currentArray.")
-            printArray = currentArray;
+            var printArray = currentArray;
           }
           else {
             //**********EXPERIMENTAL CODE FOR MAKING ARRAY OF MUTUAL INGREDIENTS**********
