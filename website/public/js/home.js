@@ -258,11 +258,15 @@ function getDrinksFromCocktailDB() {
         url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchterms;
         console.log(url);
         //Get json array using url
-        
-        $.getJSON(url, function(jsondata, i) {
+        $.ajax({
+        url: myUrl,
+        dataType: 'json',
+        async: true,
+        success: function(data) {
             console.log("jsondata returned");
             //Create array of drinks from jsondata
             currentArray = $.map(jsondata.drinks, function (el) {
+            console.log("MAPPING");
             return el.strDrink;
             });
             console.log("Array made from JSON data: " + currentArray);
@@ -291,22 +295,35 @@ function getDrinksFromCocktailDB() {
                 printArray.length = printArray.length / 2;
                 var newArray = printArray.concat(currentArray);
                 printArray = newArray;
-
               }
             }
+
+            if (i === count-1) {
+              //var delayInMilliseconds = 500;
+              //setTimeout(function()
+              //{
+              // if (newArray.length > 2 ) {
+              //   printArray = newArray;
+              // }
+              console.log("Going to displayCocktails()");
+              console.log("Current PrintArray: " + printArray);
+              displayCocktails(printArray);
+              //},delayInMilliseconds);
+            }
+          }
         });
-        if (i === count-1) {
-          var delayInMilliseconds = 500;
-          setTimeout(function()
-          {
-          // if (newArray.length > 2 ) {
-          //   printArray = newArray;
-          // }
-          console.log("Going to displayCocktails()");
-          console.log("Current PrintArray: " + printArray);
-          displayCocktails(printArray);
-          },delayInMilliseconds);
-        }
+        // if (i === count-1) {
+        //   var delayInMilliseconds = 500;
+        //   setTimeout(function()
+        //   {
+        //   // if (newArray.length > 2 ) {
+        //   //   printArray = newArray;
+        //   // }
+        //   console.log("Going to displayCocktails()");
+        //   console.log("Current PrintArray: " + printArray);
+        //   displayCocktails(printArray);
+        //   },delayInMilliseconds);
+        // }
     });
 
 }
