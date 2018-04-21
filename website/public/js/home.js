@@ -298,7 +298,7 @@ function getDrinksFromCocktailDB() {
           }
 
           if (i === count-1) {
-            var delayInMilliseconds = 500;
+            var delayInMilliseconds = 1000;
             setTimeout(function()
             {
             // if (newArray.length > 2 ) {
