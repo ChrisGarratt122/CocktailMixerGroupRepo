@@ -260,7 +260,7 @@ function getDrinksFromCocktailDB() {
         //Get json array using url
         $.ajax({
         url: url,
-        dataType: 'json',
+        dataType: 'jsondata',
         async: true,
         success: function(data) {
             console.log("jsondata returned");
