@@ -235,9 +235,7 @@ function getDrinksFromCocktailDB() {
     var searchterms = "";
     var url = "";
     var currentArray = [];
-    var oldArray = [];
     var printArray = [];
-    var newArray = [];
 
     console.log("getDrinksFromCocktailDB() entered.")
     var ingredientArray = [];
@@ -254,7 +252,6 @@ function getDrinksFromCocktailDB() {
     $.each( ingredientArray, function( i, value ) {
         console.log("Beginning of loop, i is: " + i);
         console.log("Beginning of loop, length is:" + length);
-        //oldArray = printArray;
         //Build url to get json
         searchterms = ingredientArray[i].replace(/\s+/g, '_');
         searchterms = searchterms.replace(/'/g, '');
@@ -273,28 +270,36 @@ function getDrinksFromCocktailDB() {
               printArray = currentArray;
             }
             else {
-              $.each( currentArray, function( key, value ) {
-                console.log("Entered each for creating updated printArray.");
-                //console.log("Print Array:" + printArray);
-                var index = $.inArray( value, printArray );
-                //If index is not -1, it is in the array. Push into new print array.
-                if( index != -1 ) {
-                  console.log( "Index does not equal negative one: " + index );
-                  //console.log(printArray);
-                  newArray.push(printArray[index]);
-                  console.log("Just pushed:" + currentArray[index]);
-                  console.log(newArray);
-                }
-              });
+              //**********EXPERIMENTAL CODE FOR MAKING ARRAY OF MUTUAL INGREDIENTS**********
+              // $.each( currentArray, function( key, value ) {
+              //   console.log("Entered each for creating updated printArray.");
+              //   //console.log("Print Array:" + printArray);
+              //   var index = $.inArray( value, printArray );
+              //   //If index is not -1, it is in the array. Push into new print array.
+              //   if( index != -1 ) {
+              //     console.log( "Index does not equal negative one: " + index );
+              //     //console.log(printArray);
+              //     newArray.push(printArray[index]);
+              //     console.log("Just pushed:" + currentArray[index]);
+              //     console.log(newArray);
+              //   }
+              // });
+              if (currentArray.length > (printArray.length / 2)) {
+                currentArray.length = printArray.length / 2;
+                printArray.length = printArray.length / 2;
+                var newArray = printArray.concat(currentArray);
+                printArray = newArray;
+              
+              }
             }
         });
         if (i === count-1) {
           var delayInMilliseconds = 500;
           setTimeout(function()
-          {
-          if (newArray.length > 2 ) {
-            printArray = newArray;
-          }
+          // {
+          // if (newArray.length > 2 ) {
+          //   printArray = newArray;
+          // }
           console.log("Going to displayCocktails()");
           console.log("Current PrintArray: " + printArray);
           displayCocktails(printArray);
