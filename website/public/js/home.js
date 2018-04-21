@@ -260,7 +260,7 @@ function getDrinksFromCocktailDB() {
         //Get json array using url
 
       (function (currentArray, printArray) {
-        $.JSONget (url, function (data) {
+        $.jsonget (url, function (data) {
           console.log("jsondata returned");
           //Create array of drinks from jsondata
           currentArray = $.map(data.drinks, function (el) {
@@ -309,7 +309,7 @@ function getDrinksFromCocktailDB() {
             displayCocktails(printArray);
             //},delayInMilliseconds);
           }
-        
+
         });
       })(currentArray, printArray);
 
