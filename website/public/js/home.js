@@ -296,12 +296,11 @@ function getDrinksFromCocktailDB() {
             {
             console.log("Print: " + printArray);
             console.log("Current: " + currentArray);
-            console.log("Old: " + oldArray);
-            if (currentArray.length > (oldArray.length / 2)) {
+            if (currentArray.length > (printArray.length / 2)) {
               console.log("i > 0, function to make new array entered");
-              currentArray.length = oldArray.length / 2;
-              oldArray.length = oldArray.length / 2;
-              var newArray = oldArray.concat(currentArray);
+              currentArray.length = printArray.length / 2;
+              printArray.length = printArray.length / 2;
+              var newArray = printArray.concat(currentArray);
               printArray = newArray;
               console.log("New print array:" + printArray);
             }
