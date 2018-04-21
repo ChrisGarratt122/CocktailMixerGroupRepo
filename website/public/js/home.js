@@ -260,7 +260,6 @@ function getDrinksFromCocktailDB() {
     console.log(url);
     //Get json array using url
 
-    (function (currentArray) {
     $.getJSON (url, function (data) {
       console.log("jsondata returned");
       //Create array of drinks from jsondata
@@ -282,10 +281,10 @@ function getDrinksFromCocktailDB() {
       console.log("Current PrintArray: " + printArray);
       displayCocktails(printArray);
       },delayInMilliseconds);
-      (currentArray);
 
   });
 }
+
 
 
           // else {
