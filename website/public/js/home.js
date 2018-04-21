@@ -250,7 +250,9 @@ function getDrinksFromCocktailDB() {
     var count =  ingredientArray.length;
 
     $.each( ingredientArray, function( i, value, printArray ) {
-        var oldArray = printArray;
+        if (currentArray != undefined ) {
+          printArray = currentArray;
+        }
         console.log("Beginning of loop, i is: " + i);
         console.log("Beginning of loop, length is:" + length);
         //Build url to get json
