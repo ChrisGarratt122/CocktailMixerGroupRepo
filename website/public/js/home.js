@@ -296,6 +296,7 @@ function getDrinksFromCocktailDB() {
                 var newArray = printArray.concat(currentArray);
                 printArray = newArray;
                 console.log("New print array:" + printArray);
+                return printArray;
               }
             }
 
