@@ -299,7 +299,6 @@ function getDrinksFromCocktailDB() {
           console.log("Current PrintArray: " + printArray);
           displayCocktails(printArray);
           },delayInMilliseconds);
-
         }
     });
 
@@ -364,6 +363,7 @@ function appendCocktailBox(name) {
   console.log("appendCocktailBox entered.");
   var searchName = "";
   searchName = name.replace(/\s+/g, '_');
+  console.log(searchName);
   searchName = searchName.replace(/'/g, '');
   var myUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchName;
   console.log("Url: " + myUrl)
