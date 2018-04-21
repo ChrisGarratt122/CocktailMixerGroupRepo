@@ -260,12 +260,12 @@ function getDrinksFromCocktailDB() {
         //Get json array using url
         $.ajax({
         url: url,
-        dataType: 'jsondata',
+        dataType: 'json',
         async: true,
         success: function(data) {
             console.log("jsondata returned");
             //Create array of drinks from jsondata
-            currentArray = $.map(jsondata.drinks, function (el) {
+            currentArray = $.map(data.drinks, function (el) {
             console.log("MAPPING");
             return el.strDrink;
             });
