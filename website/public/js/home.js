@@ -271,7 +271,6 @@ function getDrinksFromCocktailDB() {
       console.log("Array made from JSON data: " + currentArray);
       console.log("i = 0, making printArray equal to currentArray.")
       printArray = currentArray;
-
           // else {
           //   //**********EXPERIMENTAL CODE FOR MAKING ARRAY OF MUTUAL INGREDIENTS**********
           //   // $.each( currentArray, function( key, value ) {
@@ -326,8 +325,8 @@ function getDrinksFromCocktailDB() {
         //   displayCocktails(printArray);
         //   },delayInMilliseconds);
         // }
-});
-
+      });
+    )
 }
 
 
