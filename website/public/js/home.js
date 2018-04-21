@@ -249,7 +249,7 @@ function getDrinksFromCocktailDB() {
     console.log("Before for length is: " + length);
     var count =  ingredientArray.length;
 
-    $.each( ingredientArray, printArray, function( i, value ) {
+    $.each( ingredientArray, function( i, value, printArray ) {
         var oldArray = printArray;
         console.log("Beginning of loop, i is: " + i);
         console.log("Beginning of loop, length is:" + length);
