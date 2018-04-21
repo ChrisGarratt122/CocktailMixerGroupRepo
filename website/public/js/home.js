@@ -235,6 +235,7 @@ function getDrinksFromCocktailDB() {
     var searchterms = "";
     var url = "";
     var currentArray = [];
+    var printArray = [];
 
     console.log("getDrinksFromCocktailDB() entered.")
     var ingredientArray = [];
@@ -248,7 +249,8 @@ function getDrinksFromCocktailDB() {
     console.log("Before for length is: " + length);
     var count =  ingredientArray.length;
 
-    $.each( ingredientArray, function( i, value ) {
+    $.each( ingredientArray, printArray, function( i, value ) {
+        var oldArray = printArray;
         console.log("Beginning of loop, i is: " + i);
         console.log("Beginning of loop, length is:" + length);
         //Build url to get json
@@ -269,7 +271,7 @@ function getDrinksFromCocktailDB() {
           console.log("Array made from JSON data: " + currentArray);
           if (i === 0) {
             console.log("i = 0, making printArray equal to currentArray.")
-            var printArray = currentArray;
+            printArray = currentArray;
           }
           else {
             //**********EXPERIMENTAL CODE FOR MAKING ARRAY OF MUTUAL INGREDIENTS**********
@@ -288,11 +290,12 @@ function getDrinksFromCocktailDB() {
             // });
             console.log("Print: " + printArray);
             console.log("Current: " + currentArray);
-            if (currentArray.length > (printArray.length / 2)) {
+            console.log("Old: " + oldArray);
+            if (currentArray.length > (oldArray.length / 2)) {
               console.log("i > 0, function to make new array entered");
-              currentArray.length = printArray.length / 2;
-              printArray.length = printArray.length / 2;
-              var newArray = printArray.concat(currentArray);
+              currentArray.length = oldArray.length / 2;
+              oldArray.length = oldArray.length / 2;
+              var newArray = oldArray.concat(currentArray);
               printArray = newArray;
               console.log("New print array:" + printArray);
             }
