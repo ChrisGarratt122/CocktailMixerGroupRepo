@@ -422,7 +422,7 @@ function displayCocktails(printArray) {
        type: 'POST',
        url: '/adddrink',
        data: cocktail,
-       dataType: "json",
+       dataType: "string",
        cache: false,
        contentType: "application/json",
        success: function(data) {
