@@ -68,8 +68,8 @@ app.get('/mycocktails', function(req, res) {
   //If user is not currently logged in, redirect them to login page.
   if(!req.session.loggedin){res.redirect('/login');return;}
   //get the requested user based on their username, eg /profile?username=dioreticllama
-  console.log(req.user);
-  var uname = req.query.username;
+  console.log(sess.username);
+  var uname = sess.username;
   //this query finds the first document in the array with that username.
   //Because the username value sits in the login section of the user data we use login.username
   db.collection('users').findOne({
