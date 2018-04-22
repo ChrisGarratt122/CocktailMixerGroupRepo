@@ -35,6 +35,8 @@ app.use(bodyParser.urlencoded({
 
 var db;
 
+var sess;
+
 //Setting connection to database, setting db var as database.
 MongoClient.connect(url, function(err, database) {
   if (err) throw err;
@@ -98,6 +100,10 @@ app.post('/dologin', function(req, res) {
   console.log(JSON.stringify(req.body))
   var uname = req.body.username;
   var pword = req.body.password;
+
+  sess = req.session;
+
+  sess.username = uname;
 
   db.collection('users').findOne({"login.username":uname}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
@@ -166,4 +172,19 @@ app.post('/adduser', function(req, res) {
 app.post('/adddrink', function(req, res){
 	console.log(req.body);
   console.log(req.body.field1);
+  console.log(sess.username);
+  var username = post[];
+  var cocktail = post['drink'];
+    // I checked here that partyId and trackId are valid vars.
+    db.profiles.update( { $push: { drinks: [cocktail] } }, function(err, added) {
+      if( err || !added ) {
+        console.log("Track not added.");
+        callback(null,added);
+      }
+      else {
+        console.log("Track added to drink with name: "+ cocktail);
+        callback(null,added);
+        }
+    });
+
 });
