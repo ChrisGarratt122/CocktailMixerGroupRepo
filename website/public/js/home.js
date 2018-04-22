@@ -415,7 +415,7 @@ function displayCocktails(printArray) {
       $.ajax({
        type: 'POST',
        data: cocktail,
-       url: 'http://localhost:3000/endpoint',
+       url: 'http://localhost:8080/adddrink',
        success: function(data) {
         console.log('success');
         console.log(cocktail + 'sent.');
