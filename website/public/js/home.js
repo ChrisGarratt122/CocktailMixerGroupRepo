@@ -409,8 +409,8 @@ function displayCocktails(printArray) {
                        }
                    });*/
       var cocktailid = $(this).attr('id');
-      cocktailid = cocktail.replace(/\s+/g, '_');
-      cocktailid = cocktail.replace(/'/g, '');
+      cocktailid = cocktailid.replace(/\s+/g, '_');
+      cocktailid = cocktailid.replace(/'/g, '');
       alert(cocktailid);
 
       var cocktaildata = "{cocktail: " + cocktailid + "}";
