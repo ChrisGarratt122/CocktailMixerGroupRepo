@@ -412,15 +412,21 @@ function displayCocktails(printArray) {
       cocktail = cocktail.replace(/\s+/g, '');
       cocktail = cocktail.replace(/'/g, '');
 
-      $.ajax({
-       type: 'POST',
-       data: cocktail,
-       url: 'http://localhost:8080/adddrink',
-       success: function(data) {
-        console.log('success');
-        console.log(cocktail + 'sent.');
-      }
-      });
+      $.post('/adddrink');
+
+      // $('#like').click(function(){
+      //   $.post('/test');
+      // });
+
+      // $.ajax({
+      //  type: 'POST',
+      //  data: cocktail,
+      //  url: 'http://localhost:8080/adddrink',
+      //  success: function(data) {
+      //   console.log('success');
+      //   console.log(cocktail + 'sent.');
+      // }
+      // });
     })
   };
 
