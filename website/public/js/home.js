@@ -460,13 +460,18 @@ function appendCocktailBox(name) {
     console.log("Desc: " + desc);
 
     string += "<div id=\"" + name + "\" class=\"col-sm\">";
+    string += "<div class=\"home-image\"";
     string += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
+    string += "<div class=\"overlay-test\">";
+    string += "</div>";
+    string += "</div>";
     string += "<h3>" + name + "</h3>";
     string += "<p>" + desc + "</p>";
     string += "</div>";
     //console.log("HTMLstring: " + string);
     //text += string;
     //return string;
+
   }
   });
   return string;
