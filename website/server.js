@@ -177,7 +177,7 @@ app.post('/adddrink', function(req, res){
   var username = sess.username;
   var cocktail = req.body.field1;
 
-  db.users.update( { "username" : username },{ $push: { "drinks": cocktail } });
+  db.profiles.update( { "username" : username },{ $push: { "drinks": cocktail } });
 
   //res.send("Complete.");
 
