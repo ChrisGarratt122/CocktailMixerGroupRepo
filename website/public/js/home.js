@@ -424,7 +424,6 @@ function displayCocktails(printArray) {
        data: cocktail,
        dataType: "string",
        cache: false,
-       contentType: "application/json",
        success: function(data) {
         console.log('success');
         console.log(cocktail + 'sent.');
