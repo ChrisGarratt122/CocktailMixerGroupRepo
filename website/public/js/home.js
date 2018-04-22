@@ -421,13 +421,14 @@ function displayCocktails(printArray) {
       $.ajax({
        type: 'POST',
        url: '/adddrink',
-       data: JSON.stringify(cocktail),
+       data: cocktai),
        dataType: "json",
        cache: false,
        contentType: "application/json",
        success: function(data) {
         console.log('success');
         console.log(cocktail + 'sent.');
+        console.log(JSON.stringify(data));
        }
       });
     })
