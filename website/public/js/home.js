@@ -397,7 +397,7 @@ function displayCocktails(printArray) {
       console.log(this);
       //Create variable to hold display name of ingredient from clicked button
       var ingredient = $(this).text();
-}
+  });
 }
 
 function appendCocktailBox(name) {
