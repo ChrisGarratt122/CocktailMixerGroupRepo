@@ -160,3 +160,8 @@ app.post('/adduser', function(req, res) {
     res.redirect('/')
   })
 });
+
+app.post('/adddrink', function(req, res){
+
+	console.log('Cocktail: ' + req.body);
+});

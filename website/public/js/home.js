@@ -391,14 +391,38 @@ function displayCocktails(printArray) {
   console.log("About to append full html string.");
   $("#bordercontainer").append(text);
 
-  $(".col-sm").click(function(){
+  $(".col-sm").click(function(e){
       //Append to console a log that ingredient button has been clicked.
       console.log("Cocktail Clicked.");
       console.log(this);
       //Create variable to hold display name of ingredient from clicked button
-      var ingredient = $(this).text();
-  });
-}
+      e.preventDefault();
+      console.log('select_link clicked');
+                    /*$.ajax({
+                       dataType: 'jsonp',
+                       data: "data=yeah",
+                       jsonp: 'callback',
+                       url: 'http://localhost:3000/endpoint?callback=?',
+                       success: function(data) {
+                           console.log('success');
+                           console.log(JSON.stringify(data));
+                       }
+                   });*/
+      var cocktail = $(this).text();
+      cocktail = cocktail.replace(/\s+/g, '');
+      cocktail = cocktail.replace(/'/g, '');
+
+      $.ajax({
+       type: 'POST',
+       data: cocktail,
+       url: 'http://localhost:3000/endpoint',
+       success: function(data) {
+        console.log('success');
+        console.log(cocktail + 'sent.');
+      }
+      });
+    })
+  };
 
 function appendCocktailBox(name) {
 
