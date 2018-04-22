@@ -421,6 +421,7 @@ function displayCocktails(printArray) {
       $.ajax({
        type: 'POST',
        data: cocktail,
+       dataType: "string",
        url: '/adddrink',
        success: function(data) {
         console.log('success');
