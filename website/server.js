@@ -180,7 +180,7 @@ app.post('/adddrink', function(req, res){
 
   db.collection('users').update(
       { "login.username": sess.username },
-      { $set: { "drinks": cocktail } }
+      { $push: { "drinks": cocktail } }
 
   //res.send("Complete.");
   );
