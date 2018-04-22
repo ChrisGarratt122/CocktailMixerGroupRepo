@@ -27,6 +27,7 @@ app.set('view engine', 'ejs');
 app.use(session({ secret: 'example' }));
 
 //Comment to push
+app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -163,5 +164,5 @@ app.post('/adduser', function(req, res) {
 
 
 app.post('/adddrink', function(req, res){
-	console.log('Cocktail: ' + req.body);
+	console.log(req);
 });
