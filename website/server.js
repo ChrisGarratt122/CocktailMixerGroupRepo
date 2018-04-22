@@ -173,18 +173,18 @@ app.post('/adddrink', function(req, res){
 	console.log(req.body);
   console.log(req.body.field1);
   console.log(sess.username);
-  var username = post[sess.username];
-  var cocktail = post['drink'];
+  // var username = post[sess.username];
+  // var cocktail = post['drink'];
     // I checked here that partyId and trackId are valid vars.
-    db.profiles.update( { $push: { drinks: [cocktail] } }, function(err, added) {
-      if( err || !added ) {
-        console.log("Track not added.");
-        callback(null,added);
-      }
-      else {
-        console.log("Track added to drink with name: "+ cocktail);
-        callback(null,added);
-        }
-    });
+    // db.profiles.update( { $push: { drinks: [cocktail] } }, function(err, added) {
+    //   if( err || !added ) {
+    //     console.log("Track not added.");
+    //     callback(null,added);
+    //   }
+    //   else {
+    //     console.log("Track added to drink with name: "+ cocktail);
+    //     callback(null,added);
+    //     }
+    // });
 
 });
