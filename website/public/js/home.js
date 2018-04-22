@@ -390,6 +390,13 @@ function displayCocktails(printArray) {
   //console.log(text);
   console.log("About to append full html string.");
   $("#bordercontainer").append(text);
+
+  $(".col-sm").click(function(){
+      //Append to console a log that ingredient button has been clicked.
+      console.log("Cocktail Clicked.");
+      console.log(this);
+      //Create variable to hold display name of ingredient from clicked button
+      var ingredient = $(this).text();
 }
 
 function appendCocktailBox(name) {
