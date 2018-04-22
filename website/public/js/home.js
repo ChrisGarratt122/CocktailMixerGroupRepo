@@ -420,7 +420,7 @@ function displayCocktails(printArray) {
       var cocktailid = $(this).attr('id');
       cocktailid = cocktailid.replace(/\s+/g, '_');
       cocktailid = cocktailid.replace(/'/g, '');
-      alert(cocktailid);
+      //alert(cocktailid);
 
       // $.post('/adddrink');
       // $('#like').click(function(){
