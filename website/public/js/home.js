@@ -421,7 +421,7 @@ function displayCocktails(printArray) {
       $.ajax({
        type: 'POST',
        url: '/adddrink',
-       data: cocktai),
+       data: cocktail,
        dataType: "json",
        cache: false,
        contentType: "application/json",
