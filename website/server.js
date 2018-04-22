@@ -186,3 +186,12 @@ app.post('/adddrink', function(req, res){
   );
 
 });
+
+app.post('/checklogin', function(req,res){
+  if(req.session.loggedin){
+    res.send('true');
+  }
+  else {
+    res.send('false');
+  }
+});
