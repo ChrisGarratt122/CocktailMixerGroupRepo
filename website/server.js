@@ -163,6 +163,5 @@ app.post('/adduser', function(req, res) {
 
 
 app.post('/adddrink', function(req, res){
-
-	console.log('Cocktail: ' + req.body);
+	console.log('Cocktail: ' + JSON.stringify(req.body));
 });
