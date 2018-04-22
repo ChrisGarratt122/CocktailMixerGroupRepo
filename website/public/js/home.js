@@ -3,6 +3,12 @@ $(function(){
   //Append log to console about document being ready (Entered js)
   console.log("Document Ready");
 
+  $('body').addClass('animated fadeIn');
+
+  $( "nav li a" ).on( "click", function() {
+      $('body').addClass('animated fadeOut');
+  });
+
   //Append log about entering function tog et api list, enter function
   console.log("About to enter getIngredientsFromCocktailDB()");
   getIngredientsFromCocktailDB();
@@ -392,6 +398,9 @@ function displayCocktails(printArray) {
   $("#bordercontainer").append(text);
 
   $(".col-sm").click(function(e){
+      $(".image-overlay").fadeIn(1000).queue(function(n) {
+      $(this).fadeOut(1000); n();
+      });
       //Append to console a log that ingredient button has been clicked.
       console.log("Cocktail Clicked.");
       console.log(this);
