@@ -411,7 +411,7 @@ function displayCocktails(printArray) {
       var cocktail = $(this).attr('id');
       cocktail = cocktail.replace(/\s+/g, '_');
       cocktail = cocktail.replace(/'/g, '');
-      alert(cocktail);
+      alert(JSON.stringify(cocktail);
 
       // $.post('/adddrink');
       // $('#like').click(function(){
@@ -422,8 +422,9 @@ function displayCocktails(printArray) {
        type: 'POST',
        url: '/adddrink',
        data: cocktail,
-       dataType: "string",
+       dataType: "json",
        cache: false,
+       contentType: "application/json",
        success: function(data) {
         console.log('success');
         console.log(cocktail + 'sent.');
