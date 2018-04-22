@@ -173,7 +173,7 @@ app.post('/adddrink', function(req, res){
 	console.log(req.body);
   console.log(req.body.field1);
   console.log(sess.username);
-  var username = post[];
+  var username = post[sess.username];
   var cocktail = post['drink'];
     // I checked here that partyId and trackId are valid vars.
     db.profiles.update( { $push: { drinks: [cocktail] } }, function(err, added) {
