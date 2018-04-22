@@ -408,7 +408,7 @@ function displayCocktails(printArray) {
                            console.log(JSON.stringify(data));
                        }
                    });*/
-      var cocktail = $(this).text();
+      var cocktail = $(this).attr('id');
       cocktail = cocktail.replace(/\s+/g, '');
       cocktail = cocktail.replace(/'/g, '');
       alert(cocktail);
