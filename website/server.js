@@ -178,7 +178,7 @@ app.post('/adddrink', function(req, res){
 
   //db.profiles.update( { "username" : username },{ $push: { "drinks": cocktail } });
 
-  users.update(
+  db.users.update(
       { "login.username": sess.username },
       { $set: { "drinks": cocktail } }
 
