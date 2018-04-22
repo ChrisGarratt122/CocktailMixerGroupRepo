@@ -413,7 +413,7 @@ function displayCocktails(printArray) {
       cocktailid = cocktailid.replace(/'/g, '');
       alert(cocktailid);
 
-      var cocktaildata = "{cocktail: " + cocktailid + "}";
+      var cocktaildata = "{field1: " + cocktailid + "}";
 
       // $.post('/adddrink');
       // $('#like').click(function(){
