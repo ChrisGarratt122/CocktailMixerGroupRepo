@@ -420,13 +420,15 @@ function displayCocktails(printArray) {
 
       $.ajax({
        type: 'POST',
-       data: cocktail,
-       dataType: "string",
        url: '/adddrink',
+       data: JSON.stringify(cocktail),
+       dataType: "json",
+       cache: false,
+       contentType: "application/json",
        success: function(data) {
         console.log('success');
         console.log(cocktail + 'sent.');
-      }
+       }
       });
     })
   };
