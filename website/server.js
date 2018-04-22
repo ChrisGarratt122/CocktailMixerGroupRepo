@@ -174,11 +174,15 @@ app.post('/adddrink', function(req, res){
   console.log(req.body.field1);
   console.log(sess.username);
 
-  var username = sess.username;
   var cocktail = req.body.field1;
 
   db.profiles.update( { "username" : username },{ $push: { "drinks": cocktail } });
 
+  users.update(
+      { "login.username": sess.username },
+      { $set: { "drinks": cocktail } }
+
   //res.send("Complete.");
+  );
 
 });
