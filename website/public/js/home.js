@@ -408,10 +408,12 @@ function displayCocktails(printArray) {
                            console.log(JSON.stringify(data));
                        }
                    });*/
-      var cocktail = $(this).attr('id');
-      cocktail = cocktail.replace(/\s+/g, '_');
-      cocktail = cocktail.replace(/'/g, '');
-      alert(cocktail);
+      var cocktailid = $(this).attr('id');
+      cocktailid = cocktail.replace(/\s+/g, '_');
+      cocktailid = cocktail.replace(/'/g, '');
+      alert(cocktailid);
+
+      var cocktaildata = "{cocktail: " + cocktailid + "}";
 
       // $.post('/adddrink');
       // $('#like').click(function(){
@@ -421,7 +423,7 @@ function displayCocktails(printArray) {
       $.ajax({
        type: 'POST',
        url: '/adddrink',
-       data: cocktail,
+       data: cocktaildata,
        dataType: "json",
        cache: false,
        contentType: "application/json",
