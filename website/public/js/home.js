@@ -413,7 +413,7 @@ function displayCocktails(printArray) {
       cocktailid = cocktailid.replace(/'/g, '');
       alert(cocktailid);
 
-      var cocktaildata = "{ field1: " + cocktailid + "}";
+      var cocktaildata =
 
       // $.post('/adddrink');
       // $('#like').click(function(){
@@ -423,7 +423,7 @@ function displayCocktails(printArray) {
       $.ajax({
        type: 'POST',
        url: '/adddrink',
-       data: { field1: cocktailid},
+       data: { "field1": cocktailid},
        dataType: "json",
        cache: false,
        contentType: "application/json",
