@@ -465,7 +465,7 @@ function appendCocktailBox(name) {
     string += "<div class=\"overlay-test\">";
     string += "<a href=\"\" class=\"icon\">";
     string += "<i class=\"fas fa-plus\"></i>";
-    string += "</a";
+    string += "</a>";
     string += "</div>";
     string += "</div>";
     string += "<h3>" + name + "</h3>";
