@@ -463,6 +463,9 @@ function appendCocktailBox(name) {
     string += "<div class=\"home-image\">";
     string += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
     string += "<div class=\"overlay-test\">";
+    string += "<a href=\"\" class=\"icon\">";
+    string += "<i class=\"fas fa-plus\"></i>";
+    string += "</a";
     string += "</div>";
     string += "</div>";
     string += "<h3>" + name + "</h3>";
@@ -471,7 +474,6 @@ function appendCocktailBox(name) {
     //console.log("HTMLstring: " + string);
     //text += string;
     //return string;
-
   }
   });
   return string;
