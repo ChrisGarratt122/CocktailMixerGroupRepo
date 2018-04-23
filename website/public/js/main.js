@@ -20,10 +20,6 @@ $(function(){
 
             $("#rightspan").text() = "Profile";
           }
-          else {
-
-          }
-        }
         }
         else {
           console.log("no data");
@@ -33,7 +29,7 @@ $(function(){
 
 
 
-);
+});
 
 $( ".home-image" ).on( "click", function() {
   $(".image-overlay").fadeIn(1000).queue(function(n) {
