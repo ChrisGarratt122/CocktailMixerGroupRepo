@@ -553,7 +553,7 @@ h2, p {
 
 .contact-button {
   border: none;
-  background-color: #AEA8D3;
+  background-color: pink;
   color: #fff;
   padding: 10px 20px;
 }
@@ -576,11 +576,11 @@ h2, p {
 .login-box{
   background-color: #fff;
   max-width: 30%;
-  padding: 20px;
+  padding: 50px;
   margin: 0 auto;
   float: none;
   display: block;
-  height: 570px;
+  height: auto;
   clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%);
 }
 
