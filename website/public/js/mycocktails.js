@@ -61,7 +61,7 @@ $(function(){
               counter = counter + 1;
             }
             console.log("About to append full html string.");
-            $("#bordercontainer").append(text);
+            $("body").append(text);
           });
 
 
