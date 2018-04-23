@@ -12,6 +12,11 @@ $(function(){
           console.log(data.drinks);
           var printArray = data.drinks;
 
+          var text = "";
+          var name = "";
+          var counter = 0;
+          var tempStr = "";
+
           $.each(printArray, function(index, val) {
             console.log(printArray[index]);
             name  = printArray[index];
