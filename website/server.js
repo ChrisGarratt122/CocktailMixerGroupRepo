@@ -109,7 +109,7 @@ app.get('/getloggedin', function(req, res) {
   if(!req.session.loggedin){
     result = "false";
   }
-  else(req.session.loggedin) {
+  else{
     result = "true";
   }
   resultjson = { "result":result };
