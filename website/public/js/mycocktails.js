@@ -8,6 +8,7 @@ $(function(){
     success: function(data) {
       if (data) {
           console.log(data);
+          console.log(data.drinks);
       }
       else {
         console.log("no data");
