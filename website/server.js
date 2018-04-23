@@ -102,6 +102,20 @@ app.get('/saveddrinks', function(req, res) {
   });
 });
 
+app.get('/getloggedin', function(req, res) {
+  var result ="";
+  var resultjson = "";
+  //If user is not currently logged in, redirect them to login page.
+  if(!req.session.loggedin){
+    result = "false";
+  }
+  else(req.session.loggedin) {
+    result = "true";
+  }
+  resultjson = { "result":result };
+  res.send(JSON.stringify(resultjson));
+});
+
 app.get('/login', function(req, res) {
   res.render('pages/login');
 });
