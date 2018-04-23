@@ -181,12 +181,14 @@ h2, p {
   position: absolute;
   left: 5%;
   bottom: 2%;
+  color: white;
 }
 
 .signup {
   position: absolute;
   right: 5%;
   bottom: 2%;
+  color: white;
 }
 
 .login a:after,
