@@ -284,6 +284,7 @@ h2, p {
 .homepage-cocktails {
   background-color: #e8b6ae;
   padding: 0px;
+  min-height: 500px;
 }
 
 .homepage-cocktails img {
@@ -328,6 +329,7 @@ h2, p {
   padding: 25px 5px;
   color: #fff;
   border: 7px solid #ffada4;
+  min-height: 500px;
 }
 
 .img-thumbnail {
