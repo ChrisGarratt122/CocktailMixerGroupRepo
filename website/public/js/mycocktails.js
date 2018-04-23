@@ -14,7 +14,7 @@ $(function(){
 
           var text = "";
           var name = "";
-          var counter = 0;
+          //var counter = 0;
           var tempStr = "";
 
           $.each(printArray, function(index, val) {
@@ -27,39 +27,9 @@ $(function(){
             //   return true;
             // }
 
-            if (index === (length - 1) && index != 0) {
-                tempStr = "</div>";
-                text += tempStr;
-                console.log("Appending final row end.");
-            } else {
-              if (counter == 0) {
-                jsondata = "";
-                tempStr = "";
-                //tempStr = appendCocktailRowStart(text);
-                tempStr = "<div class=\"row text-center\">";
-                console.log("Appending row start div.");
-                tempStr += appendCocktailBox(name);
-                //console.log("temporary STRING: " + tempStr);
-                text += tempStr;
-              } else if (counter == 2) {
-                tempStr = "";
-                tempStr = appendCocktailBox(name);
-                tempStr = "</div>";
-                console.log("Appending row end div.");
-                //tempStr = appendCocktailRowEnd(text);
-                counter = -1;
-                //console.log("temporary STRING: " + tempStr);
-                text += tempStr;
-              } else {
-                tempStr = "";
-                tempStr = appendCocktailBox(name);
-                //console.log("temporary STRING: " + tempStr);
-                text += tempStr;
-              }
-              //Print all text freezes chrome
-              //console.log(text);
-              counter = counter + 1;
-            }
+            text += appendCocktailBox(name);
+
+
             console.log("About to append full html string.");
             $("body").append(text);
           });
