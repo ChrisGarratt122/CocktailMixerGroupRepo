@@ -13,7 +13,7 @@ $(function(){
       contentType: "application/json",
       success: function(data) {
         if (data) {
-          console.log("data")
+          console.log(data)
 
           if (data.result === "true") {
             $("#leftspan").text() = "Logout";
