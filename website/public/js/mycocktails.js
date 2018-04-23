@@ -21,7 +21,6 @@ $(function(){
             console.log(printArray[index]);
             name  = printArray[index];
             console.log("Name: " + name);
-            console.log("Counter =" + counter);
             //If array tries to append undefined item from JSON
             // if (printArray[index] === undefined) {
             //   return true;
