@@ -1,17 +1,16 @@
 $(function(){
   $.ajax({
-    type: 'POST',
-    url: '/adddrink',
-    data:,
+    type: 'GET',
+    url: '/saveddrinks',
     dataType: "json",
     cache: false,
     contentType: "application/json",
     success: function(data) {
-      if () {
-
+      if (data) {
+          console.log(data);
       }
-      else if () {
-
+      else {
+        console.log("no data");
       }
     }
   });

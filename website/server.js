@@ -84,6 +84,24 @@ app.get('/mycocktails', function(req, res) {
   });
 });
 
+app.get('/saveddrinks', function(req, res) {
+  //If user is not currently logged in, redirect them to login page.
+  if(!req.session.loggedin){res.redirect('/login');return;}
+  //get the requested user based on their username, eg /profile?username=dioreticllama
+  console.log(sess.username);
+  var uname = sess.username;
+  //this query finds the first document in the array with that username.
+  //Because the username value sits in the login section of the user data we use login.username
+  db.collection('users').findOne({
+    "login.username": uname
+  }, function(err, result) {
+    if (err) {res.send(err)}
+    console.log(uname + ":" + result);
+    //finally we just send the result to the user page as "user"
+    res.send(result);
+  });
+});
+
 app.get('/login', function(req, res) {
   res.render('pages/login');
 });
