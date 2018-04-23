@@ -16,9 +16,11 @@ $(function(){
           console.log(data)
 
           if (data.result === "true") {
-            $("#leftspan").text() = "Logout";
+            $("#leftspan").text("Logout");
+            $("#leftspan").attr("href", "/logout");
 
-            $("#rightspan").text() = "Profile";
+            $("#rightspan").text("Profile");
+            $("#leftspan").attr("href", "/profile");
           }
         }
         else {
