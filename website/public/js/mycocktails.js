@@ -69,7 +69,7 @@ $(function(){
 
 });
 
-appendCocktailBox(name) {
+function appendCocktailBox(name) {
   console.log("Name: " + name);
   console.log("appendCocktailBox entered.");
   var searchName = "";
