@@ -7,6 +7,7 @@ $(function(){
     contentType: "application/json",
     success: function(data) {
       if (data) {
+        // Logging data
           console.log(data);
           console.log(data.drinks);
       }
