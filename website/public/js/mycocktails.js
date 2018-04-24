@@ -46,10 +46,11 @@ $(function(){
             }
 
             counter = counter + 1;
-            console.log("About to append full html string.");
-            //console.log(text);
-            $("body").append(text);
+
           });
+          console.log("About to append full html string.");
+          //console.log(text);
+          $("body").append(text);
       }
       else {
         console.log("no data");
