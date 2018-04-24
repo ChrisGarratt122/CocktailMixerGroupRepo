@@ -14,7 +14,7 @@ $(function(){
 
           var text = "";
           var name = "";
-          //var counter = 0;
+          var counter = 0;
           var tempStr = "";
 
           $.each(printArray, function(index, val) {
@@ -26,17 +26,28 @@ $(function(){
             //   return true;
             // }
 
+
+            if (counter = 0) {
+              text+= "<div class=\"row text-center\">";
+            }
+
             text += appendCocktailBox(name);
 
+            if (index === (length - 1) && index != 0) {
+                text+= "</div>"
+                console.log("Appending final row end.");
+            }
+            else if (counter = 4) {
+              text+= "</div>";
+              counter = -1;
+            }
 
+            counter = counter + 1;
+            console.log("Counter = " + counter);
             console.log("About to append full html string.");
             console.log(text);
             $("body").append(text);
           });
-
-
-
-
       }
       else {
         console.log("no data");
