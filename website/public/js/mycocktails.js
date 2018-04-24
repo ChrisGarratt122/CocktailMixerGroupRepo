@@ -30,6 +30,7 @@ $(function(){
 
 
             console.log("About to append full html string.");
+            console.log(text);
             $("body").append(text);
           });
 
@@ -74,7 +75,7 @@ function appendCocktailBox(name) {
     string += "<div id=\"" + name + "\" class=\"col-sm myCocktailBackground\">";
     //string += "<div class=\"home-image\">";
     string += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
-    string += "<div class=\"overlay-test\">";
+    //string += "<div class=\"overlay-test\">";
     //string += "<a href=\"\" class=\"icon\">";
     //string += "<i class=\"fas fa-plus\"></i>";
     //string += "</a>";
