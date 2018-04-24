@@ -16,7 +16,7 @@ $(function(){
           var name = "";
           var counter = 0;
           var tempStr = "";
-          var length = printArray.length; 
+          var length = printArray.length;
 
           $.each(printArray, function(index, val) {
             console.log(printArray[index]);
@@ -65,12 +65,12 @@ function appendCocktailBox(name) {
   console.log("Name: " + name);
   console.log("appendCocktailBox entered.");
   var searchName = "";
-  searchName = name.replace(/\s+/g, '_');
-  console.log(searchName);
-  searchName = searchName.replace(/'/g, '');
+  searchName = name;
   var myUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchName;
   console.log("Url: " + myUrl)
 
+  //Create variable to hold display name, replace underlines
+  displayName = name.replace('_', /\s+/g);
   //var string = text;
   var string ="";
   //Using ajax call to not be asynchronous
