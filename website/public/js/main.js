@@ -16,10 +16,10 @@ $(function(){
           console.log(data)
 
           if (data.result === "true") {
-            $("#leftspan").text("Logout");
+            $("#leftspan").text("<a id=\"leftlink\" href=\"/logout\">Logout</a>");
             $("#leftlink").attr("href", "/logout");
 
-            $("#rightspan").text("Profile");
+            $("#rightspan").text("<a id=\"rightlink\" href=\"/profile\">Profile</a>");
             $("#rightlink").attr("href", "/profile");
           }
         }

@@ -124,6 +124,15 @@ app.get('/signup', function(req, res) {
   res.render('pages/signup');
 });
 
+app.get('/logout', function(req, res) {
+  req.session.loggedin = false;
+  res.render('pages/login');
+});
+
+app.get('/profile', function(req, res) {
+  res.render('pages/profile');
+});
+
 //********** POST ROUTES - Deal with processing data from forms ***************************
 
 //the dologin route detasl with the data from the login screen.
