@@ -14,7 +14,7 @@ $(function(){
 
           var text = "";
           var name = "";
-          var counter = 0;
+          var counter = -1;
           var tempStr = "";
 
           $.each(printArray, function(index, val) {
@@ -35,7 +35,7 @@ $(function(){
 
             if (index === (length - 1) && index != 0) {
                 text+= "</div>"
-                console.log("Appending final row end.");
+                console.log("Counter - Appending final row end.");
             }
             else if (counter == 4) {
               text+= "</div>";
