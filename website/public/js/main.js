@@ -17,10 +17,10 @@ $(function(){
 
           if (data.result === "true") {
             $("#leftspan").text("Logout");
-            $("#leftspan").attr("href", "/logout");
+            $("#leftlink").attr("href", "/logout");
 
             $("#rightspan").text("Profile");
-            $("#leftspan").attr("href", "/profile");
+            $("#rightlink").attr("href", "/profile");
           }
         }
         else {
