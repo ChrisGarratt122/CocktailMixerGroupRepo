@@ -28,9 +28,10 @@ $(function(){
             console.log("Counter = " + counter);
 
             if (counter == 0) {
+              console.log("APPEND : Row start");
               text+= "<div class=\"row text-center\">";
             }
-
+            console.log("APPEND : CocktailBox");
             tempStr += appendCocktailBox(name);
             text += tempStr;
 
@@ -39,6 +40,7 @@ $(function(){
                 console.log("Counter - Appending final row end.");
             }
             else if (counter == 4) {
+              console.log("APPEND : Row end");
               text+= "</div>";
               counter = -1;
             }
