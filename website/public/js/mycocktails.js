@@ -27,7 +27,7 @@ $(function(){
             // }
 
 
-            if (counter = 0) {
+            if (counter == 0) {
               text+= "<div class=\"row text-center\">";
             }
 
@@ -37,7 +37,7 @@ $(function(){
                 text+= "</div>"
                 console.log("Appending final row end.");
             }
-            else if (counter = 4) {
+            else if (counter == 4) {
               text+= "</div>";
               counter = -1;
             }
@@ -45,7 +45,7 @@ $(function(){
             counter = counter + 1;
             console.log("Counter = " + counter);
             console.log("About to append full html string.");
-            console.log(text);
+            //console.log(text);
             $("body").append(text);
           });
       }
