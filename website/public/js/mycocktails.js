@@ -14,7 +14,7 @@ $(function(){
 
           var text = "";
           var name = "";
-          var counter = -1;
+          var counter = 0;
           var tempStr = "";
 
           $.each(printArray, function(index, val) {
@@ -25,7 +25,7 @@ $(function(){
             // if (printArray[index] === undefined) {
             //   return true;
             // }
-
+            console.log("Counter = " + counter);
 
             if (counter == 0) {
               text+= "<div class=\"row text-center\">";
@@ -43,7 +43,6 @@ $(function(){
             }
 
             counter = counter + 1;
-            console.log("Counter = " + counter);
             console.log("About to append full html string.");
             //console.log(text);
             $("body").append(text);
