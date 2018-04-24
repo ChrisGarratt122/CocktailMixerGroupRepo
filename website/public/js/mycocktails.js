@@ -31,7 +31,8 @@ $(function(){
               text+= "<div class=\"row text-center\">";
             }
 
-            text += appendCocktailBox(name);
+            tempStr += appendCocktailBox(name);
+            text += tempStr;
 
             if (index === (length - 1) && index != 0) {
                 text+= "</div>"
