@@ -39,7 +39,7 @@ $(function(){
                 text+= "</div>"
                 console.log("Counter - Appending final row end.");
             }
-            else if (counter == 4) {
+            else if (counter == 3) {
               console.log("APPEND : Row end");
               text+= "</div>";
               counter = -1;
