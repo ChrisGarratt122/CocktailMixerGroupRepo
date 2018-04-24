@@ -32,7 +32,7 @@ $(function(){
               text+= "<div class=\"row text-center\">";
             }
             console.log("APPEND : CocktailBox");
-            tempStr += appendCocktailBox(name);
+            tempStr = appendCocktailBox(name);
             text += tempStr;
 
             if (index === (length - 1) && index != 0) {
