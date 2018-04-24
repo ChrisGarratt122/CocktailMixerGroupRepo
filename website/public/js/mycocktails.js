@@ -16,6 +16,7 @@ $(function(){
           var name = "";
           var counter = 0;
           var tempStr = "";
+          var length = printArray.length; 
 
           $.each(printArray, function(index, val) {
             console.log(printArray[index]);
