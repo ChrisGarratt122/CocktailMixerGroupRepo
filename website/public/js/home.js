@@ -468,7 +468,7 @@ function appendCocktailBox(name) {
     console.log("Image: " + image);
     console.log("Desc: " + desc);
 
-    string += "<div id=\"" + "\" class=\"col-sm\">";
+    string += "<div id=\"" + name + "\" class=\"col-sm\">";
     string += "<div class=\"home-image\">";
     string += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
     string += "<div class=\"overlay-test\">";
