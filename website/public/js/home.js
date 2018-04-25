@@ -115,6 +115,11 @@ function displayArray(array) {
           console.log("Dropdown hidden.");
           //Create variable to hold display name of ingredient from clicked button
           var ingredient = $(this).text();
+
+          //Send ingredient name to remove function
+          console.log("Sending to remove: " + ingredient);
+          removeCocktails(ingredient);
+
           //Append log to console of ingredient
           console.log(ingredient);
           //Create variable to construct and hold ID of button clicked
@@ -496,5 +501,7 @@ function resetCocktails() {
 }
 
 function removeCocktails (name) {
-
+    $('#bordercontainer').children('.col-sm').each(function () {
+      console.log("BOX FOUND: -" this.value); // "this" is the current element in the loop
+    });
 }
