@@ -71,6 +71,10 @@ function appendCocktailBox(name) {
 
   //Create variable to hold display name, replace underlines
   displayName = name.replace('_', /\s+/g);
+  if (displayName.length > 15) {
+    displayName.length = 15;
+    displayName.concat('...');
+  }
   //var string = text;
   var string ="";
   //Using ajax call to not be asynchronous
@@ -87,16 +91,16 @@ function appendCocktailBox(name) {
     console.log("Image: " + image);
     console.log("Desc: " + desc);
 
-    string += "<div id=\"" + name + "\" class=\"col-sm myCocktailBackground\">";
+    string += "<div id=\"" + displayName + "\" class=\"col-sm myCocktailBackground\">";
     //string += "<div class=\"home-image\">";
-    string += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
+    string += "<img src=\"" + image + "\" alt=\"Picture of " + displayName + "\" class=\"img-thumbnail\">";
     //string += "<div class=\"overlay-test\">";
     //string += "<a href=\"\" class=\"icon\">";
     //string += "<i class=\"fas fa-plus\"></i>";
     //string += "</a>";
     //string += "</div>";
     //string += "</div>";
-    string += "<h3>" + name + "</h3>";
+    string += "<h3>" + displayName + "</h3>";
     string += "<p>" + desc + "</p>";
     string += "</div>";
 
