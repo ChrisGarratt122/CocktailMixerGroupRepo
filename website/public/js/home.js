@@ -508,6 +508,7 @@ function removeCocktails (name) {
 
     $('#bordercontainer').children('.Gin').each(function () {
       console.log("Something found");
-      console.log("BOX FOUND: -" + this.value); // "this" is the current element in the loop
+
+      $(this).remove(); // "this" is the current element in the loop
     });
 }
