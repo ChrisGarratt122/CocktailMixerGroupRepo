@@ -130,6 +130,7 @@ app.get('/logout', function(req, res) {
 });
 
 app.get('/profile', function(req, res) {
+  if(!req.session.loggedin){res.redirect('/login');return;}
   res.render('pages/profile');
 });
 

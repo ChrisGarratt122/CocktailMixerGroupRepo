@@ -24,4 +24,5 @@ $(function(){
       else {
         console.log("No data");
       }
+  });
 }
