@@ -502,6 +502,6 @@ function resetCocktails() {
 
 function removeCocktails (name) {
     $('#bordercontainer').children('.col-sm').each(function () {
-      console.log("BOX FOUND: -" this.value); // "this" is the current element in the loop
+      console.log("BOX FOUND: -" + this.value); // "this" is the current element in the loop
     });
 }
