@@ -28,7 +28,6 @@ $(function(){
   });
 });
 
-
   $(".dropButton").click(function(){
     $("#message").text() = "Sorry! You cannot change your username!";
-  };
+  });
