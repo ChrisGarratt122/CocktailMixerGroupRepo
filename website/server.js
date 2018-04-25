@@ -143,6 +143,11 @@ app.post('/dologin', function(req, res) {
   var uname = req.body.username;
   var pword = req.body.password;
 
+  if (req.body.username == '' || req.body.password == '') {
+    res.render('/login', {message: "One of the fields were empty! Please try again."});
+    return;
+  }
+
   sess = req.session;
 
   sess.username = uname;
