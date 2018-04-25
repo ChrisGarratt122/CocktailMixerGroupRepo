@@ -20,7 +20,7 @@
     <h2>Your Account!</h2>
   <form id="myAccountForm">
       <div class="form-group row contact-focus account-page">
-        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Name</label>
+        <label id="inputName" for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Name</label>
 
           <input type="name" class="" placeholder="Enter Name" required>
 
@@ -29,19 +29,19 @@
       <div class="form-group row contact-focus account-page">
         <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Email</label>
 
-          <input type="email" class="" placeholder="Example@gmail.com" required>
+          <input id="inputEmail" type="email" class="" placeholder="Example@gmail.com" required>
 
       </div>
       <div class="form-group row contact-focus account-page">
         <label for="field" class="col-sm-5 col-form-label col-form-label-sm">Change Password</label>
 
-          <input type="password" class="password" placeholder="Enter Password" required>
+          <input id="inputPassword" type="password" class="password" placeholder="Enter Password" required>
 
       </div>
       <div class="form-group row contact-focus account-page">
         <label for="field" class="col-sm-5 col-form-label col-form-label-sm">Confirm Password</label>
 
-        <input type="password" class="password" placeholder="Confirm Password" required>
+        <input id="inputConPassword" type="password" class="password" placeholder="Confirm Password" required>
 
       </div>
       <input class="submit" type="submit" value="Save Changes">
