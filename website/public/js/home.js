@@ -406,6 +406,9 @@ function displayCocktails(printArray) {
   $("#bordercontainer").append(text);
 
   $(".fa-plus").click(function(e){
+
+      console.log("TEST: " + $(this).parents("col-sm"));
+
       $(".image-overlay").fadeIn(1000).queue(function(n) {
       $(this).fadeOut(1000); n();
       });
