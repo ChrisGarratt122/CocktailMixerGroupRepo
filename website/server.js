@@ -157,7 +157,7 @@ app.post('/dologin', function(req, res) {
     //if there is no result, redirect the user back to the login system as that username must not exist
     if(!result){
       console.log("There was no result!");
-      res.redirect('/login', {message: "No match! Please try again."});
+      res.redirect('pages/login', {message: "No match! Please try again."});
       return
     }
     //if(!result){res.redirect('/login');return}
@@ -167,7 +167,7 @@ app.post('/dologin', function(req, res) {
       req.session.loggedin = true; res.redirect('/')
     }
     //otherwise send them back to login
-    else{res.redirect('/login'), {message: "No match! Please try again."}}
+    else{res.redirect('pages/login'), {message: "No match! Please try again."}}
     console.log("There was a result, but the password did not match! Re-directing back to login.");
   });
 });
