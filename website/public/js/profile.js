@@ -15,10 +15,10 @@ $(function(){
         var password = data.login.password;
 
         console.log("Appending to form");
-        $("#inputEmail").append(text);
-        $("#inputName").append(text);
-        $("#inputPassword").append(text);
-        $("#inputConPassword").append(text);
+        $("#inputEmail").append(email);
+        $("#inputName").append(uname);
+        $("#inputPassword").append(password);
+        $("#inputConPassword").append(password);
 
       }
       else {
