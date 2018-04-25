@@ -405,7 +405,7 @@ function displayCocktails(printArray) {
   console.log("About to append full html string.");
   $("#bordercontainer").append(text);
 
-  $(".col-sm").click(function(e){
+  $(".fa-plus").click(function(e){
       $(".image-overlay").fadeIn(1000).queue(function(n) {
       $(this).fadeOut(1000); n();
       });
