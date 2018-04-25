@@ -319,6 +319,7 @@ function displayCocktails(printArray) {
 
     var ingredientsArray = getArray();
     var ingredient = ingredientsArray[ingredientsArray.length - 1];
+    ingredient = ingredient.replace(/\s+/g, '_');
 
 
     if (index === (length - 1) && index != 0) {
