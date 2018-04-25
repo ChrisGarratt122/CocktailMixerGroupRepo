@@ -196,6 +196,10 @@ app.post('/delete', function(req, res) {
 //"login": {"username":"admin", "password":"mixerPa$$"}",
 //"drinks":[]}
 
+app.post('/docontact', function(req, res) {
+    res.render('pages/contact', {message: "Thank you for your feedback!"});
+});
+
 app.post('/adduser', function(req, res) {
     console.log('Add user route entered.');
 
