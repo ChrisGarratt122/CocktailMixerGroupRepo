@@ -16,7 +16,7 @@ $(function(){
 
         console.log("Appending to form");
         $("#inputEmail").attr("placeholder", email);
-        $("#inputName").attr("placeholder", (uname + " - You cannot change your username!");
+        $("#inputName").attr("placeholder", (uname + " - You cannot change your username!"));
         $("#inputPassword").attr("placeholder", password);
         $("#inputConPassword").attr("placeholder", password);
 
