@@ -70,7 +70,7 @@ function appendCocktailBox(name) {
   console.log("Url: " + myUrl)
 
   //Create variable to hold display name, replace underlines
-  displayName = name.replace('_', ' ');
+  displayName = name.replace(/'_'/g, ' ');
   if (displayName.length > 15) {
     displayName = displayName.substring(0, 15);
     displayName = displayName.concat('...');
