@@ -9,7 +9,7 @@ $(function(){
       if (data) {
         console.log("Username: " + data.login.username);
         console.log("E-mail: " + data.email);
-        
+
         var uname = data.login.username;
         var email = data.email;
         var password = data.login.password;
@@ -27,3 +27,8 @@ $(function(){
     }
   });
 });
+
+
+  $(".dropButton").click(function(){
+    $("#message").text() = "Sorry! You cannot change your username!";
+  };
