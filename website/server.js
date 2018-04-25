@@ -213,6 +213,23 @@ app.post('/adduser', function(req, res) {
 
   //we create the data string from the form components that have been passed in
 
+  if (req.body.name == '' || req.body.password == '') {
+  res.render('pages/signup', {message: "A field was empty! Please try again!"});
+  return;
+  }
+  if (req.body.email == '') {
+  res.render('pages/signup', {message: "A field was empty! Please try again!"});
+  return;
+  }
+
+  if (req.body.password != req.body.confirmPassword) {
+    res.render('pages/signup', {message: "Password fields do not match! Please try again!"});
+    return;
+  }
+
+
+
+
   var datatostore = {
   "email":req.body.email,
   "login":{"username":req.body.username,"password":req.body.password},
