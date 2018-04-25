@@ -466,6 +466,7 @@ function removeCocktails (name) {
     console.log("Entered remove function.");
 
     var ingredient = "." + name.replace(/\s+/g, '_');
+    console.log("SEARCHING FOR:" + ingredient);
 
     $('#bordercontainer').children(ingredient).each(function () {
       console.log("Something found");
