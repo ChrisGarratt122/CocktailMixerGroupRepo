@@ -296,53 +296,6 @@ function getDrinksFromCocktailDB() {
   });
 }
 
-
-
-          // else {
-          //   //**********EXPERIMENTAL CODE FOR MAKING ARRAY OF MUTUAL INGREDIENTS**********
-          //   // $.each( currentArray, function( key, value ) {
-          //   //   console.log("Entered each for creating updated printArray.");
-          //   //   //console.log("Print Array:" + printArray);
-          //   //   var index = $.inArray( value, printArray );
-          //   //   //If index is not -1, it is in the array. Push into new print array.
-          //   //   if( index != -1 ) {
-          //   //     console.log( "Index does not equal negative one: " + index );
-          //   //     //console.log(printArray);
-          //   //     newArray.push(printArray[index]);
-          //   //     console.log("Just pushed:" + currentArray[index]);
-          //   //     console.log(newArray);
-          //   //   }
-          //   // });
-          //   var delayInMilliseconds = 500;
-          //   setTimeout(function()
-          //   {
-          //   console.log("Print: " + printArray);
-          //   console.log("Current: " + currentArray);
-          //   if (currentArray.length > (printArray.length / 2)) {
-          //     console.log("i > 0, function to make new array entered");
-          //     currentArray.length = printArray.length / 2;
-          //     printArray.length = printArray.length / 2;
-          //     var newArray = printArray.concat(currentArray);
-          //     printArray = newArray;
-          //     console.log("New print array:" + printArray);
-          //   }
-          //   },delayInMilliseconds);
-          // }
-
-        // if (i === count-1) {
-        //   var delayInMilliseconds = 500;
-        //   setTimeout(function()
-        //   {
-        //   // if (newArray.length > 2 ) {
-        //   //   printArray = newArray;
-        //   // }
-        //   console.log("Going to displayCocktails()");
-        //   console.log("Current PrintArray: " + printArray);
-        //   displayCocktails(printArray);
-        //   },delayInMilliseconds);
-        // }
-
-
 function displayCocktails(printArray) {
   console.log("Entered displayCocktails")
   //Basic test version
@@ -366,6 +319,7 @@ function displayCocktails(printArray) {
 
     var ingredientsArray = getArray();
     var ingredient = ingredientsArray[ingredientsArray.length - 1];
+
 
     if (index === (length - 1) && index != 0) {
         tempStr = "</div>";
@@ -482,6 +436,7 @@ function appendCocktailBox(name) {
 
     var ingredientsArray = getArray();
     var ingredient = ingredientsArray[ingredientsArray.length - 1];
+    ingredient = ingredient.split('_').join(' ');
 
     string += "<div id=\"" + name + "\" class=\"col-sm " + ingredient + "\">";
     string += "<div class=\"home-image\">";
@@ -510,7 +465,7 @@ function resetCocktails() {
 function removeCocktails (name) {
     console.log("Entered remove function.");
 
-    var ingredient = "." + name;
+    var ingredient = "." + name.split('_').join(' ');
 
     $('#bordercontainer').children(ingredient).each(function () {
       console.log("Something found");
