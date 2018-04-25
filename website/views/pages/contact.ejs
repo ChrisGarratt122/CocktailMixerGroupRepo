@@ -32,7 +32,7 @@
 <!--///////////////////////////////////
         Contact Form Template
 /////////////////////////////////// ---->
-  <form>
+  <form action="/docontact" method="POST">
       <aside class="form-group row contact-focus">
         <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Name</label>
 
@@ -41,20 +41,20 @@
       <aside class="form-group row contact-focus">
         <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Email</label>
 
-          <input type="email" class="" placeholder="">
+          <input type="text" class="" placeholder="">
       </aside>
       <aside class="form-group row contact-focus">
         <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Subject</label>
 
-          <input type="email" class="" placeholder="">
+          <input type="text" class="" placeholder="">
       </aside>
       <aside class="form-group row contact-focus">
         <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Message</label>
 
-          <input type="email" class=" " placeholder="">
-          <input type="email" class="offset-4" placeholder="">
-          <input type="email" class="offset-4" placeholder="">
-          <input type="email" class="offset-4" placeholder="">
+          <input type="text" class=" " placeholder="">
+          <input type="text" class="offset-4" placeholder="">
+          <input type="text" class="offset-4" placeholder="">
+          <input type="text" class="offset-4" placeholder="">
       </aside>
       <button id="submit" class="contact-button" type="submit">Submit</button>
       <h3 id="message"><%= typeof message!='undefined' ? message : '' %></h3>
