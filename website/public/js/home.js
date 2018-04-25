@@ -147,9 +147,9 @@ function displayArray(array) {
           //resetCocktails();
 
           //Call get cocktails to update cocktail box, if ingredient array isn't empty.
-          if (clientArray != undefined) {
-          getDrinksFromCocktailDB();
-          }
+          //if (clientArray != undefined) {
+          //getDrinksFromCocktailDB();
+          //}
 
       });
   });
