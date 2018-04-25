@@ -13,18 +13,20 @@ body {
 }
 
 /* font-family: 'Raleway', sans-serif; */
-.logo h2 {
-  text-align: center;
-  font-family: 'Baloo', cursive;
-  font-size: 50px;
-  color: #fff;
-  margin: 40px 0;
+.logo img {
+  max-width: 100%;
+  height: 120px;
+  display: block;
+  margin: 50px auto;
 }
 
-h2,p {
+h2, p {
   font-family: 'Raleway', sans-serif;
 }
 
+.container {
+  max-width: 1300px !important;
+}
 
 /********************
        Navbar
@@ -179,12 +181,14 @@ h2,p {
   position: absolute;
   left: 5%;
   bottom: 2%;
+  color: white;
 }
 
 .signup {
   position: absolute;
   right: 5%;
   bottom: 2%;
+  color: white;
 }
 
 .login a:after,
@@ -238,8 +242,9 @@ h2,p {
 }
 
 .homepage-cocktails p {
-  color: #404040;
-  font-size: 14px;
+  color: #fff;
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .homepage-form input{
@@ -279,14 +284,9 @@ h2,p {
 }
 
 .homepage-cocktails {
-  background-color: white;
-  padding: 20px;
-
-  height: 850px;
-  overflow: auto;
-
-  margin-top:5%;
-
+  background-color: #e8b6ae;
+  padding: 0px;
+  min-height: 500px;
 }
 
 .homepage-cocktails img {
@@ -298,7 +298,13 @@ h2,p {
 
 .homepage-cocktails h3,
 .homepage-cocktails p {
-  padding: 10px 0;
+  padding: 10px 20px;
+}
+
+.homepage-cocktails h3 {
+  font-family: 'Baloo', cursive;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .recipe-ingredient {
@@ -308,6 +314,7 @@ h2,p {
   margin: 0;
   margin-top:1%;
   margin-left: 2%;
+  margin-bottom: 80px;
 }
 
 .search {
@@ -318,6 +325,68 @@ h2,p {
   width:75%;
   margin-left: 15%;
 
+}
+
+.border-container {
+  padding: 25px 5px;
+  color: #fff;
+  border: 7px solid #ffada4;
+  min-height: 500px;
+}
+
+.img-thumbnail {
+  border: none;
+  background-color: #ffada4;
+}
+
+.home-image {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.overlay-test {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(44, 62, 80,.9);
+
+}
+
+.icon {
+  color: white;
+  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.overlay-test i {
+  color: #fff;
+}
+
+.overlay-test i:hover {
+  color: pink;
+  cursor: pointer;
+}
+
+.fa-plus {
+  font-size: 80px;
+}
+
+.home-image:hover .overlay-test {
+  opacity: 1;
 }
 
 /*****************
@@ -374,6 +443,7 @@ h2,p {
 .myCocktails {
   max-width: 1450px;
   margin: 0 auto;
+  color: #fff;
 }
 
 .myCocktails img {
@@ -381,17 +451,50 @@ h2,p {
   width: 320px;
   padding: 30px;
   border: none;
+  background-color: #e8b6ae;
+}
+
+.myCocktails h3 {
+  font-family: 'Baloo', cursive;
 }
 
 .myCocktails h3,
 .myCocktails p {
   padding: 10px 0;
+  font
 }
 
 .myCocktailBackground {
-  background-color: #fff;
+  background-color: #e8b6ae;
   margin: 30px;
-  clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%);
+  border: 4px solid #ffada4;
+  border-radius: 15px;
+  box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.35);
+}
+
+.image-overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(241,169,160,0.7);
+  z-index: 10;
+}
+
+.image-overlay p {
+  padding: 0;
+  z-index: 30;
+  color: #fff;
+  font-size: 40px;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Baloo', cursive;
 }
 
 .cocktail-text {
@@ -412,7 +515,7 @@ h2,p {
 .contact-page label {
   font-size: 20px;
   padding-top: 20px;
-  color: #404040;
+  color: #606060;
 }
 
 .contact-box{
@@ -455,7 +558,6 @@ h2,p {
   background-color: pink;
   color: #fff;
   padding: 10px 20px;
-
 }
 
 /********************
@@ -476,11 +578,11 @@ h2,p {
 .login-box{
   background-color: #fff;
   max-width: 30%;
-  padding: 20px;
+  padding: 40px;
   margin: 0 auto;
   float: none;
   display: block;
-  height: 570px;
+  height: auto;
   clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%);
 }
 
@@ -571,5 +673,30 @@ h2,p {
   background-color: pink;
   color: #fff;
   padding: 10px 20px;
+}
 
+/********************
+     My Account
+*********************/
+
+.myAccount-edit {
+ border: none;
+ background-color: #AEA8D3;
+ color: #fff;
+ width: 80px;
+ height: 40px;
+ margin-left: 17px;
+ margin-top: 14px;
+}
+
+.submit {
+  border: none;
+  background-color: #AEA8D3;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 5px;
+}
+
+.account-page {
+  padding: 5px 0;
 }

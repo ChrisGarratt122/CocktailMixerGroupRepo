@@ -19,25 +19,41 @@
 <div class="signup-page col-md-12">
   <div class="signup-box">
     <h2>Signup</h2>
-  <form>
+
+      <!-- Sign up form -->
+  <form action="/adduser" method="POST">
+
+    <!-- Username Field -->
       <div class="form-group row signup-focus">
         <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Username</label>
 
-          <input type="text" class="" placeholder="Enter Username...">
+          <input type="text" class="" name="username" placeholder="Enter Username...">
       </div>
+
+    <!-- Email Field -->
+      <div class="form-group row signup-focus">
+        <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">E-mail</label>
+
+          <input type="email" class="" name="email" placeholder="Enter E-mail...">
+      </div>
+
+    <!-- Password Field -->
       <div class="form-group row signup-focus">
         <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Password</label>
 
-          <input type="password" class="" placeholder="Enter Password...">
+          <input type="password" class="" name="password" placeholder="Enter Password...">
       </div>
+
+    <!-- Password Confirm Field -->
       <div class="form-group row signup-focus">
         <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Confirm Password</label>
 
-          <input type="password" class="" placeholder="Enter Password...">
+          <input type="password" class="" name="confirmPassword" placeholder="Enter Password...">
       </div>
 
-      </div>
       <button class="signup-button" type="submit">Submit</button>
+
+      </div>
   </form>
 </div>
 </div>
