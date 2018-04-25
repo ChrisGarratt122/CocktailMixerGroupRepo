@@ -407,7 +407,7 @@ function displayCocktails(printArray) {
 
   $(".fa-plus").click(function(e){
 
-      console.log("TEST: " + $(this).parents("col-sm"));
+      console.log("PARENT TEST: " + $(this).closest(".col-sm").attr('id'));
 
       $(".image-overlay").fadeIn(1000).queue(function(n) {
       $(this).fadeOut(1000); n();
