@@ -144,7 +144,7 @@ app.post('/dologin', function(req, res) {
   var pword = req.body.password;
 
   if (req.body.username == '' || req.body.password == '') {
-    res.render('/login', {message: "One of the fields were empty! Please try again."});
+    res.render('pages/login', {message: "One of the fields were empty! Please try again."});
     return;
   }
 
