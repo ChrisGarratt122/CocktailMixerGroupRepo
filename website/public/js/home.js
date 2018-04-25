@@ -506,7 +506,9 @@ function resetCocktails() {
 function removeCocktails (name) {
     console.log("Entered remove function.");
 
-    $('#bordercontainer').children('.Gin').each(function () {
+    var ingredient = "." + name;
+
+    $('#bordercontainer').children(ingredient).each(function () {
       console.log("Something found");
 
       $(this).remove(); // "this" is the current element in the loop
