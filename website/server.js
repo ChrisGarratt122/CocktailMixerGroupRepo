@@ -295,14 +295,15 @@ app.post('/updateuser', function(req,res) {
           { $set: { "email": req.body.email } }
         );
     }
-    if (req.body.name != ''){
-      messageString += "Your name has been changed! ";
-      console.log(req.body.username);
-      db.collection('users').update(
-          { "login.username": sess.username },
-          { $set: { "login.username": req.body.username } }
-        );
-        sess.username = req.body.username;
-    }
+    //*****Experimental code for changing username*****
+    // if (req.body.name != ''){
+    //   messageString += "Your name has been changed! ";
+    //   console.log(req.body.username);
+    //   db.collection('users').update(
+    //       { "login.username": sess.username },
+    //       { $set: { "login.username": req.body.username } }
+    //     );
+    //     sess.username = req.body.username;
+    // }
     res.render('pages/profile', {message: messageString} );
 });
