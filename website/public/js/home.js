@@ -436,7 +436,7 @@ function appendCocktailBox(name) {
 
     var ingredientsArray = getArray();
     var ingredient = ingredientsArray[ingredientsArray.length - 1];
-    ingredient = ingredient.split('_').join(' ');
+    ingredient = ingredient.replace(/\s+/g, '_');
 
     string += "<div id=\"" + name + "\" class=\"col-sm " + ingredient + "\">";
     string += "<div class=\"home-image\">";
@@ -465,7 +465,7 @@ function resetCocktails() {
 function removeCocktails (name) {
     console.log("Entered remove function.");
 
-    var ingredient = "." + name.split('_').join(' ');
+    var ingredient = "." + name.replace(/\s+/g, '_');
 
     $('#bordercontainer').children(ingredient).each(function () {
       console.log("Something found");
