@@ -252,7 +252,7 @@ h2, p {
   background-color: transparent;
   outline: none;
   border: none;
-  margin-bottom: 80px;
+  /* margin-bottom: 80px; */
   border-radius: 0;
   border-bottom: 2px solid #fff;
   color: #fff;
@@ -284,8 +284,8 @@ h2, p {
 
 .homepage-cocktails {
   background-color: #e8b6ae;
-  padding: 40px;
-  border: 7px solid #ffada4;
+  padding: 0px;
+  min-height: 500px;
 }
 
 .homepage-cocktails img {
@@ -313,7 +313,9 @@ h2, p {
   background-color: transparent;
   color: #fff;
   border: 1px solid #fff;
-  margin: 0 auto;
+  margin: 0;
+  margin-top:1%;
+  margin-left: 2%;
   margin-bottom: 80px;
 }
 
@@ -321,10 +323,16 @@ h2, p {
   height: 90px;
 }
 
+#button-container {
+  width:75%;
+  margin-left: 15%;
+}
+
 .border-container {
   padding: 25px 5px;
   color: #fff;
   border: 7px solid #ffada4;
+  min-height: 500px;
 }
 
 .img-thumbnail {
