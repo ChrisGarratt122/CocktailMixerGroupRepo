@@ -297,6 +297,7 @@ app.post('/updateuser', function(req,res) {
     }
     if (req.body.name != ''){
       messageString += "Your name has been changed! ";
+      console.log(req.body.username);
       db.collection('users').update(
           { "login.username": sess.username },
           { $set: { "login.username": req.body.username } }
