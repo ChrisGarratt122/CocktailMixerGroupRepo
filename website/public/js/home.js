@@ -364,6 +364,9 @@ function displayCocktails(printArray) {
     //   return true;
     // }
 
+    var ingredientsArray = getArray();
+    var ingredient = ingredientsArray[ingredientsArray.length - 1];
+
     if (index === (length - 1) && index != 0) {
         tempStr = "</div>";
         text += tempStr;
@@ -373,7 +376,7 @@ function displayCocktails(printArray) {
         jsondata = "";
         tempStr = "";
         //tempStr = appendCocktailRowStart(text);
-        tempStr = "<div class=\"row text-center\">";
+        tempStr = "<div class=\"row text-center " + ingredient +"\">";
         console.log("Appending row start div.");
         tempStr += appendCocktailBox(name);
         //console.log("temporary STRING: " + tempStr);
@@ -503,7 +506,7 @@ function resetCocktails() {
 function removeCocktails (name) {
     console.log("Entered remove function.");
 
-    $('#bordercontainer').children('.col-sm').each(function () {
+    $('#bordercontainer').children('.Gin').each(function () {
       console.log("Something found");
       console.log("BOX FOUND: -" + this.value); // "this" is the current element in the loop
     });
