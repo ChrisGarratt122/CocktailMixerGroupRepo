@@ -185,8 +185,8 @@ app.post('/delete', function(req, res) {
 //dataformat for storing new users.
 
 //{"_id":1,
-//"username":"admin",
-//"password":"mixerPa$$"",
+//"email":"admin@admin.com"
+//"login": {"username":"admin", "password":"mixerPa$$"}",
 //"drinks":[]}
 
 app.post('/adduser', function(req, res) {
@@ -196,6 +196,7 @@ app.post('/adduser', function(req, res) {
   //we create the data string from the form components that have been passed in
 
   var datatostore = {
+  "email":req.body.email,
   "login":{"username":req.body.username,"password":req.body.password},
   "drinks":[]}
 
