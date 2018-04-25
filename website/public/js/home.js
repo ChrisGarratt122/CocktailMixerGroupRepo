@@ -468,7 +468,10 @@ function appendCocktailBox(name) {
     console.log("Image: " + image);
     console.log("Desc: " + desc);
 
-    string += "<div id=\"" + name + "\" class=\"col-sm\">";
+    var ingredientsArray = getArray();
+    var ingredient = ingredientsArray[ingredientsArray.length - 1];
+
+    string += "<div id=\"" + name + "\" class=\"col-sm " + ingredient + "\">";
     string += "<div class=\"home-image\">";
     string += "<img src=\"" + image + "\" alt=\"Picture of " + name + "\" class=\"img-thumbnail\">";
     string += "<div class=\"overlay-test\">";
