@@ -382,6 +382,52 @@ h2, p {
   opacity: 1;
 }
 
+/*****************
+  Search Function
+*****************/
+#myInput {
+    border-box: box-sizing;
+
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    height: 90px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    width: 470px;
+    min-height: 50px;
+    max-height: 338px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    font-family: 'Raleway', sans-serif;
+}
+
+.dropdown-content button {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #f6f6f6;
+    width: 100%;
+    border:none;
+    text-align: left;
+}
+
+.dropdown-content button:hover {background-color: #ddd}
+
+.show {display:block;}
 
 /********************
     My Cocktails
@@ -500,6 +546,119 @@ h2, p {
 }
 
 .contact-button {
+  border: none;
+  background-color: pink;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+/********************
+       Log-In
+*********************/
+
+.login-page {
+  margin-top: 5%;
+}
+
+.login-page label {
+  font-size: 20px;
+  padding-top: 20px;
+  color: #404040;
+}
+
+.login-box{
+  background-color: #fff;
+  max-width: 30%;
+  padding: 40px;
+  margin: 0 auto;
+  float: none;
+  display: block;
+  height: auto;
+  clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%);
+}
+
+.login-box h2 {
+  text-align: center;
+  color: pink;
+}
+
+.login-focus input{
+  width: 50%;
+  font-size: 1.2em;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid pink;
+  color: black;
+  margin-top: 10px;
+}
+
+.login-focus input[type=text]:focus,
+.login-focus input:focus {
+  background-color: transparent;
+  border-color: pink;
+  color: black;
+}
+
+.login-button {
+  border: none;
+  background-color: pink;
+  color: #fff;
+  padding: 10px 20px;
+
+}
+
+/********************
+       Sign-Up
+*********************/
+
+.signup-page {
+  margin-top: 5%;
+}
+
+.signup-page label {
+  font-size: 20px;
+  padding-top: 20px;
+  color: #404040;
+}
+
+.signup-box{
+  background-color: #fff;
+  max-width: 30%;
+  padding: 20px;
+  margin: 0 auto;
+  float: none;
+  display: block;
+  height: 570px;
+  clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%);
+}
+
+.signup-box h2 {
+  text-align: center;
+  color: pink;
+}
+
+.signup-focus input{
+  width: 50%;
+  font-size: 1.2em;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid pink;
+  color: black;
+  margin-top: 10px;
+}
+
+.signup-focus input[type=text]:focus,
+.signup-focus input:focus {
+  background-color: transparent;
+  border-color: pink;
+  color: black;
+}
+
+.signup-button {
   border: none;
   background-color: pink;
   color: #fff;
