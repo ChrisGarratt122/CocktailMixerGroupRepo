@@ -199,7 +199,9 @@ app.post('/delete', function(req, res) {
 app.post('/docontact', function(req, res) {
     if (req.body.name == '' || req.body.email == '') {
     res.render('pages/contact', {message: "A field was empty! Please try again!"});
+  }
 });
+
 
 app.post('/adduser', function(req, res) {
     console.log('Add user route entered.');
