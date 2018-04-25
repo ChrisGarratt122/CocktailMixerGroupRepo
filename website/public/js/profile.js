@@ -16,7 +16,7 @@ $(function(){
 
         console.log("Appending to form");
         $("#inputEmail").attr("placeholder", email);
-        $("#inputName").attr("placeholder", uname);
+        $("#inputName").attr("placeholder", (uname + " - You cannot change your username!");
         $("#inputPassword").attr("placeholder", password);
         $("#inputConPassword").attr("placeholder", password);
 
@@ -27,7 +27,3 @@ $(function(){
     }
   });
 });
-
-  $(".dropButton").click(function(){
-    $("#message").text() = "Sorry! You cannot change your username!";
-  });
