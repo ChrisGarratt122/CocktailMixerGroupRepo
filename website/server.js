@@ -197,7 +197,8 @@ app.post('/delete', function(req, res) {
 //"drinks":[]}
 
 app.post('/docontact', function(req, res) {
-    res.render('pages/contact', {message: "Thank you for your feedback!"});
+    if (req.body.name == '' || req.body.email == '' || req.body.subject = '') {
+    res.render('pages/contact', {message: "A field was empty! Please try again!"});
 });
 
 app.post('/adduser', function(req, res) {
