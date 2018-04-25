@@ -408,13 +408,14 @@ function displayCocktails(printArray) {
   $(".fa-plus").click(function(e){
 
       console.log("PARENT TEST: " + $(this).closest(".col-sm").attr('id'));
+      var currentCocktail = $(this).closest(".col-sm").attr('id');
 
       $(".image-overlay").fadeIn(1000).queue(function(n) {
       $(this).fadeOut(1000); n();
       });
       //Append to console a log that ingredient button has been clicked.
       console.log("Cocktail Clicked.");
-      console.log(this);
+      console.log(currentCocktail);
       //Create variable to hold display name of ingredient from clicked button
       e.preventDefault();
       console.log('select_link clicked');
@@ -428,7 +429,7 @@ function displayCocktails(printArray) {
                            console.log(JSON.stringify(data));
                        }
                    });*/
-      var cocktailid = $(this).attr('id');
+      var cocktailid = currentCocktail;
       cocktailid = cocktailid.replace(/\s+/g, '_');
       cocktailid = cocktailid.replace(/'/g, '');
       //alert(cocktailid);
