@@ -272,3 +272,36 @@ app.post('/checklogin', function(req,res){
     res.send('false');
   }
 });
+
+app.post('/updateuser', function(req,res) {
+
+    var messageString = "";
+
+    if (req.body.conPassword != req.body.password) {
+      res.render('pages/profile', {message: "Password fields do not match! Please try again!"});
+      return;
+    }
+    if (req.body.password != ''){
+      messageString += "Your password has been changed! ";
+      db.collection('users').update(
+          { "login.username": sess.username },
+          { $set: { "login.password": req.body.password } }
+        );
+    }
+    if (req.body.email != ''){
+      messageString += "Your email has been changed! ";
+      db.collection('users').update(
+          { "login.username": sess.username },
+          { $set: { "email": req.body.email } }
+        );
+    }
+    if (req.body.name != ''){
+      messageString += "Your name has been changed! ";
+      db.collection('users').update(
+          { "login.username": sess.username },
+          { $set: { "login.username": req.body.username } }
+        );
+        sess.username = req.body.username;
+    }
+    res.render('pages/profile', {message: messageString} );
+});

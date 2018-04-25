@@ -32,33 +32,34 @@
   <!--///////////////////////////////////
         MyAccount Template & Inputs
   /////////////////////////////////// ---->
-  <form id="myAccountForm">
+  <form id="myAccountForm" action="/updateuser" method="POST">
       <aside class="form-group row contact-focus account-page">
         <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Name</label>
 
-          <input id="inputName" type="name" class="" placeholder="Enter Name" required>
+          <input id="inputName" name="name" type="name" class="" placeholder="Enter Username" required>
 
 
       </aside>
       <aside class="form-group row contact-focus account-page">
         <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Email</label>
 
-          <input id="inputEmail" type="email" class="" placeholder="Example@gmail.com" required>
+          <input id="inputEmail" name="email" type="email" class="" placeholder="Example@gmail.com" required>
 
       </aside>
       <aside class="form-group row contact-focus account-page">
         <label for="field" class="col-sm-5 col-form-label col-form-label-sm">Change Password</label>
 
-          <input id="inputPassword" type="password" class="password" placeholder="Enter Password" required>
+          <input id="inputPassword" name="password" type="password" class="password" placeholder="Enter Password" required>
 
       </aside>
       <aside class="form-group row contact-focus account-page">
         <label for="field" class="col-sm-5 col-form-label col-form-label-sm">Confirm Password</label>
 
-        <input id="inputConPassword" type="password" class="password" placeholder="Confirm Password" required>
+        <input id="inputConPassword" name="conPassword" type="password" class="password" placeholder="Confirm Password" required>
 
       </aside>
       <input class="submit" type="submit" value="Save Changes">
+      <h3 id="message"><%= typeof message!='undefined' ? message : '' %></h3>
    </form>
  </section>
 </main>
