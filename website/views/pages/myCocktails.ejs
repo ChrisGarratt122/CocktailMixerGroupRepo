@@ -7,24 +7,36 @@
   <!-- Website
   ================================================== -->
 
-  <body>
+<body>
 
-  <% include ../partials/logo %>
+<!--///////////////////////////////////
+          Page Logo
+/////////////////////////////////// ---->
+<% include ../partials/logo %>
 
-
-<div class="nav-container">
+<!--///////////////////////////////////
+        Navigation  Bar
+/////////////////////////////////// ---->
+<section class="nav-container">
   <% include ../partials/header %>
+</section>
+
+<!--///////////////////////////////////
+          Navigation  Bar
+/////////////////////////////////// ---->
+
+<div class="col-sm-12 text-center cocktail-text">
+  <h2>My Cocktails: <%= user.login.username %></h2>
 </div>
 
+<!--///////////////////////////////////
+      Page's Cocktail Template
+/////////////////////////////////// ---->
 
-  <div class="col-sm-12 text-center cocktail-text">
-    <h2>My Cocktails: <%= user.login.username %></h2>
-  </div>
-
-<div class="myCocktails">
+<main class="myCocktails">
     <!-- <div class="row text-center"> -->
       <!-- Dynamically generated elements will go here -->
-</div>
+</main>
 
 <% include ../partials/footer %>
 

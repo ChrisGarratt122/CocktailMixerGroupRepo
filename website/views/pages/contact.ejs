@@ -4,51 +4,64 @@
     <% include ../partials/head %>
   </head>
 
-  <!-- Website
-  ================================================== -->
+<!-- Website
+================================================== -->
 
-  <body>
+<body>
 
+  <!--///////////////////////////////////
+              Page Logo
+  /////////////////////////////////// ---->
   <% include ../partials/logo %>
 
-<div class="nav-container">
+  <!--///////////////////////////////////
+          Navigation  Bar
+  /////////////////////////////////// ---->
+<section class="nav-container">
   <% include ../partials/header %>
-</div>
+</section>
 
+<!--///////////////////////////////////
+        Contact Form Text
+/////////////////////////////////// ---->
 
-<div class="contact-page col-md-12">
-  <div class="contact-box">
+<main class="contact-page col-md-12">
+  <section class="contact-box">
     <h2>Contact Us</h2>
+
+<!--///////////////////////////////////
+        Contact Form Template
+/////////////////////////////////// ---->
   <form>
-      <div class="form-group row contact-focus">
+      <aside class="form-group row contact-focus">
         <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Name</label>
 
           <input type="email" class="" placeholder="">
-      </div>
-      <div class="form-group row contact-focus">
+      </aside>
+      <aside class="form-group row contact-focus">
         <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Email</label>
 
           <input type="email" class="" placeholder="">
-      </div>
-      <div class="form-group row contact-focus">
+      </aside>
+      <aside class="form-group row contact-focus">
         <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Subject</label>
 
           <input type="email" class="" placeholder="">
-      </div>
-      <div class="form-group row contact-focus">
+      </aside>
+      <aside class="form-group row contact-focus">
         <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Message</label>
 
           <input type="email" class=" " placeholder="">
           <input type="email" class="offset-4" placeholder="">
           <input type="email" class="offset-4" placeholder="">
           <input type="email" class="offset-4" placeholder="">
-      </div>
+      </aside>
       <button class="contact-button" type="submit">Submit</button>
   </form>
-</div>
-</div>
+</section>
+</main>
 
 <% include ../partials/footer %>
 
-  </body>
+</body>
 </html>

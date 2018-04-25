@@ -7,56 +7,70 @@
   <!-- Website
   ================================================== -->
 
-  <body>
+<body>
 
-  <% include ../partials/logo %>
+<!--///////////////////////////////////
+          Page Logo
+/////////////////////////////////// ---->
+<% include ../partials/logo %>
 
-<div class="nav-container">
+<!--///////////////////////////////////
+        Navigation  Bar
+/////////////////////////////////// ---->
+<section class="nav-container">
   <% include ../partials/header %>
-</div>
+</section>
 
-<div class="contact-page col-md-12">
-  <div class="contact-box">
-    <h2>Your Account!</h2>
+<!--///////////////////////////////////
+      MyAccount Container & Text
+/////////////////////////////////// ---->
+
+<main class="contact-page col-md-12">
+  <section class="contact-box">
+  <h2>Your Account!</h2>
+
+  <!--///////////////////////////////////
+        MyAccount Template & Inputs
+  /////////////////////////////////// ---->
   <form id="myAccountForm">
-      <div class="form-group row contact-focus account-page">
+      <aside class="form-group row contact-focus account-page">
         <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Name</label>
 
           <input id="inputName" type="name" class="" placeholder="Enter Name" required>
 
 
-      </div>
-      <div class="form-group row contact-focus account-page">
+      </aside>
+      <aside class="form-group row contact-focus account-page">
         <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Email</label>
 
           <input id="inputEmail" type="email" class="" placeholder="Example@gmail.com" required>
 
-      </div>
-      <div class="form-group row contact-focus account-page">
+      </aside>
+      <aside class="form-group row contact-focus account-page">
         <label for="field" class="col-sm-5 col-form-label col-form-label-sm">Change Password</label>
 
           <input id="inputPassword" type="password" class="password" placeholder="Enter Password" required>
 
-      </div>
-      <div class="form-group row contact-focus account-page">
+      </aside>
+      <aside class="form-group row contact-focus account-page">
         <label for="field" class="col-sm-5 col-form-label col-form-label-sm">Confirm Password</label>
 
         <input id="inputConPassword" type="password" class="password" placeholder="Confirm Password" required>
 
-      </div>
+      </aside>
       <input class="submit" type="submit" value="Save Changes">
    </form>
-  </div>
-</div>
+ </section>
+</main>
 
 
 
 
-    <% include ../partials/footer %>
+<% include ../partials/footer %>
 
-    <!--myCocktails.js only relevant to this page-->
-    <script src="js/profile.js"></script>
+<!--myCocktails.js only relevant to this page-->
+<script src="js/profile.js"></script>
 
 
-  </body>
+</body>
 </html>
