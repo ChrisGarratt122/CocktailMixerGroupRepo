@@ -197,7 +197,7 @@ app.post('/delete', function(req, res) {
 //"drinks":[]}
 
 app.post('/docontact', function(req, res) {
-    if (req.body.name == '' || req.body.email == '' || req.body.subject = '') {
+    if (req.body.name == '' || req.body.email == '') {
     res.render('pages/contact', {message: "A field was empty! Please try again!"});
 });
 
