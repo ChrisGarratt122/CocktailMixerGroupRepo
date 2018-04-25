@@ -190,8 +190,7 @@ app.post('/delete', function(req, res) {
 //"drinks":[]}
 
 app.post('/adduser', function(req, res) {
-  //check we are logged in
-  if(!req.session.loggedin){res.redirect('/login');return;}
+    console.log('Add user route entered.');
 
   //we create the data string from the form components that have been passed in
 
