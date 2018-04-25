@@ -51,7 +51,7 @@ $(function(){
           });
           console.log("About to append full html string.");
           //console.log(text);
-          $("body").append(text);
+          $(".myCocktails").append(text);
       }
       else {
         console.log("no data");
