@@ -57,10 +57,15 @@
           <input type="text" class="offset-4" placeholder="">
       </aside>
       <button id="submit" class="contact-button" type="submit">Submit</button>
+      <!-- Message box takes message from server route -->
       <h3 id="message"><%= typeof message!='undefined' ? message : '' %></h3>
   </form>
 </section>
 </main>
+
+<!--///////////////////////////////////
+      Footer partial (JavaScript)
+/////////////////////////////////// ---->
 
 <% include ../partials/footer %>
 
