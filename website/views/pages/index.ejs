@@ -9,41 +9,58 @@
 
 <body>
 
+  <!--///////////////////////////////////
+            Page Logo
+  /////////////////////////////////// ---->
   <% include ../partials/logo %>
 
-<div class="nav-container">
+<!--///////////////////////////////////
+          Navigation  Bar
+/////////////////////////////////// ---->
+<section class="nav-container">
   <% include ../partials/header %>
-</div>
+</section>
 
-<div class="image-overlay">
+<!--///////////////////////////////////
+        Main Page Search
+/////////////////////////////////// ---->
+<section class="image-overlay">
   <p>Added To Your Cocktails!</p>
-</div>
+</section>
 
-<div class="container homepage-block">
-  <div class="homepage-form">
-    <div class="row search">
-      <div class="col-centered page-title">
+<main class="container homepage-block">
+  <section class="homepage-form">
+    <content class="row search">
+      <article class="col-centered page-title">
         <form>
           <div class="dropdown">
-            <!-- <button onclick="myFunction()" class="dropbtn">Dropdown</button> -->
             <input type="text"  class="form-control" placeholder="Add Ingredient..." id="search-bar">
             <div id="myDropdown" class="dropdown-content">
             </div>
           </div>
         </form>
-      </div>
-    </div>
+      </article>
+    </section>
     <div id="button-container" class="row">
       <!-- <button class="recipe-ingredient" type="button" name="button">Vodka</button> -->
     </div>
-  </div>
-  <div class="homepage-cocktails">
-  <div id="bordercontainer" class="border-container">
+  </content>
+
+  <!--///////////////////////////////////
+        Main Page Content Container
+  /////////////////////////////////// ---->
+
+  <section class="homepage-cocktails">
+  <aside id="bordercontainer" class="border-container">
     <!-- ******Box partials go in here****** -->
 
-  </div>
-  </div>
-</div>
+  </aside>
+</section>
+</main>
+
+<!--///////////////////////////////////
+      Footer partial (JavaScript)
+/////////////////////////////////// ---->
 
 <% include ../partials/footer %>
 
@@ -51,5 +68,5 @@
 <script src="js/home.js"></script>
 
 
-  </body>
+</body>
 </html>

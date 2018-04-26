@@ -9,16 +9,28 @@
 
   <body>
 
+    <!--///////////////////////////////////
+                Page Logo
+    /////////////////////////////////// ---->
   <% include ../partials/logo %>
 
+  <!--///////////////////////////////////
+          Navigation  Bar
+  /////////////////////////////////// ---->
 <div class="nav-container">
   <% include ../partials/header %>
 </div>
 
-
+<!--///////////////////////////////////
+        Signup Form Container & Text
+/////////////////////////////////// ---->
 <div class="signup-page col-md-12">
   <div class="signup-box">
     <h2>Signup</h2>
+
+    <!--///////////////////////////////////
+            Signup Form Template
+    /////////////////////////////////// ---->
 
       <!-- Sign up form -->
   <form action="/adduser" method="POST">
@@ -52,11 +64,16 @@
       </div>
 
       <button class="signup-button" type="submit">Submit</button>
-
+      <!-- Message box takes message from server route -->
+      <h3 id="message"><%= typeof message!='undefined' ? message : '' %></h3>
       </div>
   </form>
 </div>
 </div>
+
+<!--///////////////////////////////////
+      Footer partial (JavaScript)
+/////////////////////////////////// ---->
 
 <% include ../partials/footer %>
 

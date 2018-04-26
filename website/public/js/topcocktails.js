@@ -72,10 +72,11 @@ function printDescription(jsondata, targetno){
   var imgtarget = "#cocktailImg" + targetno;
   var desctarget = "#cocktailDesc" + targetno;
 
-  //Append descstring to desc box
+  //Append namestring to desc box
   $(nametarget).append(namestring);
+  //Append image to image box
   $(imgtarget).attr("src", imgstring);
+  //Append description to desc box
   $(desctarget).append(descstring);
-  //Add drink image
 
 }

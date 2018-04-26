@@ -9,32 +9,50 @@
 
   <body>
 
+  <!--///////////////////////////////////
+            Page Logo
+  /////////////////////////////////// ---->
   <% include ../partials/logo %>
 
+<!--///////////////////////////////////
+          Navigation  Bar
+/////////////////////////////////// ---->
 <div class="nav-container">
   <% include ../partials/header %>
 </div>
 
-
+<!--///////////////////////////////////
+      MyAccount Container & Text
+/////////////////////////////////// ---->
 <div class="login-page col-md-12">
   <div class="login-box">
     <h2>Login</h2>
-  <form action="/dologin" method="POST">
+
+    <!--///////////////////////////////////
+          Login Template & Inputs
+    /////////////////////////////////// ---->
+  <form id="loginform" action="/dologin" method="POST">
       <div class="form-group row login-focus">
         <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Username</label>
 
-          <input type="text" class="" name="username" placeholder="Enter Username...">
+          <input id="inputUsername" type="text" class="" name="username" placeholder="Enter Username...">
       </div>
       <div class="form-group row login-focus">
         <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Password</label>
 
-          <input type="password" class="" name="password" placeholder="Enter Password...">
+          <input id="inputPassword" type="password" class="" name="password" placeholder="Enter Password...">
       </div>
 
       <button class="login-button" type="submit">Login</button>
+      <!-- Message box takes message from server route -->
+      <h3 id="#Message"><%= typeof message!='undefined' ? message : '' %></h3>
   </form>
 </div>
 </div>
+
+<!--///////////////////////////////////
+      Footer partial (JavaScript)
+/////////////////////////////////// ---->
 
 <% include ../partials/footer %>
 

@@ -28,12 +28,13 @@ h2, p {
   max-width: 1300px !important;
 }
 
+
 /********************
        Navbar
 *********************/
 
+
 .nav-container {
-  /* margin-bottom: 6%; */
   z-index: 100;
 }
 
@@ -181,14 +182,12 @@ h2, p {
   position: absolute;
   left: 5%;
   bottom: 2%;
-  color: white;
 }
 
 .signup {
   position: absolute;
   right: 5%;
   bottom: 2%;
-  color: white;
 }
 
 .login a:after,
@@ -253,7 +252,7 @@ h2, p {
   background-color: transparent;
   outline: none;
   border: none;
-  /*margin-bottom: 80px;*/
+  /* margin-bottom: 80px; */
   border-radius: 0;
   border-bottom: 2px solid #fff;
   color: #fff;
@@ -299,6 +298,7 @@ h2, p {
 .homepage-cocktails h3,
 .homepage-cocktails p {
   padding: 10px 20px;
+  color: #fff;
 }
 
 .homepage-cocktails h3 {
@@ -306,6 +306,8 @@ h2, p {
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
+
+
 
 .recipe-ingredient {
   background-color: transparent;
@@ -324,7 +326,6 @@ h2, p {
 #button-container {
   width:75%;
   margin-left: 15%;
-
 }
 
 .border-container {
@@ -507,7 +508,6 @@ h2, p {
        Contact
 *********************/
 
-
 .contact-page {
   margin-top: 5%;
 }
@@ -518,7 +518,7 @@ h2, p {
   color: #606060;
 }
 
-.contact-box{
+.contact-box {
   background-color: #fff;
   max-width: 30%;
   padding: 20px;
@@ -563,7 +563,6 @@ h2, p {
 /********************
        Log-In
 *********************/
-
 
 .login-page {
   margin-top: 5%;
@@ -621,7 +620,6 @@ h2, p {
 /********************
        Sign-Up
 *********************/
-
 
 .signup-page {
   margin-top: 5%;
@@ -691,7 +689,7 @@ h2, p {
 
 .submit {
   border: none;
-  background-color: #AEA8D3;
+  background-color: pink;
   color: white;
   padding: 10px 20px;
   margin-top: 5px;
